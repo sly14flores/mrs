@@ -1,0 +1,82 @@
+[11-Mar-2018 13:30:11 Asia/Manila] PHP Notice:  Undefined variable: staffs in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php on line 9
+[11-Mar-2018 13:30:11 Asia/Manila] PHP Stack trace:
+[11-Mar-2018 13:30:11 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php:0
+[11-Mar-2018 13:30:12 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php on line 9
+[11-Mar-2018 13:30:12 Asia/Manila] PHP Stack trace:
+[11-Mar-2018 13:30:12 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php:0
+[11-Mar-2018 17:27:24 Asia/Manila] PHP Notice:  Undefined index: date_of_birth in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\save.php on line 9
+[11-Mar-2018 17:27:24 Asia/Manila] PHP Stack trace:
+[11-Mar-2018 17:27:24 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\save.php:0
+[13-Mar-2018 18:46:11 Asia/Manila] PHP Notice:  Undefined variable: doctor in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php on line 8
+[13-Mar-2018 18:46:11 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 18:46:11 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php:0
+[20-Mar-2018 15:26:20 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_group' in 'where clause' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT *, DATE_...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT *, DATE_...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php(7): pdo_db->get(Array, Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[20-Mar-2018 15:34:09 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_group' in 'where clause' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT *, DATE_...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT *, DATE_...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php(7): pdo_db->get(Array, Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[20-Mar-2018 15:34:58 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_group' in 'where clause' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT *, DATE_...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT *, DATE_...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php(7): pdo_db->get(Array, Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[20-Mar-2018 15:35:52 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_group' in 'where clause' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT *, DATE_...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT *, DATE_...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php(7): pdo_db->get(Array, Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[20-Mar-2018 15:39:24 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT group_id FROM groups' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT *, DATE_...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT *, DATE_...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php(7): pdo_db->get(Array, Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[20-Mar-2018 15:40:07 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Descri' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT *, DATE_...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT *, DATE_...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php(7): pdo_db->get(Array, Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[20-Mar-2018 16:19:03 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT *, group...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT *, group...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php(7): pdo_db->get(Array, Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[20-Mar-2018 16:19:25 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' DATE_FORMAT(date_of_birth,'%b %e, %Y') dob FROM users WHERE groups = '4'' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT *, , DAT...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT *, , DAT...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php(7): pdo_db->get(Array, Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[20-Mar-2018 16:26:52 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM groups) hehe, DATE_FORMAT(date_of_birth,'%b %e, %Y') dob FROM users WHERE g' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT *, (grou...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT *, (grou...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php(7): pdo_db->get(Array, Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[20-Mar-2018 16:27:50 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''') groups, DATE_FORMAT(date_of_birth,'%b %e, %Y') dob FROM users WHERE groups =' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT *, IF(gr...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT *, IF(gr...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\doctors\doctors.php(7): pdo_db->get(Array, Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30

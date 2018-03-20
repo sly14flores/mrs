@@ -1,0 +1,386 @@
+<?php
+
+require_once 'authentication.php';
+
+?>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Medical Record System for Balaoan District Hospital</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/icons/fontawesome/styles.min.css">
+    <link rel="stylesheet" href="lib/css/chartist.min.css">
+
+    <link rel="stylesheet" href="assets/css/bootbox-fix.css">
+	
+    <script type="text/javascript" src="lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/js/tether.min.js"></script>
+    <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="lib/js/chartist.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.min.js"></script>
+	
+	<!-- JS Libraries -->
+    <script type="text/javascript" src="assets/js/bootbox/bootbox.min.js"></script>
+    <script type="text/javascript" src="assets/js/growl/jquery.bootstrap-growl.min.js"></script>
+	
+	<!-- angularjs -->
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.0.min.js"></script>
+	
+	<!-- angularjs modules -->
+    <script type="text/javascript" src="modules/account.js"></script>	
+    <script type="text/javascript" src="modules/bootstrap-modal.js"></script>	
+    <script type="text/javascript" src="modules/growl.js"></script>	
+    <script type="text/javascript" src="modules/validate.js"></script>
+    <script type="text/javascript" src="modules/add_consultation.js"></script>
+	
+	<!-- controllers -->
+    <script type="text/javascript" src="controllers/add_consultation.js"></script>
+</head>
+
+<body ng-app="consultation" ng-controller="consultationCtrl" account-profile>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-toggleable-md">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
+            <span>
+                <i class="fa fa-code-fork"></i>
+            </span>
+        </button>
+
+        <button class="navbar-toggler navbar-toggler-left" type="button" id="toggle-sidebar">
+            <span>
+               <i class="fa fa-align-justify"></i>
+            </span>
+        </button>
+
+        <a class="navbar-brand logo" href="#">
+            <img src="assets/img/navlogo.png" height="40x" width="90x">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="sidebar-toggle btn btn-flat" id="toggle-sidebar-desktop">
+                <span>
+                    <i class="fa fa-align-justify"></i>
+                </span>
+            </button>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle dropdown-has-after" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <img src="{{profile.picture}}" alt="" class="user-img"> {{profile.user}}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" drop-down></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /NAVBAR -->
+
+    <div class="page-container">
+        <div class="page-content">
+            <!-- inject:SIDEBAR -->
+
+            <div id="sidebar-main" class="sidebar sidebar-default">
+    <div class="sidebar-content">
+        <ul class="navigation">
+
+		<li>
+                <a href="index.html"><i class="app-menu__icon fa fa-dashboard"></i> <span>Dashboard</span></a>
+            </li>
+
+            <li>
+                <a href="index.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
+                <ul>
+                    <li><a href="user.html">Add User</a></li>
+                    <li><a href="users.html">User List</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+                <ul>
+                    <li><a href="all_doctors.html">Doctors List</a></li>
+                    <li><a href="add_doctor.html">Add Doctor</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-universal-access"></i> <span>Staffs</span></a>
+                <ul>
+                    <li><a href="all_staffs.html">Staff List</a></li>
+                    <li><a href="add_staff.html">Add Staff</a></li>
+                </ul>
+            </li>
+
+			<li>
+                <a href="index.html"><i class="fa fa-user-secret"></i> <span>Patients Records</span></a>
+                <ul>
+					<li><a href="all_patients.html">Patient List</a></li>
+                    <li><a href="add_patient.html">Add Patient</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-heartbeat"></i> <span>Medical Records</span></a>
+                <ul>
+                    <li><a href="">Medical Records List</a></li>
+					<li><a href="add_consultation.html">Add Record</a></li>
+                </ul>
+            </li>
+
+			<li>
+                <a href="index.html"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
+                <ul>
+                    <li><a href="">sample</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
+                <ul>
+                    <li><a href="">Backup and Restore</a></li>
+					<li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
+				</ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
+                <ul>
+                    <li><a href="">sample</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+            <!-- inject:/SIDEBAR -->
+
+            <!-- PAGE CONTENT -->
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="row">
+					
+						<div class="col-md-4 offset-md-8">
+							<div class="input-group">
+								<span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
+								<input type="text" class="form-control" placeholder="Search" ng-model="search" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+									
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-block">
+                                    <h5 class="card-title">Patient Information</h5>
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-group row margin-top-30">
+                                            <div class="col-md-3">
+                                                <label class="control-label col-form-label">First Name</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-3">
+                                                <label class="control-label col-form-label">Middle Name</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-3">
+                                                <label class="control-label col-form-label">Last Name</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-3">
+                                                <label class="control-label col-form-label">Age</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-3">
+                                                <label class="control-label col-form-label">Gender</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-block">
+                                    <h5 class="card-title">History Form</h5>
+                                    <div id="accordion" role="tablist" aria-multiselectable="true" class="accordion">
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="headingOne">
+                                                <h5 class="mb-0">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                    Consultation
+                                                </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                <div class="card-block">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                                                    eiusmod.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="headingTwo">
+                                                <h5 class="mb-0">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Prescriptions
+                                                </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                <div class="card-block">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                                                    eiusmod.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="headingThree">
+                                                <h5 class="mb-0">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    Physicians
+                                                </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                <div class="card-block">
+                                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                                    vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth nesciunt you probably haven't heard of them accusamus labore sustainable
+                                                    VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+										<div class="card">
+                                            <div class="card-header" role="tab" id="headingFour">
+                                                <h5 class="mb-0">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                    Hospitals
+                                                </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                                                <div class="card-block">
+                                                    Anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                                    vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth nesciunt you probably haven't heard of them accusamus labore sustainable
+                                                    VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+					<div class="col-lg-3">
+                            <div class="card text-center">
+                                <div class="card-block">
+                                    <h6 class="text-bold content-group-sm">Patient Status</h6>
+                                    <div class="dropdown-menu dropdown-demo dropdown-hover" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">OPD</a>
+                                        <a class="dropdown-item" href="#">IPD</a>
+                                        <a class="dropdown-item" href="#">Emergency</a>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+	
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-block text-center">
+                                    <h6 class="text-bold">Patient History</h6>
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#home1" role="tab">History</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#profile1" role="tab">Prescription</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#messages1" role="tab">Diagnostics</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#settings1" role="tab">Room</a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="home1" role="tabpanel">
+                                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet
+                                            aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum
+                                            porta. Vivamus suscipit tortor eget felis porttitor volutpat.
+                                        </div>
+                                        <div class="tab-pane" id="profile1" role="tabpanel">
+                                            Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar
+                                            a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                                            Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+                                            Donec sollicitudin molestie malesuada.
+                                        </div>
+                                        <div class="tab-pane" id="messages1" role="tabpanel">
+                                            Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta. Vivamus
+                                            magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit
+                                            nisi, pretium ut lacinia in, elementum id enim.
+                                            <br/> Curabitur aliquet quam id dui posuere blandit. Proin eget tortor risus.
+                                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Cras ultricies
+                                            ligula sed magna dictum porta.
+                                        </div>
+                                        <div class="tab-pane" id="settings1" role="tabpanel">
+                                            Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis
+                                            quis ac lectus. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in
+                                            ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam
+                                            vehicula elementum sed sit amet dui. Vestibulum ante ipsum primis in faucibus
+                                            orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit
+                                            amet aliquam vel, ullamcorper sit amet ligula.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /PAGE CONTENT -->
+        </div>
+    </div>
+</body>
+
+</html>

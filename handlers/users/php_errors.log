@@ -1,0 +1,63 @@
+[20-Mar-2018 14:55:31 Asia/Manila] PHP Warning:  require_once(../db.php): failed to open stream: No such file or directory in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\users.php on line 5
+[20-Mar-2018 14:55:31 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 14:55:31 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\users.php:0
+[20-Mar-2018 14:55:31 Asia/Manila] PHP Fatal error:  require_once(): Failed opening required '../db.php' (include_path='.;C:\php\pear') in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\users.php on line 5
+[20-Mar-2018 14:55:31 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 14:55:31 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\users.php:0
+[20-Mar-2018 14:58:30 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'firstname' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, firs...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\users.php(11): pdo_db->getData('SELECT id, firs...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[20-Mar-2018 15:04:03 Asia/Manila] PHP Notice:  Undefined index: user in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php on line 9
+[20-Mar-2018 15:04:03 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 15:04:03 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php:0
+[20-Mar-2018 15:04:03 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:122
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(122): PDO->prepare('INSERT INTO use...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php(18): pdo_db->insertData(Array)
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 122
+[20-Mar-2018 15:05:37 Asia/Manila] PHP Notice:  Undefined index: user in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php on line 10
+[20-Mar-2018 15:05:37 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 15:05:37 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php:0
+[20-Mar-2018 15:05:37 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php on line 11
+[20-Mar-2018 15:05:37 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 15:05:37 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php:0
+[20-Mar-2018 15:05:39 Asia/Manila] PHP Notice:  Undefined index: user in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php on line 10
+[20-Mar-2018 15:05:39 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 15:05:39 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php:0
+[20-Mar-2018 15:05:39 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php on line 11
+[20-Mar-2018 15:05:39 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 15:05:39 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php:0
+[20-Mar-2018 15:07:49 Asia/Manila] PHP Notice:  Undefined index: users in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php on line 10
+[20-Mar-2018 15:07:49 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 15:07:49 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php:0
+[20-Mar-2018 15:07:49 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php on line 11
+[20-Mar-2018 15:07:49 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 15:07:49 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php:0
+[20-Mar-2018 15:08:21 Asia/Manila] PHP Notice:  Undefined index: user in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php on line 9
+[20-Mar-2018 15:08:21 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 15:08:22 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php:0
+[20-Mar-2018 15:08:22 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:122
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(122): PDO->prepare('INSERT INTO use...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php(18): pdo_db->insertData(Array)
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 122
+[20-Mar-2018 15:09:16 Asia/Manila] PHP Notice:  Undefined index: users in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php on line 9
+[20-Mar-2018 15:09:16 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 15:09:16 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php:0
+[20-Mar-2018 15:09:16 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'users' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:122
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(122): PDO->prepare('INSERT INTO use...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php(18): pdo_db->insertData(Array)
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 122
+[20-Mar-2018 15:10:58 Asia/Manila] PHP Notice:  Undefined index: user in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php on line 9
+[20-Mar-2018 15:10:58 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 15:10:58 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php:0
+[20-Mar-2018 15:10:58 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php on line 11
+[20-Mar-2018 15:10:58 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 15:10:58 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\users\save.php:0

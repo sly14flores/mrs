@@ -1,0 +1,20 @@
+[16-Mar-2018 16:50:15 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1' at line 1 in C:\Users\SLY One\Desktop\UwAmp310\www\mrs\db.php:95
+Stack trace:
+#0 C:\Users\SLY One\Desktop\UwAmp310\www\mrs\db.php(95): PDO->query('ALTER TABLE  AU...')
+#1 C:\Users\SLY One\Desktop\UwAmp310\www\mrs\db.php(101): pdo_db->auto_increment_one()
+#2 C:\Users\SLY One\Desktop\UwAmp310\www\mrs\handlers\restore\restore.php(11): pdo_db->insertData(NULL)
+#3 {main}
+  thrown in C:\Users\SLY One\Desktop\UwAmp310\www\mrs\db.php on line 95
+[16-Mar-2018 17:32:40 Asia/Manila] PHP Notice:  Undefined index: data in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\restore\restore.php on line 11
+[16-Mar-2018 17:32:40 Asia/Manila] PHP Stack trace:
+[16-Mar-2018 17:32:40 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\restore\restore.php:0
+[16-Mar-2018 17:32:40 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 107
+[16-Mar-2018 17:32:40 Asia/Manila] PHP Stack trace:
+[16-Mar-2018 17:32:40 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\restore\restore.php:0
+[16-Mar-2018 17:32:40 Asia/Manila] PHP   2. pdo_db->insertData() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\restore\restore.php:11
+[16-Mar-2018 17:32:40 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES )' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:122
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(122): PDO->prepare('INSERT INTO fol...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\restore\restore.php(11): pdo_db->insertData(NULL)
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 122

@@ -1,0 +1,38 @@
+<!-- PAGE CONTENT -->
+<div class="card-block">
+		<h5 class="text-bold card-title"><i class="fa fa-user"></i> Manage Users<button class="btn btn-primary pull-right" ng-click="form.group(this)">Add</button></h5>
+	<hr>
+</div>
+<div class="card-block">
+	<div class="row">
+		<div class="col-md-4 offset-md-8">
+			<div class="input-group">
+				<span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
+				<input type="text" class="form-control" placeholder="Search" ng-model="search" aria-describedby="sizing-addon2">
+			</div>
+		</div>
+	</div>
+	<div style="margin-top: 25px;">
+	  <table class="table">										
+		<thead>
+		  <tr>
+			<th>#</th>
+			<th>Group</th>
+			<th>Group Description</th>
+			<th>Actions</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr ng-repeat="g in groups | filter: search">
+			<td>{{g.group_id}}</td>
+			<td>{{g.group_name}}</td>
+			<td>{{g.group_description}}</td>
+			<td>
+				<button type="button" class="btn btn-primary" ng-click="form.group(this,g)"><i class="fa fa-search"></i></button>
+				<button type="button" class="btn btn-danger" ng-click="form.delete(this,g)"><i class="fa fa-times"></i></button>
+			</td>
+		  </tr>
+		</tbody>
+	  </table>
+	 </div>
+</div>

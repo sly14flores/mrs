@@ -1,0 +1,450 @@
+<?php
+
+require_once 'authentication.php';
+
+?>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Medical Record System for Balaoan District Hospital</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/icons/fontawesome/styles.min.css">
+    <link rel="stylesheet" href="lib/css/chartist.min.css">
+
+    <link rel="stylesheet" href="assets/css/bootbox-fix.css">
+	
+    <script type="text/javascript" src="lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/js/tether.min.js"></script>
+    <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="lib/js/chartist.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.min.js"></script>
+	
+	<!-- JS Libraries -->
+    <script type="text/javascript" src="assets/js/bootbox/bootbox.min.js"></script>
+    <script type="text/javascript" src="assets/js/growl/jquery.bootstrap-growl.min.js"></script>
+	
+	<!-- angularjs -->
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.0.min.js"></script>
+	
+	<!-- angularjs modules -->
+    <script type="text/javascript" src="modules/account.js"></script>	
+    <script type="text/javascript" src="modules/bootstrap-modal.js"></script>	
+    <script type="text/javascript" src="modules/growl.js"></script>	
+    <script type="text/javascript" src="modules/validate.js"></script>
+    <script type="text/javascript" src="modules/record.js"></script>
+    <script type="text/javascript" src="modules/add_patient.js"></script>
+	
+	<!-- controllers -->
+    <script type="text/javascript" src="controllers/add_patient.js"></script>
+</head>
+
+<body ng-app="patient" ng-controller="patientCtrl" account-profile>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-toggleable-md">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
+            <span>
+                <i class="fa fa-code-fork"></i>
+            </span>
+        </button>
+
+        <button class="navbar-toggler navbar-toggler-left" type="button" id="toggle-sidebar">
+            <span>
+               <i class="fa fa-align-justify"></i>
+            </span>
+        </button>
+
+        <a class="navbar-brand logo" href="#">
+            <img src="assets/img/navlogo.png" height="40x" width="90x">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="sidebar-toggle btn btn-flat" id="toggle-sidebar-desktop">
+                <span>
+                    <i class="fa fa-align-justify"></i>
+                </span>
+            </button>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle dropdown-has-after" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <img src="{{profile.picture}}" alt="" class="user-img"> {{profile.user}}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" drop-down></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /NAVBAR -->
+
+    <div class="page-container">
+        <div class="page-content">
+            <!-- inject:SIDEBAR -->
+
+            <div id="sidebar-main" class="sidebar sidebar-default">
+    <div class="sidebar-content">
+        <ul class="navigation">
+
+		<li>
+                <a href="index.html"><i class="app-menu__icon fa fa-dashboard"></i> <span>Dashboard</span></a>
+            </li>
+
+            <li>
+                <a href="index.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
+                <ul>
+					<li><a href="users.html"><i class="fa fa-id-badge"></i> User List</a></li>
+                    <li><a href="user.html"><i class="fa fa-user-plus"></i> Add User</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+                <ul>
+                    <li><a href="all_doctors.html"><i class="fa fa-address-card-o"></i> Doctors List</a></li>
+                    <li><a href="add_doctor.html"><i class="fa fa-user-plus"></i> Add Doctor</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
+                <ul>
+                    <li><a href="all_staffs.html"><i class="fa fa-address-card"></i> Staff List</a></li>
+                    <li><a href="add_staff.html"><i class="fa fa-user-plus"></i> Add Staff</a></li>
+                </ul>
+            </li>
+
+			<li>
+                <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
+                <ul>
+					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
+                    <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
+                <ul>
+                    <li><a href="reports.html"><i class="fa fa-print"></i> Print Reports</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
+                <ul>
+                    <li><a href="backup-restore.html"><i class="fa fa-cogs"></i> Backup and Restore</a></li>
+					<li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
+				</ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
+                <ul>
+                    <li><a href="">sample</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+            <!-- inject:/SIDEBAR -->
+
+            <!-- PAGE CONTENT -->
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="page-title"><i class="fa fa-medkit"></i> Add Patient Record</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+							<div class="card">
+								<div class="card-block">
+								<!-- start here -->
+								
+		<button type="button" class="btn btn-primary float-right btn-rounded" ng-click="app.add(this)" ng-disabled="controls.btns.add" ng-show="controls.show.add">Add</button>
+		<button type="button" class="btn btn-secondary float-right  btn-rounded" ng-click="app.edit(this)" ng-disabled="controls.btns.edit" ng-show="controls.show.edit">Edit</button>		
+		<div class="clearfix"></div>
+
+		<hr>
+
+		<form name="form.patient" novalidate autocomplete="false">
+			<legend class="text-bold">Patient Information</legend>			
+			<div class="row">
+				<div class="col-md-4 offset-md-8">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.hospital_no.$touched && form.patient.hospital_no.$invalid}">
+							<label class="control-label">Hospital No</label>
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-user-circle"></i>
+								</span>
+							<input type="text" class="form-control" name="hospital_no" ng-model="patient.hospital_no" ng-disabled="controls.btns.ok" required>
+							</div>
+							<div class="form-control-feedback" ng-show="form.patient.hospital_no.$touched && form.patient.hospital_no.$invalid">Hospital no is required</div>
+						</div>						
+					</fieldset>
+				</div>			
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.first_name.$touched && form.patient.first_name.$invalid}">
+							<label class="control-label">First Name</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-user-circle"></i>
+                                    </span>
+							<input type="text" class="form-control" name="first_name" ng-model="patient.first_name" ng-disabled="controls.btns.ok" required>
+							</div>
+							<div class="form-control-feedback" ng-show="form.patient.first_name.$touched && form.patient.first_name.$invalid">First name is required</div>
+						</div>						
+					</fieldset>
+				</div>
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.middle_name.$touched && form.patient.middle_name.$invalid}">
+							<label class="control-label">Middle Name</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-user-circle"></i>
+                                    </span>
+							<input type="text" class="form-control" name="middle_name" ng-model="patient.middle_name" ng-disabled="controls.btns.ok">
+							</div>
+							
+						</div>						
+					</fieldset>
+				</div>
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.last_name.$touched && form.patient.last_name.$invalid}">
+							<label class="control-label">Last Name</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-user-circle"></i>
+                                    </span>
+							<input type="text" class="form-control" name="last_name" ng-model="patient.last_name" ng-disabled="controls.btns.ok" required>
+							</div>
+							<div class="form-control-feedback" ng-show="form.patient.last_name.$touched && form.patient.last_name.$invalid">Last name is required</div>
+						</div>						
+					</fieldset>
+				</div>				
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.date_of_birth.$touched && form.patient.date_of_birth.$invalid}">
+							<label class="control-label">Birthday</label>
+							<input type="date" class="form-control" name="date_of_birth" ng-model="patient.date_of_birth" ng-disabled="controls.btns.ok" required>
+							<div class="form-control-feedback" ng-show="form.patient.date_of_birth.$touched && form.patient.date_of_birth.$invalid">Birthday name is required</div>
+						</div>							
+					</fieldset>
+				</div>
+				
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.age.$touched && form.patient.age.$invalid}">
+							<label class="control-label">Age</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-id-badge"></i>
+                                    </span>
+							<input type="text" class="form-control" name="age" ng-model="patient.age" ng-disabled="controls.btns.ok" required>
+							</div>
+							<div class="form-control-feedback" ng-show="form.patient.age.$touched && form.patient.age.$invalid">Age is required</div>
+						</div>							
+					</fieldset>
+				</div>		
+
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.birth_place.$touched && form.patient.birth_place.$invalid}">
+							<label class="control-label">Birth Place</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-id-card"></i>
+                                    </span>
+							<input type="text" class="form-control" name="birth_place" ng-model="patient.birth_place" ng-disabled="controls.btns.ok">
+							</div>
+							
+						</div>							
+					</fieldset>
+				</div>		
+			</div>
+			
+			
+			<div class="row">
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.gender.$touched && form.patient.gender.$invalid}">
+							<label class="control-label">Gender</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-venus-mars"></i>
+                                    </span>
+							<select class="form-control" name="gender" ng-model="patient.gender" ng-disabled="controls.btns.ok" required>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							</select>
+							</div>
+							<div class="form-control-feedback" ng-show="form.patient.gender.$touched && form.patient.gender.$invalid">Gender is required</div>
+						</div>						
+					</fieldset>
+				</div>		
+				
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.mobile_number.$touched && form.patient.mobile_number.$invalid}">
+							<label class="control-label">Mobile Number</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-fax"></i>
+                                    </span>
+							<input type="text" class="form-control" name="mobile_number" ng-model="patient.mobile_number" ng-disabled="controls.btns.ok">
+							</div>
+							
+						</div>							
+					</fieldset>
+				</div>	
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.civil_status.$touched && form.patient.civil_status.$invalid}">
+							<label class="control-label">Civil Status</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-wechat"></i>
+                                    </span>
+							<select class="form-control" name="civil_status" ng-model="patient.civil_status" ng-disabled="controls.btns.ok" required>
+								<option value="Single">Single</option>
+								<option value="Married">Married</option>
+								<option value="Widowed">Widowed</option>
+								<option value="Separated">Separated</option>
+							</select>
+							</div>
+							<div class="form-control-feedback" ng-show="form.patient.civil_status.$touched && form.patient.civil_status.$invalid">Civil Status is required</div>
+						</div>						
+					</fieldset>
+				</div>	
+			</div>
+			
+			
+			<div class="row">
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.address.$touched && form.patient.address.$invalid}">
+							<label class="control-label">Address</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-address-book-o"></i>
+                                    </span>
+							<input type="text" class="form-control" name="address" ng-model="patient.address" ng-disabled="controls.btns.ok" required>
+							</div>
+							<div class="form-control-feedback" ng-show="form.patient.address.$touched && form.patient.address.$invalid">Address is required</div>
+						</div>							
+					</fieldset>
+				</div>	
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.nationality.$touched && form.patient.nationality.$invalid}">
+							<label class="control-label">Nationality</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-flag"></i>
+                                    </span>
+							<input type="text" class="form-control" name="nationality" ng-model="patient.nationality" ng-disabled="controls.btns.ok">
+							</div>
+							
+						</div>							
+					</fieldset>
+				</div>			
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.religion.$touched && form.patient.religion.$invalid}">
+							<label class="control-label">Religion</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-handshake-o"></i>
+                                    </span>
+							<input type="text" class="form-control" name="religion" ng-model="patient.religion" ng-disabled="controls.btns.ok">
+							</div>
+							
+						</div>							
+					</fieldset>
+				</div>		
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.patient.occupation.$touched && form.patient.occupation.$invalid}">
+							<label class="control-label">Occupation</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-shopping-bag"></i>
+                                    </span>
+							<input type="text" class="form-control" name="occupation" ng-model="patient.occupation" ng-disabled="controls.btns.ok">
+							</div>
+							
+						</div>							
+					</fieldset>
+				</div>			
+			</div>
+			<legend class="text-bold">Records</legend>
+			<fieldset class="content-group">
+				<button type="button" class="btn btn-primary" ng-click="record.medicalRecord(this,null)" ng-disabled="controls.btns.addRecord">Add Record</button>
+			</fieldset>			
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Date</th><th>OPD No</th><th>Department</th><th>Physician</th><th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="mr in medical_records">
+								<td>{{mr.date}}</td><td>{{mr.opd_no}}</td><td>{{mr.department}}</td><td>{{mr.physician}}</td>
+								<td>
+									<i class="fa fa-search" ng-click="record.medicalRecord(this,mr)" style="margin-right: 5px; cursor: pointer;"></i>
+									<i class="fa fa-remove" ng-click="record.delete(this,mr)" style="cursor: pointer;"></i>								
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</form>
+
+		<hr>
+		<div class="pull-right">
+			<button type="button" class="btn btn-secondary" ng-click="app.save(this)" ng-disabled="controls.btns.ok">Save</button>
+			<button type="button" class="btn btn-primary" ng-click="app.cancel(this)" ng-disabled="controls.btns.cancel">Cancel</button>
+		</div>		
+
+								<!-- start here -->
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <!-- /PAGE CONTENT -->
+        </div>
+    </div>
+</body>
+
+</html>

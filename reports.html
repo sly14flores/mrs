@@ -1,0 +1,277 @@
+<?php
+
+require_once 'authentication.php';
+
+?>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Medical Record System for Balaoan District Hospital</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/icons/fontawesome/styles.min.css">
+    <link rel="stylesheet" href="lib/css/chartist.min.css">
+
+    <link rel="stylesheet" href="assets/css/bootbox-fix.css">
+	
+    <script type="text/javascript" src="lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/js/tether.min.js"></script>
+    <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="lib/js/chartist.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.min.js"></script>
+	
+	<!-- JS Libraries -->
+    <script type="text/javascript" src="assets/js/bootbox/bootbox.min.js"></script>
+    <script type="text/javascript" src="assets/js/growl/jquery.bootstrap-growl.min.js"></script>
+	
+	<!-- for report -->
+    <script type="text/javascript" src="jspdf/jspdf.min.js"></script>
+    <script type="text/javascript" src="jspdf/jspdf.plugin.autotable.js"></script>
+	
+	<!-- angularjs -->
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.0.min.js"></script>
+	
+	<!-- angularjs modules -->
+    <script type="text/javascript" src="modules/account.js"></script>	
+    <script type="text/javascript" src="modules/bootstrap-modal.js"></script>	
+    <script type="text/javascript" src="modules/growl.js"></script>	
+    <script type="text/javascript" src="modules/validate.js"></script>
+	
+	<!-- angularjs -->
+    <script type="text/javascript" src="modules/jspdf.js"></script>	
+	
+	<!-- controllers -->
+    <script type="text/javascript" src="controllers/all_doctors.js"></script>
+</head>
+
+<body ng-app="doctors" ng-controller="doctorsCtrl" account-profile>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-toggleable-md">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
+            <span>
+                <i class="fa fa-code-fork"></i>
+            </span>
+        </button>
+
+        <button class="navbar-toggler navbar-toggler-left" type="button" id="toggle-sidebar">
+            <span>
+               <i class="fa fa-align-justify"></i>
+            </span>
+        </button>
+
+        <a class="navbar-brand logo" href="#">
+            <img src="assets/img/navlogo.png" height="40x" width="90x">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="sidebar-toggle btn btn-flat" id="toggle-sidebar-desktop">
+                <span>
+                    <i class="fa fa-align-justify"></i>
+                </span>
+            </button>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle dropdown-has-after" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <img src="{{profile.picture}}" alt="" class="user-img"> {{profile.user}}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" drop-down></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /NAVBAR -->
+
+    <div class="page-container">
+        <div class="page-content">
+            <!-- inject:SIDEBAR -->
+
+            <div id="sidebar-main" class="sidebar sidebar-default">
+    <div class="sidebar-content">
+        <ul class="navigation">
+
+           <li>
+                <a href="index.html"><i class="app-menu__icon fa fa-dashboard"></i> <span>Dashboard</span></a>
+            </li>
+
+            <li>
+                <a href="index.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
+                <ul>
+					<li><a href="users.html"><i class="fa fa-id-badge"></i> User List</a></li>
+                    <li><a href="user.html"><i class="fa fa-user-plus"></i> Add User</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+                <ul>
+                    <li><a href="all_doctors.html"><i class="fa fa-address-card-o"></i> Doctors List</a></li>
+                    <li><a href="add_doctor.html"><i class="fa fa-user-plus"></i> Add Doctor</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
+                <ul>
+                    <li><a href="all_staffs.html"><i class="fa fa-address-card"></i> Staff List</a></li>
+                    <li><a href="add_staff.html"><i class="fa fa-user-plus"></i> Add Staff</a></li>
+                </ul>
+            </li>
+
+			<li>
+                <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
+                <ul>
+					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
+                    <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
+                <ul>
+                    <li><a href="reports.html"><i class="fa fa-print"></i> Print Reports</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
+                <ul>
+                    <li><a href="backup-restore.html"><i class="fa fa-cogs"></i> Backup and Restore</a></li>
+					<li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
+				</ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
+                <ul>
+                    <li><a href="">sample</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+            <!-- inject:/SIDEBAR -->
+
+            <!-- PAGE CONTENT -->
+            <div class="content-wrapper">
+                <div class="content">
+                   <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="page-title"><i class="fa fa-cogs"></i> Reports</h3>
+                        </div>
+                    </div> 				
+					<div class="row">
+                        <div class="col-md-8 offset-md-2">
+						    <div class="card">
+								<div class="card-block">
+									<h5 class="text-bold card-title">Print Reports</h5>
+					<hr>
+					<br>
+									
+					<div class="row">
+                        <div class="col-lg-5 col-xs-4 offset-md-1">
+                            <div class="widget-overview bg-primary-1">
+                                <div class="inner">
+                                    <h3><b>Doctors</b></h3>
+                                   <h5><b><i>List</i></b></h5>
+                                </div>
+
+                                <div class="icon">
+                                    <img src="assets/img/doc.png" height="90px" width="90px" >
+                                </div>
+								<br>
+
+                                <div class="details bg-primary-3">
+                                    <span>Print Details <i class="fa fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-xs-4">
+                            <div class="widget-overview bg-info-1">
+                                <div class="inner">
+                                    <h3><b>Staffs</b></h3>
+                                   <h5><b><i>List</i></b></h5>
+                                </div>
+
+                                <div class="icon">
+                                    <img src="assets/img/staff.png" height="90px" width="90px" >
+                                </div>
+								<br>
+
+                                <div class="details bg-info-3">
+                                    <span>Print Details <i class="fa fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+					<br>
+					<br>
+					
+					<div class="row">
+					 <div class="col-lg-5 col-xs-4 offset-md-1">
+                            <div class="widget-overview bg-success-1">
+                                <div class="inner">
+                                    <h3><b>Patients</b></h3>
+                                   <h5><b><i>List</i></b></h5>
+                                </div>
+
+                                <div class="icon">
+                                    <img src="assets/img/patient.png" height="90px" width="90px" >
+                                </div>
+								<br>
+
+                                <div class="details bg-success-3">
+                                    <span>Print Details <i class="fa fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+						
+
+                        <div class="col-lg-5 col-xs-4">
+                            <div class="widget-overview bg-danger-1">
+                                <div class="inner">
+                                    <h3><b>Records</b></h3>
+                                    <h5><b><i>List</i></b></h5>
+                                </div>
+
+                                <div class="icon">
+                                    <img src="assets/img/med.png" height="90px" width="90px" >
+                                </div>
+								<br>
+
+                                <div class="details bg-danger-3">
+                                    <span>Print Details <i class="fa fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+					
+					
+								</div>                           
+							</div>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /PAGE CONTENT -->
+        </div>
+    </div>
+</body>
+
+</html>

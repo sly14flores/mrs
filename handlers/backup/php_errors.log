@@ -1,0 +1,49 @@
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Notice:  Undefined property: pdo_db::$db_name in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:54 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Notice:  Undefined index: Tables_in_ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:54 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Notice:  Undefined property: pdo_db::$db_name in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:54 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Notice:  Undefined index: Tables_in_ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:54 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Notice:  Undefined property: pdo_db::$db_name in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:54 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Notice:  Undefined index: Tables_in_ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:54 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Notice:  Undefined property: pdo_db::$db_name in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:54 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Notice:  Undefined index: Tables_in_ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:54 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Notice:  Undefined property: pdo_db::$db_name in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:54 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Notice:  Undefined index: Tables_in_ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:54 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:54 Asia/Manila] PHP Notice:  Undefined property: pdo_db::$db_name in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:55 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:55 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:55 Asia/Manila] PHP Notice:  Undefined index: Tables_in_ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:55 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:55 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:55 Asia/Manila] PHP Notice:  Undefined property: pdo_db::$db_name in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:55 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:55 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:55 Asia/Manila] PHP Notice:  Undefined index: Tables_in_ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php on line 13
+[13-Mar-2018 22:08:55 Asia/Manila] PHP Stack trace:
+[13-Mar-2018 22:08:55 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php:0
+[13-Mar-2018 22:08:55 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:27
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(27): PDO->query('SELECT * FROM ')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(77): pdo_db->getData('SELECT * FROM ')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\backup\start.php(20): pdo_db->all()
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 27

@@ -1,0 +1,295 @@
+<?php
+
+require_once 'authentication.php';
+
+?>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Medical Record System for Balaoan District Hospital</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/icons/fontawesome/styles.min.css">
+    <link rel="stylesheet" href="lib/css/chartist.min.css">
+
+    <link rel="stylesheet" href="assets/css/bootbox-fix.css">
+	
+    <script type="text/javascript" src="lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/js/tether.min.js"></script>
+    <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="lib/js/chartist.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.min.js"></script>
+	
+	<!-- JS Libraries -->
+    <script type="text/javascript" src="assets/js/bootbox/bootbox.min.js"></script>
+    <script type="text/javascript" src="assets/js/growl/jquery.bootstrap-growl.min.js"></script>
+	
+	<!-- angularjs -->
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.0.min.js"></script>
+	
+	<!-- angularjs modules -->
+    <script type="text/javascript" src="modules/account.js"></script>	
+    <script type="text/javascript" src="modules/bootstrap-modal.js"></script>	
+    <script type="text/javascript" src="modules/growl.js"></script>	
+    <script type="text/javascript" src="modules/validate.js"></script>
+    <script type="text/javascript" src="modules/user.js"></script>
+	
+	<!-- controllers -->
+    <script type="text/javascript" src="controllers/user.js"></script>
+</head>
+
+<body ng-app="user" ng-controller="userCtrl" account-profile>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-toggleable-md">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
+            <span>
+                <i class="fa fa-code-fork"></i>
+            </span>
+        </button>
+
+        <button class="navbar-toggler navbar-toggler-left" type="button" id="toggle-sidebar">
+            <span>
+               <i class="fa fa-align-justify"></i>
+            </span>
+        </button>
+
+        <a class="navbar-brand logo" href="#">
+            <img src="assets/img/navlogo.png" height="40x" width="90x">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="sidebar-toggle btn btn-flat" id="toggle-sidebar-desktop">
+                <span>
+                    <i class="fa fa-align-justify"></i>
+                </span>
+            </button>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle dropdown-has-after" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <img src="{{profile.picture}}" alt="" class="user-img"> {{profile.user}}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" drop-down></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /NAVBAR -->
+
+    <div class="page-container">
+        <div class="page-content">
+            <!-- inject:SIDEBAR -->
+
+            <div id="sidebar-main" class="sidebar sidebar-default">
+    <div class="sidebar-content">
+        <ul class="navigation">
+
+		
+		<li>
+                <a href="index.html"><i class="app-menu__icon fa fa-dashboard"></i> <span>Dashboard</span></a>
+            </li>
+
+            <li>
+                <a href="index.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
+                <ul>
+					<li><a href="users.html"><i class="fa fa-id-badge"></i> User List</a></li>
+                    <li><a href="user.html"><i class="fa fa-user-plus"></i> Add User</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+                <ul>
+                    <li><a href="all_doctors.html"><i class="fa fa-address-card-o"></i> Doctors List</a></li>
+                    <li><a href="add_doctor.html"><i class="fa fa-user-plus"></i> Add Doctor</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
+                <ul>
+                    <li><a href="all_staffs.html"><i class="fa fa-address-card"></i> Staff List</a></li>
+                    <li><a href="add_staff.html"><i class="fa fa-user-plus"></i> Add Staff</a></li>
+                </ul>
+            </li>
+
+			<li>
+                <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
+                <ul>
+					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
+                    <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
+                <ul>
+                    <li><a href="reports.html"><i class="fa fa-print"></i> Print Reports</a></li>
+                </ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
+                <ul>
+                    <li><a href="backup-restore.html"><i class="fa fa-cogs"></i> Backup and Restore</a></li>
+					<li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
+				</ul>
+            </li>
+			
+			<li>
+                <a href="index.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
+                <ul>
+                    <li><a href="">sample</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+            <!-- inject:/SIDEBAR -->
+
+            <!-- PAGE CONTENT -->
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="page-title"><i class="fa fa-users"></i> Add User</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+							<div class="card">
+								<div class="card-block">
+								
+		<button type="button" class="btn btn-primary float-right  btn-rounded" ng-click="app.add(this)" ng-show="controls.btns.add">Add</button>
+		<button type="button" class="btn btn-secondary float-right  btn-rounded" ng-click="app.edit(this)" ng-show="controls.btns.edit">Edit</button>
+		<div class="clearfix"></div>
+		
+		<hr>
+		
+		<form name="form.user" novalidate autocomplete="off">
+			<legend class="text-bold">User Information</legend>		
+
+				<div class="row">
+					<div class="col-md-4">
+						<fieldset class="content-group margin-top-10">
+							<div class="form-group" ng-class="{'has-danger': form.user.user_group.$touched && form.user.user_group.$invalid}">
+								<label class="control-label">Group</label>
+								<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-users"></i>
+                                    </span>
+								<select class="form-control" name="user_group" ng-model="user.groups" ng-options="group.group_description for group in groups track by group.group_id" ng-disabled="controls.btns.ok" required>
+								</select>
+								</div>
+								<div class="form-control-feedback" ng-show="form.user.user_group.$touched && form.user.user_group.$invalid">Group name is required</div>
+							</div>					
+						</fieldset>
+					</div>					
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<fieldset class="content-group margin-top-10">
+							<div class="form-group" ng-class="{'has-danger': form.user.first_name.$touched && form.user.first_name.$invalid}">
+								<label class="control-label">First Name</label>
+								<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-user-circle"></i>
+                                    </span>
+								<input type="text" class="form-control" name="first_name" ng-model="user.first_name" ng-disabled="controls.btns.ok" required>
+								</div>
+								<div class="form-control-feedback" ng-show="form.user.first_name.$touched && form.user.first_name.$invalid">First name is required</div>
+							</div>				
+						</fieldset>
+					</div>
+					<div class="col-md-4">
+						<fieldset class="content-group margin-top-10">
+							<div class="form-group" ng-class="{'has-danger': form.user.middle_name.$touched && form.user.middle_name.$invalid}">
+								<label class="control-label">Middle Name</label>
+								<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-user-circle"></i>
+                                    </span>
+								<input type="text" class="form-control" name="middle_name" ng-model="user.middle_name" ng-disabled="controls.btns.ok" required>
+								</div>
+								<div class="form-control-feedback" ng-show="form.user.middle_name.$touched && form.user.middle_name.$invalid">Middle name is required</div>								
+							</div>					
+						</fieldset>				
+					</div>				
+					<div class="col-md-4">
+						<fieldset class="content-group margin-top-10">
+							<div class="form-group" ng-class="{'has-danger': form.user.last_name.$touched && form.user.last_name.$invalid}">
+								<label class="control-label">Last Name</label>
+								<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-user-circle"></i>
+                                    </span>
+								<input type="text" class="form-control" name="last_name" ng-model="user.last_name" ng-disabled="controls.btns.ok" required>
+								</div>
+								<div class="form-control-feedback" ng-show="form.user.last_name.$touched && form.user.last_name.$invalid">Last name is required</div>								
+							</div>					
+						</fieldset>				
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<fieldset class="content-group margin-top-10">
+							<div class="form-group" ng-class="{'has-danger': form.user.username.$touched && form.user.username.$invalid}">
+								<label class="control-label">Username</label>
+								<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-user"></i>
+                                    </span>
+								<input type="text" class="form-control" name="username" ng-model="user.username" ng-disabled="controls.btns.ok" required>
+								</div>
+								<div class="form-control-feedback" ng-show="form.user.username.$touched && form.user.username.$invalid">Username name is required</div>
+							</div>				
+						</fieldset>
+					</div>
+					<div class="col-md-4">
+						<fieldset class="content-group margin-top-10">
+							<div class="form-group" ng-class="{'has-danger': form.user.password.$touched && form.user.password.$invalid}">
+								<label class="control-label">Password</label>
+								<div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-key"></i>
+                                </span>
+								<input type="password" class="form-control" name="password" ng-model="user.password" ng-disabled="controls.btns.ok" required>
+								</div>
+								<div class="form-control-feedback" ng-show="form.user.password.$touched && form.user.password.$invalid">Password name is required</div>
+							</div>				
+						</fieldset>
+					</div>					
+				</div>
+		</form>
+		<hr>
+		<div class="pull-right">
+			<button type="button" class="btn btn-secondary" ng-click="app.save(this)" ng-disabled="controls.btns.ok">Save</button>
+			<button type="button" class="btn btn-primary" ng-click="app.cancel(this)" ng-disabled="controls.btns.cancel">Cancel</button>
+		</div>		
+								
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <!-- /PAGE CONTENT -->
+        </div>
+    </div>
+</body>
+
+</html>

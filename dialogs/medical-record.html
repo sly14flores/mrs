@@ -1,0 +1,173 @@
+<form name="form.record" novalidate autocomplete="false">
+	<button class="btn btn-default float-right" ng-click="record.prescription.editRecord(this)" ng-disabled="!controls.show.editRecord"><i class="fa fa-edit"></i></button>
+	<div class="clearfix"></div>
+	<legend class="text-bold">Consultation</legend>
+	<div class="row">
+		<div class="col-md-4">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Date</label>
+					<input type="date" class="form-control" name="date" ng-model="patient.record.date" ng-disabled="controls.show.editRecord">					
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-4">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">OPD No</label>
+					<input type="text" class="form-control" name="opd_no" ng-model="patient.record.opd_no" ng-disabled="controls.show.editRecord">					
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-4">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Department</label>
+					<select class="form-control" name="department" ng-model="patient.record.department" ng-disabled="controls.show.editRecord">
+						<option value="Out-Patient">Out-Patient</option>
+						<option value="In-Patien">In-Patient</option>
+						<option value="Emergency">Emergency</option>
+					</select>				
+				</div>
+			</fieldset>
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Physician</label>
+					<select class="form-control" name="physician" ng-model="patient.record.physician" ng-options="doctor.fullname for doctor in doctors track by doctor.id" ng-disabled="controls.show.editRecord"></select>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+	<legend class="text-bold">Vital Signs</legend>
+	<div class="row">
+		<div class="col-md-3">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Temperature</label>
+					<input type="text" class="form-control" name="temperature" ng-model="patient.record.temperature" ng-disabled="controls.show.editRecord">					
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-3">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Blood Pressure</label>
+					<input type="text" class="form-control" name="blood_pressure" ng-model="patient.record.blood_pressure" ng-disabled="controls.show.editRecord">					
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-3">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Height</label>
+					<input type="text" class="form-control" name="height" ng-model="patient.record.height" ng-disabled="controls.show.editRecord">					
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-3">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Weight</label>
+					<input type="text" class="form-control" name="weight" ng-model="patient.record.weight" ng-disabled="controls.show.editRecord">					
+				</div>
+			</fieldset>
+		</div>			
+	</div>
+<div class="card">
+    <div class="card-block text-center">
+		<ul class="nav nav-tabs nav-justified" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" href="#other-history" role="tab">Other History</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#diagnosis" role="tab">Diagnosis</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#prescription" role="tab">Prescriptions</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#follow-up" role="tab">Follow Up</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="other-history" role="tabpanel">
+				<div class="row">
+					<div class="col-md-4">		
+						<div class="form-group">
+							<label>Hospital</label>
+							<input type="text" class="form-control" name="other_history_hospital_name" ng-model="patient.record.other_history.hospital_name" ng-disabled="controls.show.editRecord">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label">Complaint</label>
+							<textarea class="form-control" name="other_history_complaint" ng-model="patient.record.other_history.complaint" ng-disabled="controls.show.editRecord"></textarea>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label">Diagnosis</label>
+							<textarea class="form-control" name="other_history_diagnosis" ng-model="patient.record.other_history.diagnosis" ng-disabled="controls.show.editRecord"></textarea>
+						</div>
+					</div>					
+				</div>
+			</div>
+			<div class="tab-pane" id="diagnosis" role="tabpanel">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="control-label">Complaint</label>
+							<textarea class="form-control" name="diagnosis_complaint" ng-model="patient.record.diagnosis.complaint" ng-disabled="controls.show.editRecord"></textarea>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="control-label">Diagnosis</label>
+							<textarea class="form-control" name="diagnosis_diagnosis" ng-model="patient.record.diagnosis.diagnosis" ng-disabled="controls.show.editRecord"></textarea>
+						</div>
+					</div>				
+				</div>
+			</div>
+			<div class="tab-pane" id="prescription" role="tabpanel">
+				<button class="btn btn-primary float-right" style="margin-bottom: 10px;" ng-click="record.prescription.add(this)">Add</button>
+				<div class="clearfix"></div>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr><th>Medicine</th><th>Quantity</th><th>Dosage</th><th></th></tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="prp in patient.record.prescription">
+							<td><input type="text" class="form-control" ng-model="prp.medicine" ng-disabled="prp.disabled"></td><td><input type="text" class="form-control" ng-model="prp.quantity" ng-disabled="prp.disabled"></td><td><input type="text" class="form-control" ng-model="prp.dosage" ng-disabled="prp.disabled"></td>
+							<td><i class="fa" ng-class="{'fa-edit': prp.disabled, 'fa-save': !prp.disabled}" style="margin-right: 10px; cursor: pointer;" ng-click="record.prescription.edit(this,prp)"></i><i class="fa fa-remove" style="cursor: pointer;" ng-click="record.prescription.delete(this,prp)"></i></td>
+						</tr>
+					</tbody>
+				</table>				
+			</div>
+			<div class="tab-pane" id="follow-up" role="tabpanel">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="control-label">Date</label>
+							<input type="date" class="form-control" name="follow_up_date" ng-model="patient.record.follow_up.date" ng-disabled="controls.show.editRecord">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="control-label">Remarks</label>
+							<input type="text" class="form-control" name="follow_up_remarks" ng-model="patient.record.follow_up.remarks" ng-disabled="controls.show.editRecord">
+						</div>
+					</div>				
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>
+<fieldset class="content-group">
+	<button type="button" class="btn btn-primary float-right" ng-click="record.save(this)">Save</button>
+	<div class="clearfix"></div>
+</fieldset>
+</form>
