@@ -1,6 +1,6 @@
-var app = angular.module('users',['account-module','bootstrap-modal']);
+var app = angular.module('users',['account-module','bootstrap-modal','module-access']);
 
-app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal) {
+app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access) {
 
 	$scope.views = {};
 	
@@ -24,12 +24,16 @@ app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal) {
 	};
 	
 	$scope.view = function(row) {
-
+		
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.edit)) return;
+	
 		$window.location.href = "user.html#!/view/"+row.id;
 
 	};
 	
 	$scope.delete = function(row) {
+		
+		if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.delete)) return;
 		
 		var onOk = function() {
 			
@@ -54,6 +58,16 @@ app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal) {
 		
 		bootstrapModal.confirm($scope,'Confirmation','Are you sure you want to delete this user?',onOk,onCancel);			
 		
-	};	
+	};
+
+	$scope.module = {
+			id: 2,
+			privileges: {
+				show: 1,
+				add: 2,
+				edit: 3,
+				delete: 4,
+			}
+		};	
 	
 });

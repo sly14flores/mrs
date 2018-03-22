@@ -7,7 +7,7 @@ require_once '../../db.php';
 $con = new pdo_db("users");
 
 $_POST['date_of_birth'] = date("Y-m-d",strtotime($_POST['date_of_birth']));
-$_POST['user_group'] = "Staff";
+$_POST['groups'] = 2;
 
 if ($_POST['id']) { # update
 

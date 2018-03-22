@@ -8,7 +8,7 @@ require_once '../classes.php';
 
 $con = new pdo_db("groups");
 
-/* $group_privileges = $con->get(array("group_id"=>$_POST['groups']),["privileges"]);
+$group_privileges = $con->get(array("group_id"=>$_POST['group']),["privileges"]);
 
 $access = array("value"=>false);
 
@@ -19,7 +19,7 @@ if (count($group_privileges)) {
 		$access = array("value"=>$privileges_obj->hasAccess($_POST['mod'],$_POST['prop']));
 
 	};
-}; */
+};
 
 echo json_encode($access);
 

@@ -4,7 +4,7 @@ require_once '../../db.php';
 
 $con = new pdo_db("users");
 
-$doctors = $con->get(array("groups"=>"'4'"),["*","DATE_FORMAT(date_of_birth,'%b %e, %Y') dob"]);
+$doctors = $con->get(array("groups"=>3),["*","DATE_FORMAT(date_of_birth,'%b %e, %Y') dob"]);
 
 foreach ($doctors as $i => $doctor) {
 	

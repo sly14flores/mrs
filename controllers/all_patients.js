@@ -1,6 +1,6 @@
-var app = angular.module('patients',['account-module','bootstrap-modal','jspdf-module']);
+var app = angular.module('patients',['account-module','bootstrap-modal','jspdf-module','module-access']);
 
-app.controller('patientsCtrl',function($scope,$http,$window,bootstrapModal,jspdf) {
+app.controller('patientsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,access) {
 
 	$scope.views = {};
 	
@@ -29,13 +29,17 @@ app.controller('patientsCtrl',function($scope,$http,$window,bootstrapModal,jspdf
 	};
 	
 	$scope.view = function(row) {
-
+		
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.edit)) return;
+	
 		$window.location.href = "add_patient.html#!/view/"+row.id;
 
 	};
 	
 	$scope.delete = function(row) {
 		
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.delete)) return;
+	
 		var onOk = function() {
 			
 			$http({
@@ -59,7 +63,17 @@ app.controller('patientsCtrl',function($scope,$http,$window,bootstrapModal,jspdf
 		
 		bootstrapModal.confirm($scope,'Confirmation','Are you sure you want to delete this patient?',onOk,onCancel);			
 		
-	};	
+	};
+
+	$scope.module = {
+			id: 4,
+			privileges: {
+				show: 1,
+				add: 2,
+				edit: 3,
+				delete: 4,
+			}
+		};	
 	
 	$scope.print = function(patient) {
 		

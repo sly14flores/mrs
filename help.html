@@ -21,6 +21,15 @@ require_once 'authentication.php';
     <link rel="stylesheet" href="lib/css/chartist.min.css">
 
     <link rel="stylesheet" href="assets/css/bootbox-fix.css">
+	<style type="text/css">
+	
+		#preview {
+			border: 3px solid #ccc;
+			width: 1000px;
+			height: 1200px;
+		}
+		
+	</style>
 	
     <script type="text/javascript" src="lib/js/jquery.min.js"></script>
     <script type="text/javascript" src="lib/js/tether.min.js"></script>
@@ -33,10 +42,6 @@ require_once 'authentication.php';
     <script type="text/javascript" src="assets/js/bootbox/bootbox.min.js"></script>
     <script type="text/javascript" src="assets/js/growl/jquery.bootstrap-growl.min.js"></script>
 	
-	<!-- for report -->
-    <script type="text/javascript" src="jspdf/jspdf.min.js"></script>
-    <script type="text/javascript" src="jspdf/jspdf.plugin.autotable.js"></script>
-	
 	<!-- angularjs -->
     <script type="text/javascript" src="angular/angular.min.js"></script>
     <script type="text/javascript" src="angular/angular-route.min.js"></script>
@@ -47,16 +52,12 @@ require_once 'authentication.php';
     <script type="text/javascript" src="modules/bootstrap-modal.js"></script>	
     <script type="text/javascript" src="modules/growl.js"></script>	
     <script type="text/javascript" src="modules/validate.js"></script>
-    <script type="text/javascript" src="modules/module-access.js"></script>
-	
-	<!-- angularjs -->
-    <script type="text/javascript" src="modules/jspdf.js"></script>	
 	
 	<!-- controllers -->
-    <script type="text/javascript" src="controllers/all_doctors.js"></script>
+    <script type="text/javascript" src="controllers/help.js"></script>
 </head>
 
-<body ng-app="doctors" ng-controller="doctorsCtrl" account-profile>
+<body ng-app="help" ng-controller="helpCtrl" account-profile>
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-toggleable-md">
@@ -102,13 +103,13 @@ require_once 'authentication.php';
             <div id="sidebar-main" class="sidebar sidebar-default">
     <div class="sidebar-content">
         <ul class="navigation">
-
-           <li ng-show="profile.pages_access[0].value">
+			
+            <li ng-show="profile.pages_access[0].value">
                 <a href="index.html"><i class="app-menu__icon fa fa-dashboard"></i> <span>Dashboard</span></a>
             </li>
 
             <li ng-show="profile.pages_access[1].value">
-                <a href="index.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
+                <a href="javascript:;"><i class="fa fa-users"></i> <span>Accounts</span></a>
                 <ul>
 					<li><a href="users.html"><i class="fa fa-id-badge"></i> User List</a></li>
                     <li><a href="user.html"><i class="fa fa-user-plus"></i> Add User</a></li>
@@ -116,7 +117,7 @@ require_once 'authentication.php';
             </li>
 			
 			<li ng-show="profile.pages_access[2].value">
-                <a href="index.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+                <a href="javascript:;"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
                 <ul>
                     <li><a href="all_doctors.html"><i class="fa fa-address-card-o"></i> Doctors List</a></li>
                     <li><a href="add_doctor.html"><i class="fa fa-user-plus"></i> Add Doctor</a></li>
@@ -124,7 +125,7 @@ require_once 'authentication.php';
             </li>
 			
 			<li ng-show="profile.pages_access[3].value">
-                <a href="index.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
+                <a href="javascript:;"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
                 <ul>
                     <li><a href="all_staffs.html"><i class="fa fa-address-card"></i> Staff List</a></li>
                     <li><a href="add_staff.html"><i class="fa fa-user-plus"></i> Add Staff</a></li>
@@ -132,7 +133,7 @@ require_once 'authentication.php';
             </li>
 
 			<li ng-show="profile.pages_access[4].value">
-                <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
+                <a href="javascript:;"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
                 <ul>
 					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
                     <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li>
@@ -140,26 +141,23 @@ require_once 'authentication.php';
             </li>
 			
 			<li ng-show="profile.pages_access[5].value">
-                <a href="index.html"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
+                <a href="javascript:;"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
                 <ul>
                     <li><a href="reports.html"><i class="fa fa-print"></i> Print Reports</a></li>
                 </ul>
             </li>
-			
+
 			<li ng-show="profile.pages_access[6].value">
-                <a href="index.html"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
+                <a href="javascript:;"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
                 <ul>
                     <li><a href="backup-restore.html"><i class="fa fa-cogs"></i> Backup and Restore</a></li>
-					<li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
-				</ul>
-            </li>
-			
-			<li ng-show="profile.pages_access[7].value">
-                <a href="index.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
-                <ul>
-                    <li><a href="">sample</a></li>
+                    <li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
                 </ul>
             </li>
+
+            <li ng-show="profile.pages_access[7].value">
+                <a href="help.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
+            </li>			
 
         </ul>
     </div>
@@ -170,55 +168,40 @@ require_once 'authentication.php';
             <!-- PAGE CONTENT -->
             <div class="content-wrapper">
                 <div class="content">
-                   <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="page-title"><i class="fa fa-user-md"></i> Manage Doctors</h3>
-                        </div>
-                    </div> 				
-					<div class="row">
-                        <div class="col-md-12">
-						    <div class="card">
-								<div class="card-block">
-									<h5 class="text-bold card-title">Doctors List</h5>
-									<div class="row">
-										<div class="col-md-4 offset-md-8">
-											<div class="input-group">
-												<span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
-												<input type="text" class="form-control" placeholder="Search" ng-model="search" aria-describedby="sizing-addon2">
-											</div>
-										</div>
-									</div>
-									<div class="table-responsive" style="margin-top: 25px;">
-									  <table class="table">										
-										<thead>
-										  <tr>
-											<th>#</th>
-											<th>Name</th>
-											<th>Specialization</th>
-											<th>Actions</th>
-										  </tr>
-										</thead>
-										<tbody>
-										  <tr ng-repeat="d in doctors | filter: search">
-											<td>{{d.id}}</td>
-											<td>Dr.  {{d.last_name}} , {{d.first_name}}</td>
-											<td>{{d.specialization}}</td>
-											<td>
-												<button type="button" class="btn btn-primary" ng-click="view(d)"><i class="fa fa-search"></i></button>
-												<button type="button" class="btn btn-info" ng-click="print(d)"><i class="fa fa-print"></i></button>
-												<button type="button" class="btn btn-danger" ng-click="delete(d)"><i class="fa fa-times"></i></button>
-											</td>
-										  </tr>
-										</tbody>
-									  </table>
-									</div>                           
-								</div>                           
-							</div>                           
-                        </div>
+                    <div class="row">
+						<div class="col-md-12">
+							<h3 class="page-title"><i class="fa fa-info-circle"></i> Users Manual</h3>
+						</div>
                     </div>
+					<hr>					
+					<div class="row">
+						<div class="col-md-6">
+							<form class="form-inline">
+							  <div class="form-group mb-2">
+								<label>Contents:</label>
+							  </div>
+							  <div class="form-group mx-sm-3 mb-2">
+								<select class="form-control" ng-model="views.content" ng-change="selectContent()">
+									<option value="1.pdf">First Page</option>
+									<option value="2.pdf">Second Page</option>
+								</select>
+							  </div>
+							</form>						
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-md-12">
+							<embed id="preview" src="manuals/1.pdf" type="application/pdf" />
+						</div>
+					</div>
                 </div>
             </div>
+			
+			
             <!-- /PAGE CONTENT -->
+			
+			
         </div>
     </div>
 </body>

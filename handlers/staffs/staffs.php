@@ -4,7 +4,7 @@ require_once '../../db.php';
 
 $con = new pdo_db("users");
 
-$staffs = $con->get(array("groups"=>"'3'"),["*","CONCAT(last_name,',',first_name) fullname","DATE_FORMAT(date_of_birth,'%b %e, %Y') dob"]);
+$staffs = $con->get(array("groups"=>2),["*","CONCAT(last_name,',',first_name) fullname","DATE_FORMAT(date_of_birth,'%b %e, %Y') dob"]);
 
 foreach ($staffs as $i => $staff) {
 	

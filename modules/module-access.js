@@ -22,13 +22,13 @@ angular.module('module-access', ['bootstrap-growl']).factory('access', function(
 					access = response.value;
 
 					if (!response.value) {
-						growl.show('alert alert-danger alert-dismissible fade in',{from: 'top', amount: 55},'Sorry, you are not allowed to use this feature.');
+						growl.show('danger',{from: 'top', amount: 55},'Sorry, you are not allowed to use this feature.');
 						access = response.value;
 					};
 
 				} else {
 
-					growl.show('alert alert-danger alert-dismissible fade in',{from: 'top', amount: 55},'Sorry, you are not allowed to use this feature.');
+					growl.show('danger',{from: 'top', amount: 55},'Sorry, you are not allowed to use this feature.');
 					access = false;
 
 				}

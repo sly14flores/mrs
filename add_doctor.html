@@ -96,11 +96,11 @@ require_once 'authentication.php';
     <div class="sidebar-content">
         <ul class="navigation">
 
-		<li>
+		<li ng-show="profile.pages_access[0].value">
                 <a href="index.html"><i class="app-menu__icon fa fa-dashboard"></i> <span>Dashboard</span></a>
             </li>
 
-            <li>
+            <li ng-show="profile.pages_access[1].value">
                 <a href="index.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
                 <ul>
 					<li><a href="users.html"><i class="fa fa-id-badge"></i> User List</a></li>
@@ -108,7 +108,7 @@ require_once 'authentication.php';
                 </ul>
             </li>
 			
-			<li>
+			<li ng-show="profile.pages_access[2].value">
                 <a href="index.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
                 <ul>
                     <li><a href="all_doctors.html"><i class="fa fa-address-card-o"></i> Doctors List</a></li>
@@ -116,7 +116,7 @@ require_once 'authentication.php';
                 </ul>
             </li>
 			
-			<li>
+			<li ng-show="profile.pages_access[3].value">
                 <a href="index.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
                 <ul>
                     <li><a href="all_staffs.html"><i class="fa fa-address-card"></i> Staff List</a></li>
@@ -124,7 +124,7 @@ require_once 'authentication.php';
                 </ul>
             </li>
 
-			<li>
+			<li ng-show="profile.pages_access[4].value">
                 <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
                 <ul>
 					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
@@ -132,14 +132,14 @@ require_once 'authentication.php';
                 </ul>
             </li>
 			
-			<li>
+			<li ng-show="profile.pages_access[5].value">
                 <a href="index.html"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
                 <ul>
                     <li><a href="reports.html"><i class="fa fa-print"></i> Print Reports</a></li>
                 </ul>
             </li>
 			
-			<li>
+			<li ng-show="profile.pages_access[6].value">
                 <a href="index.html"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
                 <ul>
                     <li><a href="backup-restore.html"><i class="fa fa-cogs"></i> Backup and Restore</a></li>
@@ -147,7 +147,7 @@ require_once 'authentication.php';
 				</ul>
             </li>
 			
-			<li>
+			<li ng-show="profile.pages_access[7].value">
                 <a href="index.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
                 <ul>
                     <li><a href="">sample</a></li>
