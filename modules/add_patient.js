@@ -1,4 +1,4 @@
-angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-growl','ngRoute','record-module']).config(function($routeProvider) {
+angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-growl','ngRoute','record-module','module-access']).config(function($routeProvider) {
     $routeProvider
         .when('/:option/:id', {
             templateUrl: 'add_patient.html'
@@ -17,7 +17,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
             });
         }
     }
-}).factory('app', function($http,$window,$routeParams,$location,$timeout,validate,growl,bootstrapModal,record) {
+}).factory('app', function($http,$window,$routeParams,$location,$timeout,validate,growl,bootstrapModal,record,access) {
 
 	function app() {
 
@@ -79,7 +79,9 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		};
 
 		self.add = function(scope) {
-
+		
+		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
+		
 			$routeParams.option = undefined;
 			
 			scope.patient = {};

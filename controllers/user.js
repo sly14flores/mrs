@@ -6,4 +6,14 @@ app.controller('userCtrl',function($scope,app) {
 	
 	$scope.app.data($scope);
 	
+	$scope.module = {
+			id: 2,
+			privileges: {
+				show: 1,
+				add: 2,
+				edit: 3,
+				delete: 4,
+			}
+		};
+	
 });

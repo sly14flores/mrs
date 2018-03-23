@@ -1,9 +1,9 @@
-angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-growl','ngRoute']).config(function($routeProvider) {
+angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-growl','ngRoute','module-access']).config(function($routeProvider) {
     $routeProvider
         .when('/:option/:id', {
             templateUrl: 'add_doctor.html'
         });
-}).factory('app', function($http,$window,$routeParams,$location,$timeout,validate,growl,bootstrapModal) {
+}).factory('app', function($http,$window,$routeParams,$location,$timeout,validate,growl,bootstrapModal,access) {
 
 	function app() {
 
@@ -51,6 +51,8 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 
 		self.add = function(scope) {
 
+			if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
+			
 			$routeParams.option = undefined;
 			
 			scope.doctor = {};

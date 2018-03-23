@@ -66,7 +66,7 @@ app.controller('patientsCtrl',function($scope,$http,$window,bootstrapModal,jspdf
 	};
 
 	$scope.module = {
-			id: 4,
+			id: 5,
 			privileges: {
 				show: 1,
 				add: 2,

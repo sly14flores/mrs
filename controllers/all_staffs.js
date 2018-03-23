@@ -1,6 +1,6 @@
-var app = angular.module('staffs',['account-module','bootstrap-modal','jspdf-module']);
+var app = angular.module('staffs',['account-module','bootstrap-modal','jspdf-module','module-access']);
 
-app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf) {
+app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,access) {
 
 	$scope.views = {};
 	
@@ -27,12 +27,16 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf) 
 	
 	$scope.view = function(row) {
 
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.edit)) return;
+	
 		$window.location.href = "add_staff.html#!/view/"+row.id;
 
 	};
 	
 	$scope.delete = function(row) {
-		
+	
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.delete)) return;
+	
 		var onOk = function() {
 			
 			$http({
@@ -58,6 +62,17 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf) 
 		
 	};
 	
+	
+	$scope.module = {
+			id: 4,
+			privileges: {
+				show: 1,
+				add: 2,
+				edit: 3,
+				delete: 4,
+			}
+		};
+		
 	$scope.print = function(staff) {
 		
 		var doc = new jsPDF({
