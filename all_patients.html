@@ -22,6 +22,10 @@ require_once 'authentication.php';
 
     <link rel="stylesheet" href="assets/css/bootbox-fix.css">
 	
+	<!-- PAGE LEVEL STYLESHEETS -->
+    <link rel="stylesheet" href="lib/css/jquery.dataTables.min.css">
+    <!-- /PAGE LEVEL STYLESHEETS -->
+	
     <script type="text/javascript" src="lib/js/jquery.min.js"></script>
     <script type="text/javascript" src="lib/js/tether.min.js"></script>
     <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
@@ -32,6 +36,11 @@ require_once 'authentication.php';
 	<!-- JS Libraries -->
     <script type="text/javascript" src="assets/js/bootbox/bootbox.min.js"></script>
     <script type="text/javascript" src="assets/js/growl/jquery.bootstrap-growl.min.js"></script>
+	
+	<!-- PAGE LEVEL SCRIPTS -->
+    <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/pages_datatables.min.js"></script>
+    <!-- /PAGE LEVEL SCRIPTS -->
 	
 	<!-- for report -->
     <script type="text/javascript" src="jspdf/jspdf.min.js"></script>
@@ -180,16 +189,16 @@ require_once 'authentication.php';
 						    <div class="card">
 								<div class="card-block">
 									<h5 class="text-bold card-title">Patients List</h5>
-									<div class="row">
+									<!-- <div class="row">
 										<div class="col-md-4 offset-md-8">
 											<div class="input-group">
 												<span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
 												<input type="text" class="form-control" placeholder="Search" ng-model="search" aria-describedby="sizing-addon2">
 											</div>
 										</div>
-									</div>
+									</div> -->
 									<div class="table-responsive" style="margin-top: 25px;">
-									  <table class="table">										
+									  <table id="disabledHeader" class="display datatable table table-stripped">										
 										<thead>
 										  <tr>
 											<th>#</th>
@@ -201,7 +210,7 @@ require_once 'authentication.php';
 										  </tr>
 										</thead>
 										<tbody>
-										  <tr ng-repeat="p in patients | filter: search">
+										  <tr ng-repeat="p in patients">
 											<td>{{p.id}}</td>
 											<td>{{p.hospital_no}}</td>
 											<td>{{p.last_name}}, {{p.first_name}}</td>
@@ -214,6 +223,7 @@ require_once 'authentication.php';
 												<button type="button" class="btn btn-danger" ng-click="delete(p)"><i class="fa fa-times"></i></button>
 											</td>
 										  </tr>
+										  
 										</tbody>
 									  </table>
 									</div>                           
@@ -226,6 +236,11 @@ require_once 'authentication.php';
             <!-- /PAGE CONTENT -->
         </div>
     </div>
+	<script type="text/javascript">
+		$('#disabledHeader').dataTable( {
+		  "ordering": false
+		} );
+	</script>
 </body>
 
 </html>

@@ -22,6 +22,10 @@ require_once 'authentication.php';
 
     <link rel="stylesheet" href="assets/css/bootbox-fix.css">
 	
+	<!-- PAGE LEVEL STYLESHEETS -->
+    <link rel="stylesheet" href="lib/css/jquery.dataTables.min.css">
+    <!-- /PAGE LEVEL STYLESHEETS -->
+	
     <script type="text/javascript" src="lib/js/jquery.min.js"></script>
     <script type="text/javascript" src="lib/js/tether.min.js"></script>
     <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
@@ -37,9 +41,10 @@ require_once 'authentication.php';
     <script type="text/javascript" src="jspdf/jspdf.min.js"></script>
     <script type="text/javascript" src="jspdf/jspdf.plugin.autotable.js"></script>
 	
-	<!-- PAGE LEVEL STYLESHEETS -->
-    <link rel="stylesheet" href="lib/css/jquery.dataTables.min.css">
-    <!-- /PAGE LEVEL STYLESHEETS -->
+	 <!-- PAGE LEVEL SCRIPTS -->
+    <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/pages_datatables.min.js"></script>
+    <!-- /PAGE LEVEL SCRIPTS -->
 	
 	<!-- angularjs -->
     <script type="text/javascript" src="angular/angular.min.js"></script>
@@ -181,8 +186,8 @@ require_once 'authentication.php';
 								<div id="x_content" class="x_content"></div>								
 							</div>                           
                         </div>
+						
                     </div>
-					
                 </div>
             </div>
             <!-- /PAGE CONTENT -->

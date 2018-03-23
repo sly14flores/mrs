@@ -1,5 +1,35 @@
 <!-- PAGE CONTENT -->
 <div class="card-block">
+	<h6 class="card-title text-bold"><i class="fa fa-user"></i> Manage Users<button class="btn btn-primary pull-right" ng-click="form.group(this)">Add</button></h6>
+	<hr>
+	<table id="groups" class="display datatable table table-stripped" cellspacing="0" width="50%">
+		<thead>
+		  <tr>
+			<th>No</th>
+			<th>Group</th>
+			<th>Group Description</th>
+			<th>Actions</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="g in groups">
+				<td>{{g.group_id}}</td>
+				<td>{{g.group_name}}</td>
+				<td>{{g.group_description}}</td>
+				<td>
+					<button type="button" class="btn btn-primary" ng-click="form.group(this,g)"><i class="fa fa-search"></i></button>
+					<button type="button" class="btn btn-danger" ng-click="form.delete(this,g)"><i class="fa fa-times"></i></button>
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+	
+<!--<div class="card-block">
 		<h5 class="text-bold card-title"><i class="fa fa-user"></i> Manage Users<button class="btn btn-primary pull-right" ng-click="form.group(this)">Add</button></h5>
 	<hr>
 </div>
@@ -11,28 +41,17 @@
 				<input type="text" class="form-control" placeholder="Search" ng-model="search" aria-describedby="sizing-addon2">
 			</div>
 		</div>
-	</div>
+	</div> 
 	<div style="margin-top: 25px;">
-	  <table class="table">										
-		<thead>
-		  <tr>
-			<th>#</th>
-			<th>Group</th>
-			<th>Group Description</th>
-			<th>Actions</th>
-		  </tr>
-		</thead>
+	  <table class="display datatable table table-stripped">	
 		<tbody>
-		  <tr ng-repeat="g in groups | filter: search">
+		  <tr ng-repeat="g in groups">
 			<td>{{g.group_id}}</td>
 			<td>{{g.group_name}}</td>
 			<td>{{g.group_description}}</td>
-			<td>
-				<button type="button" class="btn btn-primary" ng-click="form.group(this,g)"><i class="fa fa-search"></i></button>
-				<button type="button" class="btn btn-danger" ng-click="form.delete(this,g)"><i class="fa fa-times"></i></button>
-			</td>
+			
 		  </tr>
 		</tbody>
 	  </table>
 	 </div>
-</div>
+</div>-->
