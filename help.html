@@ -45,7 +45,7 @@ require_once 'authentication.php';
 	<!-- angularjs -->
     <script type="text/javascript" src="angular/angular.min.js"></script>
     <script type="text/javascript" src="angular/angular-route.min.js"></script>
-    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.0.min.js"></script>
+    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.2.min.js"></script>
 	
 	<!-- angularjs modules -->
     <script type="text/javascript" src="modules/account.js"></script>	
@@ -109,34 +109,24 @@ require_once 'authentication.php';
             </li>
 
             <li ng-show="profile.pages_access[1].value">
-                <a href="javascript:;"><i class="fa fa-users"></i> <span>Accounts</span></a>
-                <ul>
-					<li><a href="users.html"><i class="fa fa-id-badge"></i> User List</a></li>
-                    <li><a href="user.html"><i class="fa fa-user-plus"></i> Add User</a></li>
-                </ul>
+			   <a href="users.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[2].value">
-                <a href="javascript:;"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
-                <ul>
-                    <li><a href="all_doctors.html"><i class="fa fa-address-card-o"></i> Doctors List</a></li>
-                    <li><a href="add_doctor.html"><i class="fa fa-user-plus"></i> Add Doctor</a></li>
-                </ul>
+				<a href="all_doctors.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[3].value">
-                <a href="javascript:;"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
-                <ul>
-                    <li><a href="all_staffs.html"><i class="fa fa-address-card"></i> Staff List</a></li>
-                    <li><a href="add_staff.html"><i class="fa fa-user-plus"></i> Add Staff</a></li>
-                </ul>
+				<a href="all_staffs.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
             </li>
 
 			<li ng-show="profile.pages_access[4].value">
-                <a href="javascript:;"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
+                <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
                 <ul>
 					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
-                    <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li>
+                    <li><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
+                    <li><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
+					<!-- <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li> -->
                 </ul>
             </li>
 			
@@ -182,8 +172,23 @@ require_once 'authentication.php';
 							  </div>
 							  <div class="form-group mx-sm-3 mb-2">
 								<select class="form-control" ng-model="views.content" ng-change="selectContent()">
-									<option value="1.pdf">First Page</option>
-									<option value="2.pdf">Second Page</option>
+									<option value="1.pdf">How to install UwAmp310</option>
+									<option value="2.pdf">How to run UwAmp310 Application</option>
+									<option value="3.pdf">How to run the system</option>
+									<option value="4.pdf">How to Login</option>
+									<option value="5.pdf">How to Add User</option>
+									<option value="6.pdf">How to Manage Users Information</option>
+									<option value="7.pdf">How to Add Doctor</option>
+									<option value="8.pdf">How to Manage Doctor</option>
+									<option value="9.pdf">How to Print Doctor's Information</option>
+									<option value="10.pdf">How to Add Staff</option>
+									<option value="11.pdf">How to Manage Staff</option>
+									<option value="12.pdf">How to Add Patient</option>
+									<option value="13.pdf">How to Print Staff's Information</option>
+									<option value="14.pdf">How to Add Patient Record</option>
+									<option value="15.pdf">How to Manage Patient Record</option>
+									<option value="16.pdf">How to Backup File</option>
+									<option value="17.pdf">How to Restore File</option>
 								</select>
 							  </div>
 							</form>						

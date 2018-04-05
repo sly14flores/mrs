@@ -1,6 +1,6 @@
-var app = angular.module('users',['account-module','bootstrap-modal','module-access']);
+var app = angular.module('users',['account-module','bootstrap-modal','module-access','bootstrap-growl']);
 
-app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access) {
+app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access,growl) {
 
 	$scope.views = {};
 	
@@ -16,7 +16,10 @@ app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access) 
 		}).then(function mySucces(response) {
 
 			$scope.users = angular.copy(response.data);
-
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip();
+			});	
+			
 		}, function myError(response) {
 
 		});
@@ -43,7 +46,9 @@ app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access) 
 				data: {id: row.id}
 			}).then(function mySuccess(response) {
 				
+				growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'User info successfully deleted.');
 				list();
+				
 		
 			}, function myError(response) {
 
@@ -61,13 +66,21 @@ app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access) 
 	};
 
 	$scope.module = {
-			id: 2,
-			privileges: {
-				show: 1,
-				add: 2,
-				edit: 3,
-				delete: 4,
-			}
-		};	
+		id: 2,
+		privileges: {
+			show: 1,
+			add: 2,
+			edit: 3,
+			delete: 4,
+		}
+	};
+
+	$scope.addUser = function() {
+		
+			if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.add)) return;
+		
+		$window.location.href = "user.html#!/add/user";
+
+	};
 	
 });

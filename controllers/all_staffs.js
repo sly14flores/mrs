@@ -18,7 +18,10 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 		}).then(function mySucces(response) {
 
 			$scope.staffs = angular.copy(response.data);
-
+            $(function () {
+			  $('[data-toggle="tooltip"]').tooltip();
+			});	
+			
 		}, function myError(response) {
 
 		});
@@ -26,7 +29,7 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 	};
 	
 	$scope.view = function(row) {
-
+	
 	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.edit)) return;
 	
 		$window.location.href = "add_staff.html#!/view/"+row.id;
@@ -35,7 +38,7 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 	
 	$scope.delete = function(row) {
 	
-	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.delete)) return;
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.add)) return;
 	
 		var onOk = function() {
 			
@@ -62,7 +65,6 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 		
 	};
 	
-	
 	$scope.module = {
 			id: 4,
 			privileges: {
@@ -73,6 +75,14 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 			}
 		};
 		
+	$scope.addStaff = function() {
+		
+			if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.add)) return;
+		
+		$window.location.href = "add_staff.html#!/add/staff";
+
+	};
+	
 	$scope.print = function(staff) {
 		
 		var doc = new jsPDF({

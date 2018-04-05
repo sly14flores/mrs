@@ -36,15 +36,15 @@ require_once 'authentication.php';
 	<!-- angularjs -->
     <script type="text/javascript" src="angular/angular.min.js"></script>
     <script type="text/javascript" src="angular/angular-route.min.js"></script>
-    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.0.min.js"></script>
+    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.2.min.js"></script>
 	
 	<!-- angularjs modules -->
     <script type="text/javascript" src="modules/account.js"></script>	
     <script type="text/javascript" src="modules/bootstrap-modal.js"></script>	
     <script type="text/javascript" src="modules/growl.js"></script>	
     <script type="text/javascript" src="modules/validate.js"></script>
-    <script type="text/javascript" src="modules/module-access.js"></script>
     <script type="text/javascript" src="modules/add_doctor.js"></script>
+    <script type="text/javascript" src="modules/module-access.js"></script>
 	
 	<!-- controllers -->
     <script type="text/javascript" src="controllers/add_doctor.js"></script>
@@ -102,34 +102,24 @@ require_once 'authentication.php';
             </li>
 
             <li ng-show="profile.pages_access[1].value">
-                <a href="index.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
-                <ul>
-					<li><a href="users.html"><i class="fa fa-id-badge"></i> User List</a></li>
-                    <li><a href="user.html"><i class="fa fa-user-plus"></i> Add User</a></li>
-                </ul>
+			   <a href="users.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[2].value">
-                <a href="index.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
-                <ul>
-                    <li><a href="all_doctors.html"><i class="fa fa-address-card-o"></i> Doctors List</a></li>
-                    <li><a href="add_doctor.html"><i class="fa fa-user-plus"></i> Add Doctor</a></li>
-                </ul>
+				<a href="all_doctors.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[3].value">
-                <a href="index.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
-                <ul>
-                    <li><a href="all_staffs.html"><i class="fa fa-address-card"></i> Staff List</a></li>
-                    <li><a href="add_staff.html"><i class="fa fa-user-plus"></i> Add Staff</a></li>
-                </ul>
+				<a href="all_staffs.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
             </li>
 
 			<li ng-show="profile.pages_access[4].value">
                 <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
                 <ul>
 					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
-                    <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li>
+                    <li><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
+                    <li><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
+					<!-- <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li> -->
                 </ul>
             </li>
 			
@@ -149,11 +139,8 @@ require_once 'authentication.php';
             </li>
 			
 			<li ng-show="profile.pages_access[7].value">
-                <a href="index.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
-                <ul>
-                    <li><a href="">sample</a></li>
-                </ul>
-            </li>
+                <a href="help.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
+            </li>	
 
         </ul>
     </div>
@@ -166,7 +153,7 @@ require_once 'authentication.php';
                 <div class="content">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="page-title"><i class="fa fa-user-md"></i> Add Doctor</h3>
+                            <h3 class="page-title"><i class="fa fa-user-md"></i> {{views.option}}</h3>
                         </div>
                     </div>
                     <div class="row">
@@ -175,13 +162,13 @@ require_once 'authentication.php';
 								<div class="card-block">
 								<!-- start here -->
 								
-		<button type="button" class="btn btn-primary float-right btn-rounded" ng-click="app.add(this)" ng-show="controls.btns.add">Add</button>
-		<button type="button" class="btn btn-secondary float-right  btn-rounded" ng-click="app.edit(this)" ng-show="controls.btns.edit">Edit</button>		
+		<!-- <button type="button" class="btn btn-primary float-right btn-rounded" ng-click="app.add(this)" ng-show="controls.btns.add">Add</button> -->
+		<button type="button" class="btn btn-secondary float-right  btn-rounded" ng-click="app.edit(this)" ng-show="controls.show.edit">Edit</button>		
 		<div class="clearfix"></div>
 
 		<hr>
 
-		<form name="form.doctor" novalidate autocomplete=false>
+		<form name="form.doctor" novalidate autocomplete="off">
 			<legend class="text-bold">Doctors Information</legend>			
 			<div class="row">
 				<div class="col-md-4">
@@ -233,8 +220,9 @@ require_once 'authentication.php';
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.doctor.date_of_birth.$touched && form.doctor.date_of_birth.$invalid}">
 							<label class="control-label">Birthday</label>
-							<input type="date" class="form-control" name="date_of_birth" ng-model="doctor.date_of_birth" ng-disabled="controls.btns.ok">
-							
+							<input type="date" class="form-control" name="date_of_birth" ng-model="doctor.date_of_birth" ng-change="app.birthday(this)" ng-disabled="controls.btns.ok" required>
+							<div class="form-control-feedback" ng-show="form.doctor.date_of_birth.$touched && form.doctor.date_of_birth.$invalid">Birthday is required</div>
+													
 						</div>							
 					</fieldset>
 				</div>
@@ -244,10 +232,10 @@ require_once 'authentication.php';
 						<div class="form-group" ng-class="{'has-danger': form.doctor.age.$touched && form.doctor.age.$invalid}">
 							<label class="control-label">Age</label>
 							<div class="input-group">
-                                    <span class="input-group-addon">
-										<i class="fa fa-id-badge"></i>
-                                    </span>
-							<input type="text" restrict-to="[0-9]" class="form-control" name="age" ng-model="doctor.age" ng-disabled="controls.btns.ok">
+								<span class="input-group-addon">
+									<i class="fa fa-id-badge"></i>
+								</span>
+								<input type="text" restrict-to="[0-9]" class="form-control" name="age" ng-model="doctor.age" ng-disabled="controls.btns.ok">
 							</div>
 							
 						</div>							
@@ -329,18 +317,49 @@ require_once 'authentication.php';
 			<div class="row">
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
-						<div class="form-group" ng-class="{'has-danger': form.doctor.address.$touched && form.doctor.address.$invalid}">
-							<label class="control-label">Address</label>
+						<div class="form-group" ng-class="{'has-danger': form.doctor.province.$touched && form.doctor.province.$invalid}">
+							<label class="control-label">Province</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-address-book-o"></i>
                                     </span>
-							<input type="text" class="form-control" name="address" ng-model="doctor.address" ng-disabled="controls.btns.ok">
+							<input type="text" class="form-control" name="province" uib-typeahead="p.province_description for p in provinces | filter:{province_description:$viewValue}" typeahead-min-length="1" typeahead-on-select="app.provinceSelect($item, this)" ng-model="doctor.province" ng-disabled="controls.btns.ok" required>
+						</div>		
+						<div class="form-control-feedback" ng-show="form.doctor.province.$touched && form.doctor.province.$invalid" >Province is required</div>
+						</div>						
+					</fieldset>
+				</div>
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.doctor.city.$touched && form.doctor.city.$invalid}">
+							<label class="control-label">City/Municipality</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-address-book-o"></i>
+                                    </span>
+							<input type="text" class="form-control" name="city" uib-typeahead="m.municipality_description for m in municipalities | filter:{municipality_description:$viewValue}" typeahead-min-length="1" typeahead-on-select="app.municipalitySelect($item, this)" ng-model="doctor.city" ng-disabled="controls.btns.ok" required>
 							</div>
-							
+							<div class="form-control-feedback" ng-show="form.doctor.city.$touched && form.doctor.city.$invalid">City/Municipality is required</div>
 						</div>							
 					</fieldset>
-				</div>	
+				</div>
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group" ng-class="{'has-danger': form.doctor.barangay.$touched && form.doctor.barangay.$invalid}">
+							<label class="control-label">Barangay</label>
+							<div class="input-group">
+                                    <span class="input-group-addon">
+										<i class="fa fa-address-book-o"></i>
+                                    </span>
+							<input type="text" class="form-control" name="barangay" uib-typeahead="b.barangay_description for b in barangays | filter:{barangay_description:$viewValue}" typeahead-min-length="1" typeahead-on-select="app.barangaySelect($item, this)" ng-model="doctor.barangay" ng-disabled="controls.btns.ok" required>
+						</div>
+						<div class="form-control-feedback" ng-show="form.doctor.barangay.$touched && form.doctor.barangay.$invalid">Barangay is required</div>
+							</div>
+					</fieldset>
+				</div>
+			</div>
+				
+			<div class="row">
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.doctor.nationality.$touched && form.doctor.nationality.$invalid}">
@@ -368,10 +387,8 @@ require_once 'authentication.php';
 							
 						</div>							
 					</fieldset>
-				</div>		
-			</div>
-			
-			<div class="row">
+				</div>
+				
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.doctor.education.$touched && form.doctor.education.$invalid}">
@@ -386,7 +403,9 @@ require_once 'authentication.php';
 						</div>							
 					</fieldset>
 				</div>
-				
+			</div>
+			
+			<div class="row">
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.doctor.specialization.$touched && form.doctor.specialization.$invalid}">
@@ -397,17 +416,18 @@ require_once 'authentication.php';
                                     </span>
 							<input type="text" class="form-control" name="specialization" ng-model="doctor.specialization" ng-disabled="controls.btns.ok" required>
 							</div>
-							<div class="form-control-feedback" ng-show="form.doctor.specialization.$touched && form.doctor.specialization.$invalid">Occupation is required</div>
+							<div class="form-control-feedback" ng-show="form.doctor.specialization.$touched && form.doctor.specialization.$invalid">Specialization is required</div>
 						</div>							
 					</fieldset>
 				</div>				
 			</div>
+			
 		</form>
 
 		<hr>
 		<div class="pull-right">
-			<button type="button" class="btn btn-secondary" ng-click="app.save(this)" ng-disabled="controls.btns.ok">Save</button>
-			<button type="button" class="btn btn-primary" ng-click="app.cancel(this)" ng-disabled="controls.btns.cancel">Cancel</button>
+			<button type="button" class="btn btn-secondary" ng-click="app.save(this)" ng-disabled="controls.btns.ok">{{controls.label.ok}}</button>
+			<button type="button" class="btn btn-primary" ng-click="app.cancel(this)" ng-disabled="controls.btns.cancel">{{controls.label.cancel}}</button>
 		</div>		
 
 								<!-- start here -->

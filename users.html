@@ -22,10 +22,6 @@ require_once 'authentication.php';
 
     <link rel="stylesheet" href="assets/css/bootbox-fix.css">
 	
-	<!-- PAGE LEVEL STYLESHEETS -->
-    <link rel="stylesheet" href="lib/css/jquery.dataTables.min.css">
-    <!-- /PAGE LEVEL STYLESHEETS -->
-	
     <script type="text/javascript" src="lib/js/jquery.min.js"></script>
     <script type="text/javascript" src="lib/js/tether.min.js"></script>
     <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
@@ -40,12 +36,7 @@ require_once 'authentication.php';
 	<!-- angularjs -->
     <script type="text/javascript" src="angular/angular.min.js"></script>
     <script type="text/javascript" src="angular/angular-route.min.js"></script>
-    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.0.min.js"></script>
-	
-	<!-- PAGE LEVEL SCRIPTS -->
-    <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="assets/js/pages_datatables.min.js"></script>
-    <!-- /PAGE LEVEL SCRIPTS -->
+    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.2.min.js"></script>
 	
 	<!-- angularjs modules -->
     <script type="text/javascript" src="modules/account.js"></script>	
@@ -115,34 +106,24 @@ require_once 'authentication.php';
             </li>
 
             <li ng-show="profile.pages_access[1].value">
-                <a href="index.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
-                <ul>
-					<li><a href="users.html"><i class="fa fa-id-badge"></i> User List</a></li>
-                    <li><a href="user.html"><i class="fa fa-user-plus"></i> Add User</a></li>
-                </ul>
+			   <a href="users.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[2].value">
-                <a href="index.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
-                <ul>
-                    <li><a href="all_doctors.html"><i class="fa fa-address-card-o"></i> Doctors List</a></li>
-                    <li><a href="add_doctor.html"><i class="fa fa-user-plus"></i> Add Doctor</a></li>
-                </ul>
+				<a href="all_doctors.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[3].value">
-                <a href="index.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
-                <ul>
-                    <li><a href="all_staffs.html"><i class="fa fa-address-card"></i> Staff List</a></li>
-                    <li><a href="add_staff.html"><i class="fa fa-user-plus"></i> Add Staff</a></li>
-                </ul>
+				<a href="all_staffs.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
             </li>
 
 			<li ng-show="profile.pages_access[4].value">
                 <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
                 <ul>
 					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
-                    <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li>
+                    <li><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
+                    <li><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
+					<!-- <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li> -->
                 </ul>
             </li>
 			
@@ -161,12 +142,9 @@ require_once 'authentication.php';
                 </ul>
             </li>
 			
-			<li ng-show="profile.pages_access[7].value">
-                <a href="index.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
-                <ul>
-                    <li><a href="">sample</a></li>
-                </ul>
-            </li>
+			 <li ng-show="profile.pages_access[7].value">
+                <a href="help.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
+            </li>	
 
         </ul>
     </div>
@@ -187,36 +165,38 @@ require_once 'authentication.php';
 						    <div class="card">
 								<div class="card-block">
 									<h5 class="text-bold card-title">Users List</h5>
-									<!-- <div class="row">
-										<div class="col-md-4 offset-md-8">
+									<div class="row">
+										<div class="col-md-4">
 											<div class="input-group">
 												<span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
 												<input type="text" class="form-control" placeholder="Search" ng-model="search" aria-describedby="sizing-addon2">
 											</div>
 										</div>
-									</div> -->
+										<div class="col-md-8">
+											<button type="button" class="btn btn-primary float-right" ng-click="addUser()" data-toggle="tooltip" data-placement="top" title="Add User"><i class="fa fa-plus"></i></button>											
+											<div class="clearfix"></div>
+										</div>
+									</div>
 									<div style="margin-top: 25px;">
-									  <table id="disabledHeader" class="display datatable table table-stripped">										
+									  <table class="table">										
 										<thead>
 										  <tr>
 											<th>#</th>
 											<th>Name</th>
 											<th>Username</th>
-											<th>Password</th>
 											<th>Group</th>
 											<th>Actions</th>
 										  </tr>
 										</thead>
 										<tbody>
-										  <tr ng-repeat="u in users">
+										  <tr ng-repeat="u in users | filter: search">
 											<td>{{u.id}}</td>
 											<td>{{u.last_name}} , {{u.first_name}}</td>
 											<td>{{u.username}}</td>
-											<td>{{u.password}}</td>
 											<td>{{u.group_description}}</td>
 											<td>
-												<button type="button" class="btn btn-primary" ng-click="view(u)"><i class="fa fa-search"></i></button>
-												<button type="button" class="btn btn-danger" ng-click="delete(u)"><i class="fa fa-times"></i></button>
+												<button type="button" class="btn btn-primary" ng-click="view(u)" data-toggle="tooltip" data-placement="top" title="View User Info"><i class="fa fa-search" ></i></button>
+												<button type="button" class="btn btn-danger" ng-click="delete(u)" data-toggle="tooltip" data-placement="top" title="Delete User Info"><i class="fa fa-times"></i></button>
 											</td>
 										  </tr>
 										</tbody>
@@ -231,11 +211,6 @@ require_once 'authentication.php';
             <!-- /PAGE CONTENT -->
         </div>
     </div>
-	<script type="text/javascript">
-		$('#disabledHeader').dataTable( {
-		  "ordering": false
-		} );
-	</script>
 </body>
 
 </html>

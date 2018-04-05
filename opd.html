@@ -33,10 +33,6 @@ require_once 'authentication.php';
     <script type="text/javascript" src="assets/js/bootbox/bootbox.min.js"></script>
     <script type="text/javascript" src="assets/js/growl/jquery.bootstrap-growl.min.js"></script>
 	
-	<!-- for report -->
-    <script type="text/javascript" src="jspdf/jspdf.min.js"></script>
-    <script type="text/javascript" src="jspdf/jspdf.plugin.autotable.js"></script>
-	
 	<!-- angularjs -->
     <script type="text/javascript" src="angular/angular.min.js"></script>
     <script type="text/javascript" src="angular/angular-route.min.js"></script>
@@ -49,14 +45,14 @@ require_once 'authentication.php';
     <script type="text/javascript" src="modules/validate.js"></script>
     <script type="text/javascript" src="modules/module-access.js"></script>
 	
-	<!-- angularjs -->
-    <script type="text/javascript" src="modules/jspdf.js"></script>	
+	<!-- angularjs -->		
+    <script type="text/javascript" src="modules/opd.js"></script>	
 	
 	<!-- controllers -->
-    <script type="text/javascript" src="controllers/all_doctors.js"></script>
+    <script type="text/javascript" src="controllers/opd.js"></script>
 </head>
 
-<body ng-app="doctors" ng-controller="doctorsCtrl" account-profile>
+<body ng-app="opd" ng-controller="opdCtrl" account-profile>
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-toggleable-md">
@@ -103,7 +99,7 @@ require_once 'authentication.php';
     <div class="sidebar-content">
         <ul class="navigation">
 
-            <li ng-show="profile.pages_access[0].value">
+           <li ng-show="profile.pages_access[0].value">
                 <a href="index.html"><i class="app-menu__icon fa fa-dashboard"></i> <span>Dashboard</span></a>
             </li>
 
@@ -159,50 +155,24 @@ require_once 'authentication.php';
                 <div class="content">
                    <div class="row">
                         <div class="col-md-12">
-                            <h3 class="page-title"><i class="fa fa-user-md"></i> Manage Doctors</h3>
+                            <h3 class="page-title"><i class="fa fa-edit"></i> OPD</h3>
                         </div>
                     </div> 				
 					<div class="row">
                         <div class="col-md-12">
 						    <div class="card">
 								<div class="card-block">
-									<h5 class="text-bold card-title">Doctors List</h5>
+									<!-- <h5 class="text-bold card-title">Patients List</h5> -->
 									<div class="row">
 										<div class="col-md-4">
 											<div class="input-group">
 												<span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
-												<input type="text" class="form-control" placeholder="Search" ng-model="search" aria-describedby="sizing-addon2">
+												<input type="text" class="form-control" placeholder="Search" ng-model="search" ng-model="receive.receive_barcode" uib-typeahead="pas.fullname for pas in patientAsyncSuggest($viewValue)" typeahead-min-length="1" typeahead-on-select="record.selectPatient(this, $item)" aria-describedby="sizing-addon2">
 											</div>
 										</div>
-										<div class="col-md-8">
-											<button type="button" class="btn btn-primary float-right" ng-click="addDoctor()" data-toggle="tooltip" data-placement="top" title="Add Doctor"><i class="fa fa-plus"></i></button>											
-											<div class="clearfix"></div>
-										</div>
 									</div>
-									<div class="table-responsive" style="margin-top: 25px;">
-									  <table class="table">										
-										<thead>
-										  <tr>
-											<th>#</th>
-											<th>Name</th>
-											<th>Specialization</th>
-											<th>Actions</th>
-										  </tr>
-										</thead>
-										<tbody>
-										  <tr ng-repeat="d in doctors | filter: search">
-											<td>{{d.id}}</td>
-											<td>Dr.  {{d.last_name}} , {{d.first_name}}</td>
-											<td>{{d.specialization}}</td>
-											<td>
-												<button type="button" class="btn btn-primary" ng-click="view(d)" data-toggle="tooltip" data-placement="top" title="View Doctor Info"><i class="fa fa-search"></i></button>
-												<button type="button" class="btn btn-info" ng-click="print(d)" data-toggle="tooltip" data-placement="top" title="Print Doctor Info"><i class="fa fa-print"></i></button>
-												<button type="button" class="btn btn-danger" ng-click="delete(d)" data-placement="top" title="Delete Doctor Info" data-toggle="tooltip"><i class="fa fa-times" ></i></button>
-											</td>
-										  </tr>
-										</tbody>
-									  </table>
-									</div>                           
+									<hr>									
+									<div id="content"></div>									
 								</div>                           
 							</div>                           
                         </div>

@@ -1,6 +1,6 @@
-var app = angular.module('doctors',['account-module','bootstrap-modal','jspdf-module','module-access']);
+var app = angular.module('doctors',['account-module','bootstrap-modal','jspdf-module','module-access','bootstrap-growl']);
 
-app.controller('doctorsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,access) {
+app.controller('doctorsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,access,growl) {
 
 	$scope.views = {};
 	
@@ -18,7 +18,10 @@ app.controller('doctorsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,
 		}).then(function mySucces(response) {
 
 			$scope.doctors = angular.copy(response.data);
-
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip();
+			});	
+			
 		}, function myError(response) {
 
 		});
@@ -45,6 +48,7 @@ app.controller('doctorsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,
 				data: {id: row.id}
 			}).then(function mySuccess(response) {
 				
+				growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Doctor info successfully deleted.');
 				list();
 		
 			}, function myError(response) {
@@ -70,6 +74,14 @@ app.controller('doctorsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,
 				delete: 4,
 			}
 		};	
+		
+	$scope.addDoctor = function() {
+		
+		if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.add)) return;
+		
+		$window.location.href = "add_doctor.html#!/add/doctor";
+
+	};
 	
 	$scope.print = function(doctor) {
 		

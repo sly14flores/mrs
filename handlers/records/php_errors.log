@@ -1,0 +1,36 @@
+[25-Mar-2018 23:41:05 Asia/Manila] PHP Notice:  Undefined index: physician in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php on line 22
+[25-Mar-2018 23:41:05 Asia/Manila] PHP Stack trace:
+[25-Mar-2018 23:41:05 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php:0
+[25-Mar-2018 23:41:05 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php on line 33
+[25-Mar-2018 23:41:05 Asia/Manila] PHP Stack trace:
+[25-Mar-2018 23:41:05 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php:0
+[25-Mar-2018 23:42:36 Asia/Manila] PHP Notice:  Undefined index: physician in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php on line 22
+[25-Mar-2018 23:42:36 Asia/Manila] PHP Stack trace:
+[25-Mar-2018 23:42:36 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php:0
+[25-Mar-2018 23:42:36 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php on line 33
+[25-Mar-2018 23:42:36 Asia/Manila] PHP Stack trace:
+[25-Mar-2018 23:42:36 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php:0
+[25-Mar-2018 23:47:26 Asia/Manila] PHP Notice:  Undefined index: physician in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php on line 22
+[25-Mar-2018 23:47:26 Asia/Manila] PHP Stack trace:
+[25-Mar-2018 23:47:26 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php:0
+[25-Mar-2018 23:47:26 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php on line 33
+[25-Mar-2018 23:47:27 Asia/Manila] PHP Stack trace:
+[25-Mar-2018 23:47:27 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php:0
+[25-Mar-2018 23:48:29 Asia/Manila] PHP Notice:  Undefined index: physician in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php on line 22
+[25-Mar-2018 23:48:29 Asia/Manila] PHP Stack trace:
+[25-Mar-2018 23:48:29 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php:0
+[25-Mar-2018 23:48:29 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php on line 33
+[25-Mar-2018 23:48:29 Asia/Manila] PHP Stack trace:
+[25-Mar-2018 23:48:29 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php:0
+[25-Mar-2018 23:49:38 Asia/Manila] PHP Notice:  Undefined index: physician in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php on line 22
+[25-Mar-2018 23:49:38 Asia/Manila] PHP Stack trace:
+[25-Mar-2018 23:49:38 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php:0
+[25-Mar-2018 23:49:38 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php on line 33
+[25-Mar-2018 23:49:38 Asia/Manila] PHP Stack trace:
+[25-Mar-2018 23:49:38 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\save.php:0
+[25-Mar-2018 23:50:37 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30

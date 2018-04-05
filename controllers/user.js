@@ -1,6 +1,6 @@
 var app = angular.module('user',['account-module','app-module']);
 
-app.controller('userCtrl',function($scope,app) {
+app.controller('userCtrl', function($scope,app) {
 	
 	$scope.app = app;
 	
@@ -15,5 +15,4 @@ app.controller('userCtrl',function($scope,app) {
 				delete: 4,
 			}
 		};
-	
 });

@@ -14,7 +14,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			scope.views = {};
 			scope.form = {};
 			
-			scope.views.option = 'Add User';
+			scope.views.option = '';
 			
 			scope.controls = {
 				btns: {
@@ -22,6 +22,14 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 					edit: false,					
 					ok: true,
 					cancel: true
+				},
+				show: {
+					add: true,
+					edit: false
+				},
+				label: {
+					ok: 'Save',
+					cancel: 'Cancel'
 				}
 			};
 			
@@ -32,12 +40,29 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 
 				switch ($routeParams.option) {					
 					
+					case 'add':
+	
+						scope.controls.btns.add = true;
+						scope.controls.btns.edit = true;
+						scope.controls.btns.ok = false;
+						scope.controls.btns.cancel = false;
+						scope.controls.show.add = false;
+						scope.controls.show.edit = false;
+						scope.views.option = 'Add User';				
+
+					break;
+					
 					case 'view':
 
 						if ($routeParams.id != undefined) {				
 							self.load(scope,$routeParams.id);
 							scope.controls.btns.add = true;
-							scope.controls.btns.edit = true;
+							scope.controls.btns.edit = false;
+							scope.controls.btns.cancel = false;
+							scope.controls.label.ok = 'Update';
+							scope.controls.label.cancel = 'Close';
+							scope.controls.show.add = false;
+							scope.controls.show.edit = true;
 							scope.views.option = 'Modify User';
 						};				
 
@@ -62,7 +87,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		};
 
 		self.add = function(scope) {
-			
+	
 		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
 		
 			$routeParams.option = undefined;
@@ -79,21 +104,16 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 
 		self.cancel = function(scope) {
 			
-			scope.controls.btns.ok = true;
-			scope.controls.btns.cancel = true;
-			
-			if ($routeParams.option==undefined) {
-				scope.user = {};
-				scope.user.id = 0;
-				validate.cancel(scope,'user');
-			};
+			$window.location.href = 'users.html';
 
 		};
 
 		self.save = function(scope) {
 
-			if (validate.form(scope,'user')) return;
-			
+			if (validate.form(scope,'user')) { 
+			growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Please complete required fields.');
+			return;
+			}
 			$http({
 			  method: 'POST',
 			  url: 'handlers/users/save.php',
@@ -101,16 +121,28 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			}).then(function mySucces(response) {
 				
 				scope.controls.btns.ok = true;
-				scope.controls.btns.cancel = true;
+				scope.controls.btns.cancel = false;
+				scope.controls.label.cancel = 'Close';
 
-				if ($routeParams.option==undefined) growl.show('success',{from: 'top', amount: 55},'New user successfully added.');
-				else growl.show('success',{from: 'top', amount: 55},'User info successfully updated.');
+				if ($routeParams.option==undefined) growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'New user successfully added.');
+				else growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'User info successfully updated.');
 				
 			}, function myError(response) {
 				
 			});	
 			
 		};
+		
+			 // show password
+		  self.inputType = 'password';
+		  
+		  self.hideShowPassword = function(){
+			if (self.inputType == 'password')
+				self.inputType = 'text';
+			else
+			  self.inputType = 'password';
+		  };	
+		  
 		
 		self.edit = function(scope) {
 			
@@ -134,10 +166,33 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			});			
 			
 		};
-		
 
 	};
 	
 	return new app();
 	
-});
+}).directive('passwordConfirm', ['$parse', function ($parse) {
+ return {
+    restrict: 'A',
+    scope: {
+      matchTarget: '=',
+    },
+    require: 'ngModel',
+    link: function link(scope, elem, attrs, ctrl) {
+      var validator = function (value) {
+        ctrl.$setValidity('match', value === scope.matchTarget);
+        return value;
+      }
+ 
+      ctrl.$parsers.unshift(validator);
+      ctrl.$formatters.push(validator);
+      
+      // This is to force validator when the original password gets changed
+      scope.$watch('matchTarget', function(newval, oldval) {
+        validator(ctrl.$viewValue);
+      });
+
+    }
+  };
+}]);
+

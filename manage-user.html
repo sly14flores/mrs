@@ -22,10 +22,6 @@ require_once 'authentication.php';
 
     <link rel="stylesheet" href="assets/css/bootbox-fix.css">
 	
-	<!-- PAGE LEVEL STYLESHEETS -->
-    <link rel="stylesheet" href="lib/css/jquery.dataTables.min.css">
-    <!-- /PAGE LEVEL STYLESHEETS -->
-	
     <script type="text/javascript" src="lib/js/jquery.min.js"></script>
     <script type="text/javascript" src="lib/js/tether.min.js"></script>
     <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
@@ -41,16 +37,19 @@ require_once 'authentication.php';
     <script type="text/javascript" src="jspdf/jspdf.min.js"></script>
     <script type="text/javascript" src="jspdf/jspdf.plugin.autotable.js"></script>
 	
-	 <!-- PAGE LEVEL SCRIPTS -->
-    <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="assets/js/pages_datatables.min.js"></script>
-    <!-- /PAGE LEVEL SCRIPTS -->
+	<!-- PAGE LEVEL STYLESHEETS -->
+    <link rel="stylesheet" href="lib/css/jquery.dataTables.min.css">
+    <!-- /PAGE LEVEL STYLESHEETS -->
 	
 	<!-- angularjs -->
     <script type="text/javascript" src="angular/angular.min.js"></script>
     <script type="text/javascript" src="angular/angular-route.min.js"></script>
     <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.0.min.js"></script>
 	
+	<!-- PAGE LEVEL SCRIPTS -->
+    <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/pages_datatables.min.js"></script>
+    <!-- /PAGE LEVEL SCRIPTS -->
 	<!-- angularjs modules -->
     <script type="text/javascript" src="modules/account.js"></script>	
     <script type="text/javascript" src="modules/bootstrap-modal.js"></script>	
@@ -118,34 +117,24 @@ require_once 'authentication.php';
             </li>
 
             <li ng-show="profile.pages_access[1].value">
-                <a href="index.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
-                <ul>
-					<li><a href="users.html"><i class="fa fa-id-badge"></i> User List</a></li>
-                    <li><a href="user.html"><i class="fa fa-user-plus"></i> Add User</a></li>
-                </ul>
+			   <a href="users.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[2].value">
-                <a href="index.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
-                <ul>
-                    <li><a href="all_doctors.html"><i class="fa fa-address-card-o"></i> Doctors List</a></li>
-                    <li><a href="add_doctor.html"><i class="fa fa-user-plus"></i> Add Doctor</a></li>
-                </ul>
+				<a href="all_doctors.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[3].value">
-                <a href="index.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
-                <ul>
-                    <li><a href="all_staffs.html"><i class="fa fa-address-card"></i> Staff List</a></li>
-                    <li><a href="add_staff.html"><i class="fa fa-user-plus"></i> Add Staff</a></li>
-                </ul>
+				<a href="all_staffs.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
             </li>
 
 			<li ng-show="profile.pages_access[4].value">
                 <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
                 <ul>
 					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
-                    <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li>
+                    <li><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
+                    <li><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
+					<!-- <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li> -->
                 </ul>
             </li>
 			
@@ -165,10 +154,7 @@ require_once 'authentication.php';
             </li>
 			
 			<li ng-show="profile.pages_access[7].value">
-                <a href="index.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
-                <ul>
-                    <li><a href="">sample</a></li>
-                </ul>
+                <a href="help.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
             </li>
 
         </ul>
@@ -186,8 +172,8 @@ require_once 'authentication.php';
 								<div id="x_content" class="x_content"></div>								
 							</div>                           
                         </div>
-						
                     </div>
+					
                 </div>
             </div>
             <!-- /PAGE CONTENT -->

@@ -1,218 +1,36 @@
-[20-Mar-2018 13:30:53 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 14
-[20-Mar-2018 13:30:53 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:30:53 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:30:53 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 18
-[20-Mar-2018 13:30:53 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:30:53 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:36:16 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 14
-[20-Mar-2018 13:36:16 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:36:16 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:36:16 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 18
-[20-Mar-2018 13:36:16 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:36:16 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:39:24 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 14
-[20-Mar-2018 13:39:25 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:39:25 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:39:25 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 18
-[20-Mar-2018 13:39:25 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:39:25 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:41:17 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 14
-[20-Mar-2018 13:41:17 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:41:17 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:41:17 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 18
-[20-Mar-2018 13:41:17 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:41:17 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:41:29 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 14
-[20-Mar-2018 13:41:29 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:41:29 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:41:29 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 18
-[20-Mar-2018 13:41:29 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:41:29 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:41:33 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 14
-[20-Mar-2018 13:41:33 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:41:33 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:41:33 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 18
-[20-Mar-2018 13:41:33 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:41:33 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:41:37 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 14
-[20-Mar-2018 13:41:37 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:41:37 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:41:37 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 18
-[20-Mar-2018 13:41:37 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:41:37 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:42:19 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 14
-[20-Mar-2018 13:42:19 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:42:19 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 13:42:19 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 18
-[20-Mar-2018 13:42:19 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 13:42:19 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 14:32:06 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 25
-[20-Mar-2018 14:32:06 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 14:32:06 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 14:32:06 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+[04-Apr-2018 05:23:38 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\account-profile.php on line 16
+[04-Apr-2018 05:23:38 UTC] PHP Stack trace:
+[04-Apr-2018 05:23:38 UTC] PHP   1. {main}() C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\account-profile.php:0
+[04-Apr-2018 05:23:38 UTC] PHP Notice:  Undefined index: groups in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\account-profile.php on line 27
+[04-Apr-2018 05:23:38 UTC] PHP Stack trace:
+[04-Apr-2018 05:23:38 UTC] PHP   1. {main}() C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\account-profile.php:0
+[04-Apr-2018 05:23:38 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php:30
 Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(25): pdo_db->get(Array, Array)
+#0 C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php(30): PDO->query('SELECT privileg...')
+#1 C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
+#2 C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\account-profile.php(27): pdo_db->get(Array, Array)
 #3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 14:32:08 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 25
-[20-Mar-2018 14:32:08 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 14:32:08 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 14:32:08 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+  thrown in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php on line 30
+[04-Apr-2018 05:23:39 UTC] PHP Notice:  Undefined index: group in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\access.php on line 11
+[04-Apr-2018 05:23:39 UTC] PHP Stack trace:
+[04-Apr-2018 05:23:39 UTC] PHP   1. {main}() C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\access.php:0
+[04-Apr-2018 05:23:39 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php:30
 Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(25): pdo_db->get(Array, Array)
+#0 C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php(30): PDO->query('SELECT privileg...')
+#1 C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
+#2 C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\access.php(11): pdo_db->get(Array, Array)
 #3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 14:32:19 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 25
-[20-Mar-2018 14:32:19 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 14:32:19 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 14:32:19 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+  thrown in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php on line 30
+[04-Apr-2018 05:23:44 UTC] PHP Notice:  Undefined offset: 0 in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\account-profile.php on line 16
+[04-Apr-2018 05:23:44 UTC] PHP Stack trace:
+[04-Apr-2018 05:23:44 UTC] PHP   1. {main}() C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\account-profile.php:0
+[04-Apr-2018 05:23:44 UTC] PHP Notice:  Undefined index: groups in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\account-profile.php on line 27
+[04-Apr-2018 05:23:44 UTC] PHP Stack trace:
+[04-Apr-2018 05:23:44 UTC] PHP   1. {main}() C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\account-profile.php:0
+[04-Apr-2018 05:23:44 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php:30
 Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(25): pdo_db->get(Array, Array)
+#0 C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php(30): PDO->query('SELECT privileg...')
+#1 C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
+#2 C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\account-profile.php(27): pdo_db->get(Array, Array)
 #3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 14:32:47 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 25
-[20-Mar-2018 14:32:47 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 14:32:47 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 14:32:47 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(25): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 14:33:03 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 25
-[20-Mar-2018 14:33:03 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 14:33:03 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 14:33:03 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(25): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 14:33:48 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 29
-[20-Mar-2018 14:33:48 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 14:33:49 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 14:33:49 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(29): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 14:33:58 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 29
-[20-Mar-2018 14:33:58 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 14:33:58 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 14:33:58 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(29): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 15:30:57 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 25
-[20-Mar-2018 15:30:57 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 15:30:57 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 15:30:57 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(25): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 15:31:30 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 25
-[20-Mar-2018 15:31:30 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 15:31:30 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 15:31:30 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(25): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 15:32:17 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 25
-[20-Mar-2018 15:32:17 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 15:32:17 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 15:32:17 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(25): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 15:33:02 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 25
-[20-Mar-2018 15:33:02 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 15:33:02 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 15:33:02 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(25): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 15:57:50 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 25
-[20-Mar-2018 15:57:50 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 15:57:50 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 15:57:50 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(25): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 16:00:06 Asia/Manila] PHP Notice:  Undefined index: groups in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 27
-[20-Mar-2018 16:00:06 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 16:00:06 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 16:00:06 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(27): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 16:00:33 Asia/Manila] PHP Notice:  Undefined index: groups in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 27
-[20-Mar-2018 16:00:33 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 16:00:33 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 16:00:33 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(27): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 16:00:55 Asia/Manila] PHP Notice:  Undefined index: group in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 27
-[20-Mar-2018 16:00:55 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 16:00:55 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 16:00:55 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(27): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 16:14:21 Asia/Manila] PHP Notice:  Undefined index: groups in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 27
-[20-Mar-2018 16:14:21 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 16:14:21 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 16:14:21 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(27): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[20-Mar-2018 16:14:29 Asia/Manila] PHP Notice:  Undefined index: groups in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 27
-[20-Mar-2018 16:14:29 Asia/Manila] PHP Stack trace:
-[20-Mar-2018 16:14:29 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
-[20-Mar-2018 16:14:29 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
-Stack trace:
-#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT privileg...')
-#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT privileg...')
-#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(27): pdo_db->get(Array, Array)
-#3 {main}
-  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+  thrown in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php on line 30

@@ -36,15 +36,15 @@ require_once 'authentication.php';
 	<!-- angularjs -->
     <script type="text/javascript" src="angular/angular.min.js"></script>
     <script type="text/javascript" src="angular/angular-route.min.js"></script>
-    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.0.min.js"></script>
+    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.2.min.js"></script>
 	
 	<!-- angularjs modules -->
     <script type="text/javascript" src="modules/account.js"></script>	
     <script type="text/javascript" src="modules/bootstrap-modal.js"></script>
     <script type="text/javascript" src="modules/growl.js"></script>	
     <script type="text/javascript" src="modules/validate.js"></script>
-	<script type="text/javascript" src="modules/module-access.js"></script>
     <script type="text/javascript" src="modules/user.js"></script>
+    <script type="text/javascript" src="modules/module-access.js"></script>
    
 	
 	<!-- controllers -->
@@ -104,34 +104,24 @@ require_once 'authentication.php';
             </li>
 
             <li ng-show="profile.pages_access[1].value">
-                <a href="index.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
-                <ul>
-					<li><a href="users.html"><i class="fa fa-id-badge"></i> User List</a></li>
-                    <li><a href="user.html"><i class="fa fa-user-plus"></i> Add User</a></li>
-                </ul>
+			   <a href="users.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[2].value">
-                <a href="index.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
-                <ul>
-                    <li><a href="all_doctors.html"><i class="fa fa-address-card-o"></i> Doctors List</a></li>
-                    <li><a href="add_doctor.html"><i class="fa fa-user-plus"></i> Add Doctor</a></li>
-                </ul>
+				<a href="all_doctors.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[3].value">
-                <a href="index.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
-                <ul>
-                    <li><a href="all_staffs.html"><i class="fa fa-address-card"></i> Staff List</a></li>
-                    <li><a href="add_staff.html"><i class="fa fa-user-plus"></i> Add Staff</a></li>
-                </ul>
+				<a href="all_staffs.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
             </li>
 
 			<li ng-show="profile.pages_access[4].value">
                 <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
                 <ul>
 					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
-                    <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li>
+                    <li><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
+                    <li><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
+					<!-- <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li> -->
                 </ul>
             </li>
 			
@@ -150,12 +140,9 @@ require_once 'authentication.php';
 				</ul>
             </li>
 			
-			<li ng-show="profile.pages_access[7].value">
-                <a href="index.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
-                <ul>
-                    <li><a href="">sample</a></li>
-                </ul>
-            </li>
+			 <li ng-show="profile.pages_access[7].value">
+                <a href="help.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
+            </li>	
 
         </ul>
     </div>
@@ -168,7 +155,7 @@ require_once 'authentication.php';
                 <div class="content">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="page-title"><i class="fa fa-users"></i> Add User</h3>
+                            <h3 class="page-title"><i class="fa fa-users"></i> {{views.option}}</h3>
                         </div>
                     </div>
                     <div class="row">
@@ -176,8 +163,8 @@ require_once 'authentication.php';
 							<div class="card">
 								<div class="card-block">
 								
-		<button type="button" class="btn btn-primary float-right  btn-rounded" ng-click="app.add(this)" ng-show="controls.btns.add">Add</button>
-		<button type="button" class="btn btn-secondary float-right  btn-rounded" ng-click="app.edit(this)" ng-show="controls.btns.edit">Edit</button>
+		<!-- <button type="button" class="btn btn-primary float-right  btn-rounded" ng-click="app.add(this)" ng-show="controls.btns.add">Add</button> -->
+		<button type="button" class="btn btn-secondary float-right  btn-rounded" ng-click="app.edit(this)" ng-disabled="controls.btns.edit" ng-show="controls.show.edit">Edit</button>
 		<div class="clearfix"></div>
 		
 		<hr>
@@ -269,18 +256,34 @@ require_once 'authentication.php';
                                 <span class="input-group-addon">
                                     <i class="fa fa-key"></i>
                                 </span>
-								<input type="password" class="form-control" name="password" ng-model="user.password" ng-disabled="controls.btns.ok" required>
+								<input type="{{app.inputType}}" class="form-control" name="password" ng-model="user.password" ng-disabled="controls.btns.ok" required>
 								</div>
-								<div class="form-control-feedback" ng-show="form.user.password.$touched && form.user.password.$invalid">Password name is required</div>
+								<div class="form-control-feedback" ng-show="form.user.password.$touched && form.user.password.$invalid">Password is required</div>
+							</div>	
+<input type="checkbox" class="flat" id="checkbox" ng-model="app.passwordCheckbox" ng-click="app.hideShowPassword()" ng-disabled="controls.ok.btn" /> Show password							
+						</fieldset>
+					</div>
+					
+					<div class="col-md-4">
+						<fieldset class="content-group margin-top-10">
+							<div class="form-group" ng-class="{'has-danger': form.user.password.$touched && form.user.password.$invalid}">
+								<label class="control-label">Confirm Password</label>
+								<div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-key"></i>
+                                </span>
+								<input type="{{app.inputType}}" class="form-control" name="confirm_password" ng-model="user.confirm_password" ng-disabled="controls.btns.ok" required password-confirm match-target="user.password" />
+								</div>
+								<div class="form-control-feedback text-danger" ng-show="form.user.confirm_password.$error.match">Password does not match.</div>
 							</div>				
 						</fieldset>
-					</div>					
+					</div>
 				</div>
 		</form>
 		<hr>
 		<div class="pull-right">
-			<button type="button" class="btn btn-secondary" ng-click="app.save(this)" ng-disabled="controls.btns.ok">Save</button>
-			<button type="button" class="btn btn-primary" ng-click="app.cancel(this)" ng-disabled="controls.btns.cancel">Cancel</button>
+			<button type="button" class="btn btn-secondary" ng-click="app.save(this)" ng-disabled="controls.btns.ok">{{controls.label.ok}}</button>
+			<button type="button" class="btn btn-primary" ng-click="app.cancel(this)" ng-disabled="controls.btns.cancel">{{controls.label.cancel}}</button>
 		</div>		
 								
 								</div>
