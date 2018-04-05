@@ -1,6 +1,6 @@
-var app = angular.module('staffs',['account-module','bootstrap-modal','jspdf-module']);
+var app = angular.module('staffs',['account-module','bootstrap-modal','jspdf-module','module-access']);
 
-app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf) {
+app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,access) {
 
 	$scope.views = {};
 	
@@ -18,7 +18,10 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf) 
 		}).then(function mySucces(response) {
 
 			$scope.staffs = angular.copy(response.data);
-
+            $(function () {
+			  $('[data-toggle="tooltip"]').tooltip();
+			});	
+			
 		}, function myError(response) {
 
 		});
@@ -26,13 +29,17 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf) 
 	};
 	
 	$scope.view = function(row) {
-
+	
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.edit)) return;
+	
 		$window.location.href = "add_staff.html#!/view/"+row.id;
 
 	};
 	
 	$scope.delete = function(row) {
-		
+	
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.add)) return;
+	
 		var onOk = function() {
 			
 			$http({
@@ -56,6 +63,24 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf) 
 		
 		bootstrapModal.confirm($scope,'Confirmation','Are you sure you want to delete this staff?',onOk,onCancel);			
 		
+	};
+	
+	$scope.module = {
+			id: 4,
+			privileges: {
+				show: 1,
+				add: 2,
+				edit: 3,
+				delete: 4,
+			}
+		};
+		
+	$scope.addStaff = function() {
+		
+			if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.add)) return;
+		
+		$window.location.href = "add_staff.html#!/add/staff";
+
 	};
 	
 	$scope.print = function(staff) {

@@ -42,7 +42,7 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 			
 			if (scope.patient.id == 0) {
 
-				growl.show('danger',{from: 'top', amount: 55},'You have to add patient info first before you can add record.');				
+				growl.show('danger',{from: 'top', amount: 55},'You have to search one patient info first before you can add record.');				
 				return;
 
 			};
@@ -96,7 +96,7 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 			  data: scope.patient
 			}).then(function mySucces(response) {
 				
-				self.list(scope);
+				// self.list(scope);
 				if (scope.patient.record.id == 0) growl.show('success',{from: 'top', amount: 55},'Patient record successfully added.');		
 				scope.controls.show.editRecord = true;
 				
@@ -106,7 +106,7 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 			
 		};
 
-		self.list = function(scope) {
+		/* self.list = function(scope) {
 			
 			if (scope.$id > 2) scope = scope.$parent;
 			
@@ -122,11 +122,11 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 				
 			});			
 
-		};
+		}; */
 		
 		self.delete = function(scope,row) {
 			
-			if (scope.controls.btns.addRecord) return;			
+			// if (scope.controls.btns.addRecord) return;			
 			
 			var onOk = function() {
 				

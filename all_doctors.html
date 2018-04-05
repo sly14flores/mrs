@@ -40,7 +40,7 @@ require_once 'authentication.php';
 	<!-- angularjs -->
     <script type="text/javascript" src="angular/angular.min.js"></script>
     <script type="text/javascript" src="angular/angular-route.min.js"></script>
-    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.0.min.js"></script>
+    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.2.min.js"></script>
 	
 	<!-- angularjs modules -->
     <script type="text/javascript" src="modules/account.js"></script>	
@@ -103,39 +103,29 @@ require_once 'authentication.php';
     <div class="sidebar-content">
         <ul class="navigation">
 
-           <li ng-show="profile.pages_access[0].value">
+            <li ng-show="profile.pages_access[0].value">
                 <a href="index.html"><i class="app-menu__icon fa fa-dashboard"></i> <span>Dashboard</span></a>
             </li>
 
             <li ng-show="profile.pages_access[1].value">
-                <a href="index.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
-                <ul>
-					<li><a href="users.html"><i class="fa fa-id-badge"></i> User List</a></li>
-                    <li><a href="user.html"><i class="fa fa-user-plus"></i> Add User</a></li>
-                </ul>
+			   <a href="users.html"><i class="fa fa-users"></i> <span>Accounts</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[2].value">
-                <a href="index.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
-                <ul>
-                    <li><a href="all_doctors.html"><i class="fa fa-address-card-o"></i> Doctors List</a></li>
-                    <li><a href="add_doctor.html"><i class="fa fa-user-plus"></i> Add Doctor</a></li>
-                </ul>
+				<a href="all_doctors.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
             </li>
 			
 			<li ng-show="profile.pages_access[3].value">
-                <a href="index.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
-                <ul>
-                    <li><a href="all_staffs.html"><i class="fa fa-address-card"></i> Staff List</a></li>
-                    <li><a href="add_staff.html"><i class="fa fa-user-plus"></i> Add Staff</a></li>
-                </ul>
+				<a href="all_staffs.html"><i class="fa fa-user-secret"></i> <span>Staffs</span></a>
             </li>
 
 			<li ng-show="profile.pages_access[4].value">
                 <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
                 <ul>
 					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
-                    <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li>
+                    <li><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
+                    <li><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
+					<!-- <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li> -->
                 </ul>
             </li>
 			
@@ -154,12 +144,9 @@ require_once 'authentication.php';
 				</ul>
             </li>
 			
-			<li ng-show="profile.pages_access[7].value">
-                <a href="index.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
-                <ul>
-                    <li><a href="">sample</a></li>
-                </ul>
-            </li>
+			 <li ng-show="profile.pages_access[7].value">
+                <a href="help.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
+            </li>	
 
         </ul>
     </div>
@@ -181,11 +168,15 @@ require_once 'authentication.php';
 								<div class="card-block">
 									<h5 class="text-bold card-title">Doctors List</h5>
 									<div class="row">
-										<div class="col-md-4 offset-md-8">
+										<div class="col-md-4">
 											<div class="input-group">
 												<span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
 												<input type="text" class="form-control" placeholder="Search" ng-model="search" aria-describedby="sizing-addon2">
 											</div>
+										</div>
+										<div class="col-md-8">
+											<button type="button" class="btn btn-primary float-right" ng-click="addDoctor()" data-toggle="tooltip" data-placement="top" title="Add Doctor"><i class="fa fa-plus"></i></button>											
+											<div class="clearfix"></div>
 										</div>
 									</div>
 									<div class="table-responsive" style="margin-top: 25px;">
@@ -204,9 +195,9 @@ require_once 'authentication.php';
 											<td>Dr.  {{d.last_name}} , {{d.first_name}}</td>
 											<td>{{d.specialization}}</td>
 											<td>
-												<button type="button" class="btn btn-primary" ng-click="view(d)"><i class="fa fa-search"></i></button>
-												<button type="button" class="btn btn-info" ng-click="print(d)"><i class="fa fa-print"></i></button>
-												<button type="button" class="btn btn-danger" ng-click="delete(d)"><i class="fa fa-times"></i></button>
+												<button type="button" class="btn btn-primary" ng-click="view(d)" data-toggle="tooltip" data-placement="top" title="View Doctor Info"><i class="fa fa-search"></i></button>
+												<button type="button" class="btn btn-info" ng-click="print(d)" data-toggle="tooltip" data-placement="top" title="Print Doctor Info"><i class="fa fa-print"></i></button>
+												<button type="button" class="btn btn-danger" ng-click="delete(d)" data-placement="top" title="Delete Doctor Info" data-toggle="tooltip"><i class="fa fa-times" ></i></button>
 											</td>
 										  </tr>
 										</tbody>

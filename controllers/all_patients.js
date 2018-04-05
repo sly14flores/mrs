@@ -1,6 +1,6 @@
-var app = angular.module('patients',['account-module','bootstrap-modal','jspdf-module','module-access']);
+var app = angular.module('patients',['account-module','bootstrap-modal','jspdf-module','module-access','bootstrap-growl']);
 
-app.controller('patientsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,access) {
+app.controller('patientsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,access,growl) {
 
 	$scope.views = {};
 	
@@ -49,6 +49,7 @@ app.controller('patientsCtrl',function($scope,$http,$window,bootstrapModal,jspdf
 			}).then(function mySuccess(response) {
 				
 				list();
+				growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Patient info successfully deleted.');
 		
 			}, function myError(response) {
 
@@ -66,7 +67,7 @@ app.controller('patientsCtrl',function($scope,$http,$window,bootstrapModal,jspdf
 	};
 
 	$scope.module = {
-			id: 4,
+			id: 5,
 			privileges: {
 				show: 1,
 				add: 2,
@@ -220,6 +221,14 @@ app.controller('patientsCtrl',function($scope,$http,$window,bootstrapModal,jspdf
 		var blob = doc.output("blob");
 		window.open(URL.createObjectURL(blob));		
 		
+	};
+	
+	$scope.addPatient = function() {
+		
+		if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.add)) return;
+		
+		$window.location.href = "add_patient.html#!/add/patient";
+
 	};
 	
 });

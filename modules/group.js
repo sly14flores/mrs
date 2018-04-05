@@ -182,7 +182,7 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 				$timeout(function() { $compile($('#x_content')[0])(scope); },100);								
 				// instantiate datable
 				$timeout(function() {
-					$('#groups').DataTable({
+					$('#groups').dataTable({
 						"ordering": false,
 						"processing": true
 					});	

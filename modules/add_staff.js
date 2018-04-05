@@ -1,4 +1,4 @@
-angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-growl','ngRoute']).config(function($routeProvider) {
+angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-growl','ngRoute','module-access','ui.bootstrap']).config(function($routeProvider) {
     $routeProvider
         .when('/:option/:id', {
             templateUrl: 'add_staff.html'
@@ -17,9 +17,21 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
             });
         }
     }
-}).factory('app', function($http,$window,$routeParams,$location,$timeout,validate,growl,bootstrapModal) {
+}).factory('app', function($http,$window,$routeParams,$location,$timeout,validate,growl,bootstrapModal,access) {
 
 	function app() {
+		
+		function getAge(dateString) { //Autocompute birthday to age
+			var today = new Date();
+			var birthDate = new Date(dateString);
+			var age = today.getFullYear() - birthDate.getFullYear();
+			var m = today.getMonth() - birthDate.getMonth();
+			if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+				age--;
+			}
+			return age;
+		};
+		
 
 		var self = this;
 
@@ -28,7 +40,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			scope.views = {};
 			scope.form = {};
 			
-			scope.views.option = 'Add Staff';
+			scope.views.option = '';
 			
 			scope.controls = {
 				btns: {
@@ -36,6 +48,14 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 					edit: false,					
 					ok: true,
 					cancel: true
+				},
+				show: {
+					add: true,
+					edit: false
+				},
+				label: {
+					ok: 'Save',
+					cancel: 'Cancel'
 				}
 			};
 			
@@ -43,8 +63,37 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			scope.staff.id = 0;		
 
 			$timeout(function() {
+				
+				$http({
+					method: 'POST',
+					url: 'api/suggestions/provinces.php'
+				}).then(function mySucces(response) {
+					
+					scope.provinces = response.data;
+					scope.municipalities = [];
+					scope.barangays = [];
+					
+				},function myError(response) {
+					
+				});
+			
+			}, 1500);
+			
+			$timeout(function() {
 
 				switch ($routeParams.option) {					
+					
+					case 'add':
+			
+						scope.controls.btns.add = true;
+						scope.controls.btns.edit = false;
+						scope.controls.btns.ok = false;
+						scope.controls.btns.cancel = false;
+						scope.controls.show.add = false;
+						scope.controls.show.edit = true;
+						scope.views.option = 'Add Staff';			
+
+					break;	
 					
 					case 'view':
 
@@ -52,6 +101,9 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 							self.load(scope,$routeParams.id);
 							scope.controls.btns.add = true;
 							scope.controls.btns.edit = true;
+							scope.controls.btns.cancel = false;
+							scope.controls.label.ok = 'Update';
+							scope.controls.label.cancel = 'Close';
 							scope.views.option = 'Modify Staff';
 						};				
 
@@ -64,7 +116,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		};
 
 		self.add = function(scope) {
-
+		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
 			$routeParams.option = undefined;
 			
 			scope.staff = {};
@@ -79,21 +131,17 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 
 		self.cancel = function(scope) {
 
-			scope.controls.btns.ok = true;
-			scope.controls.btns.cancel = true;
-			
-			if ($routeParams.option==undefined) {
-				scope.staff = {};
-				scope.staff.id = 0;
-				validate.cancel(scope,'staff');
-			};
+			$window.location.href = 'all_staffs.html';
 
 		};
 
 		self.save = function(scope) {
 
-			if (validate.form(scope,'staff')) return;
-
+			if (validate.form(scope,'staff')){
+			growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Please complete required fields.');
+			return;
+			}
+			
 			$http({
 			  method: 'POST',
 			  url: 'handlers/staffs/save.php',
@@ -101,7 +149,8 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			}).then(function mySucces(response) {
 				
 				scope.controls.btns.ok = true;
-				scope.controls.btns.cancel = true;
+				scope.controls.btns.cancel = false;
+				scope.controls.label.cancel = 'CLose';
 
 				if ($routeParams.option==undefined) growl.show('success',{from: 'top', amount: 55},'New staff successfully added.');
 				else growl.show('success',{from: 'top', amount: 55},'Staff info successfully updated.');
@@ -134,6 +183,30 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				
 			});			
 			
+		};
+		
+		self.birthday = function(scope) {
+			
+			if (scope.staff.date_of_birth == null) return;
+			scope.staff.age = getAge(scope.staff.date_of_birth); //for birthday autocompute
+
+		};
+		
+		self.provinceSelect = function($item, scope) {
+			
+			scope.staff.province = $item;
+			scope.municipalities = $item.municipalities;
+		};
+		
+		self.municipalitySelect = function($item, scope) {
+			
+			scope.staff.city = $item;
+			scope.barangays = $item.barangays;
+		};
+		
+		self.barangaySelect = function($item, scope) {
+			
+			scope.staff.barangay = $item;
 		};
 
 	};
