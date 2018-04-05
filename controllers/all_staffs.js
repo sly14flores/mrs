@@ -29,11 +29,7 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 	};
 	
 	$scope.view = function(row) {
-<<<<<<< HEAD
 	
-=======
-
->>>>>>> origin/master
 	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.edit)) return;
 	
 		$window.location.href = "add_staff.html#!/view/"+row.id;
@@ -42,11 +38,7 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 	
 	$scope.delete = function(row) {
 	
-<<<<<<< HEAD
 	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.add)) return;
-=======
-	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.delete)) return;
->>>>>>> origin/master
 	
 		var onOk = function() {
 			
@@ -73,10 +65,6 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 		
 	};
 	
-<<<<<<< HEAD
-=======
-	
->>>>>>> origin/master
 	$scope.module = {
 			id: 4,
 			privileges: {
@@ -87,7 +75,6 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 			}
 		};
 		
-<<<<<<< HEAD
 	$scope.addStaff = function() {
 		
 			if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.add)) return;
@@ -96,8 +83,6 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 
 	};
 	
-=======
->>>>>>> origin/master
 	$scope.print = function(staff) {
 		
 		var doc = new jsPDF({

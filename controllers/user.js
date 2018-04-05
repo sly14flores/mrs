@@ -15,8 +15,4 @@ app.controller('userCtrl', function($scope,app) {
 				delete: 4,
 			}
 		};
-<<<<<<< HEAD
-=======
-	
->>>>>>> origin/master
 });
