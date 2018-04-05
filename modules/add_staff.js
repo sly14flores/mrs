@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-growl','ngRoute','module-access','ui.bootstrap']).config(function($routeProvider) {
+=======
+angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-growl','ngRoute','module-access']).config(function($routeProvider) {
+>>>>>>> origin/master
     $routeProvider
         .when('/:option/:id', {
             templateUrl: 'add_staff.html'
@@ -116,7 +120,13 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		};
 
 		self.add = function(scope) {
+<<<<<<< HEAD
 		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
+=======
+
+		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
+		
+>>>>>>> origin/master
 			$routeParams.option = undefined;
 			
 			scope.staff = {};

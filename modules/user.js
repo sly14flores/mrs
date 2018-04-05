@@ -87,7 +87,11 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		};
 
 		self.add = function(scope) {
+<<<<<<< HEAD
 	
+=======
+			
+>>>>>>> origin/master
 		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
 		
 			$routeParams.option = undefined;
@@ -166,6 +170,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			});			
 			
 		};
+		
 
 	};
 	
