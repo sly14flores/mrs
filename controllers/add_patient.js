@@ -4,7 +4,7 @@ app.controller('patientCtrl',function($scope,app,record) {
 
 	$scope.app = app;	
 	$scope.app.data($scope);
-
+	$scope.phoneNumbr = /^\d{3}[- ]?\d{3}[- ]?\d{5}$/;
 	$scope.module = {
 			id: 5,
 			privileges: {

@@ -285,9 +285,9 @@ require_once 'authentication.php';
                                     <span class="input-group-addon">
 										<i class="fa fa-fax"></i>
                                     </span>
-							<input type="text" restrict-to="[0-9]" class="form-control" name="mobile_number" ng-model="staff.mobile_number" ng-disabled="controls.btns.ok">
+								<input type="text" ng-pattern="phoneNumbr" class="form-control" placeholder="09x-xxx-xxxxx" name="mobile_number" ng-model="staff.mobile_number" ng-disabled="controls.btns.ok" required>
 							</div>
-							
+							<div style="color: red" class="form-control-feedback" ng-show="form.staff.mobile_number.$error.pattern && form.staff.mobile_number.$invalid">Valid mobile no. is [09x-xxx-xxxxx]</div>
 						</div>							
 					</fieldset>
 				</div>	

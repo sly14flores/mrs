@@ -1,6 +1,6 @@
-var app = angular.module('staffs',['account-module','bootstrap-modal','jspdf-module','module-access']);
+var app = angular.module('staffs',['account-module','bootstrap-modal','jspdf-module','module-access','bootstrap-growl']);
 
-app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,access) {
+app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,access,growl) {
 
 	$scope.views = {};
 	
@@ -48,6 +48,7 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 				data: {id: row.id}
 			}).then(function mySuccess(response) {
 				
+				growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Staff info successfully deleted.');
 				list();
 		
 			}, function myError(response) {
@@ -151,8 +152,8 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 		doc.text(60, 295, "Address: ");
 		doc.setFontSize(12); 
 		doc.setFontType('italic')
-		doc.text(110, 295, staff.address);
-		doc.line(105, 297, 260, 295);
+		doc.text(110, 295, ''+staff.province.province_description+', '+staff.municipality.municipality_description+', '+staff.barangay.barangay_description);
+		doc.line(105, 297, 560, 295);
 		
 		doc.setFontSize(10); 		
 		doc.setFontType('bold'); 

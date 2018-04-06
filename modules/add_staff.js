@@ -152,8 +152,8 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				scope.controls.btns.cancel = false;
 				scope.controls.label.cancel = 'CLose';
 
-				if ($routeParams.option==undefined) growl.show('success',{from: 'top', amount: 55},'New staff successfully added.');
-				else growl.show('success',{from: 'top', amount: 55},'Staff info successfully updated.');
+				if ($routeParams.option==undefined) growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'New staff successfully added.');
+				else growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Staff info successfully updated.');
 				
 			}, function myError(response) {
 				

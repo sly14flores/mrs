@@ -18,6 +18,13 @@ foreach ($patients as $i => $patient) {
 	
 };
 
+foreach ($patients as $key => $rec) {
+	
+$municipality = $con->getData("SELECT * FROM municipalities WHERE municipality_id = ".$rec['city']);
+$patients[$key]['municipality'] = $municipality[0];
+
+}
+
 echo json_encode($patients);
 
 ?>
