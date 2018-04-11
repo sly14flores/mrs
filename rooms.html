@@ -21,15 +21,6 @@ require_once 'authentication.php';
     <link rel="stylesheet" href="lib/css/chartist.min.css">
 
     <link rel="stylesheet" href="assets/css/bootbox-fix.css">
-	<style type="text/css">
-	
-		#preview {
-			border: 3px solid #ccc;
-			width: 1000px;
-			height: 1200px;
-		}
-		
-	</style>
 	
     <script type="text/javascript" src="lib/js/jquery.min.js"></script>
     <script type="text/javascript" src="lib/js/tether.min.js"></script>
@@ -42,22 +33,40 @@ require_once 'authentication.php';
     <script type="text/javascript" src="assets/js/bootbox/bootbox.min.js"></script>
     <script type="text/javascript" src="assets/js/growl/jquery.bootstrap-growl.min.js"></script>
 	
+	<!-- for report -->
+    <script type="text/javascript" src="jspdf/jspdf.min.js"></script>
+    <script type="text/javascript" src="jspdf/jspdf.plugin.autotable.js"></script>
+	
+	<!-- PAGE LEVEL STYLESHEETS -->
+    <link rel="stylesheet" href="lib/css/jquery.dataTables.min.css">
+    <!-- /PAGE LEVEL STYLESHEETS -->
+	
 	<!-- angularjs -->
     <script type="text/javascript" src="angular/angular.min.js"></script>
     <script type="text/javascript" src="angular/angular-route.min.js"></script>
-    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.2.min.js"></script>
+    <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.0.min.js"></script>
+	
+	<!-- PAGE LEVEL SCRIPTS -->
+    <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/pages_datatables.min.js"></script>
+    <!-- /PAGE LEVEL SCRIPTS -->
 	
 	<!-- angularjs modules -->
     <script type="text/javascript" src="modules/account.js"></script>	
     <script type="text/javascript" src="modules/bootstrap-modal.js"></script>	
     <script type="text/javascript" src="modules/growl.js"></script>	
     <script type="text/javascript" src="modules/validate.js"></script>
+    <script type="text/javascript" src="modules/room.js"></script>
+	<script type="text/javascript" src="modules/module-access.js"></script>
+	
+	<!-- angularjs -->
+    <script type="text/javascript" src="modules/jspdf.js"></script>	
 	
 	<!-- controllers -->
-    <script type="text/javascript" src="controllers/help.js"></script>
+    <script type="text/javascript" src="controllers/room.js"></script>
 </head>
 
-<body ng-app="help" ng-controller="helpCtrl" account-profile>
+<body ng-app="room" ng-controller="roomCtrl" account-profile>
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-toggleable-md">
@@ -103,8 +112,8 @@ require_once 'authentication.php';
             <div id="sidebar-main" class="sidebar sidebar-default">
     <div class="sidebar-content">
         <ul class="navigation">
-			
-            <li ng-show="profile.pages_access[0].value">
+
+           <li ng-show="profile.pages_access[0].value">
                 <a href="index.html"><i class="app-menu__icon fa fa-dashboard"></i> <span>Dashboard</span></a>
             </li>
 
@@ -131,24 +140,24 @@ require_once 'authentication.php';
             </li>
 			
 			<li ng-show="profile.pages_access[5].value">
-                <a href="javascript:;"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
+                <a href="index.html"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
                 <ul>
                     <li><a href="reports.html"><i class="fa fa-print"></i> Print Reports</a></li>
                 </ul>
             </li>
-
+			
 			<li ng-show="profile.pages_access[6].value">
-                <a href="javascript:;"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
+                <a href="index.html"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
                 <ul>
                     <li><a href="backup-restore.html"><i class="fa fa-cogs"></i> Backup and Restore</a></li>
-                    <li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
+					<li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
 					<li><a href="rooms.html"><i class="fa fa-edit"></i> Manage Rooms</a></li>
-                </ul>
+				</ul>
             </li>
-
-            <li ng-show="profile.pages_access[7].value">
+			
+			<li ng-show="profile.pages_access[7].value">
                 <a href="help.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
-            </li>			
+            </li>
 
         </ul>
     </div>
@@ -158,56 +167,18 @@ require_once 'authentication.php';
 
             <!-- PAGE CONTENT -->
             <div class="content-wrapper">
-                <div class="content">
-                    <div class="row">
-						<div class="col-md-12">
-							<h3 class="page-title"><i class="fa fa-info-circle"></i> Users Manual</h3>
-						</div>
+                <div class="content"> 				
+					<div class="row">
+                        <div class="col-md-12">
+						    <div class="card">
+								<div id="x_content" class="x_content"></div>								
+							</div>                           
+                        </div>
                     </div>
-					<hr>					
-					<div class="row">
-						<div class="col-md-6">
-							<form class="form-inline">
-							  <div class="form-group mb-2">
-								<label>Contents:</label>
-							  </div>
-							  <div class="form-group mx-sm-3 mb-2">
-								<select class="form-control" ng-model="views.content" ng-change="selectContent()">
-									<option value="1.pdf">How to install UwAmp310</option>
-									<option value="2.pdf">How to run UwAmp310 Application</option>
-									<option value="3.pdf">How to run the system</option>
-									<option value="4.pdf">How to Login</option>
-									<option value="5.pdf">How to Add User</option>
-									<option value="6.pdf">How to Manage Users Information</option>
-									<option value="7.pdf">How to Add Doctor</option>
-									<option value="8.pdf">How to Manage Doctor</option>
-									<option value="9.pdf">How to Print Doctor's Information</option>
-									<option value="10.pdf">How to Add Staff</option>
-									<option value="11.pdf">How to Manage Staff</option>
-									<option value="12.pdf">How to Add Patient</option>
-									<option value="13.pdf">How to Print Staff's Information</option>
-									<option value="14.pdf">How to Add Patient Record</option>
-									<option value="15.pdf">How to Manage Patient Record</option>
-									<option value="16.pdf">How to Backup File</option>
-									<option value="17.pdf">How to Restore File</option>
-								</select>
-							  </div>
-							</form>						
-						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-md-12">
-							<embed id="preview" src="manuals/1.pdf" type="application/pdf" />
-						</div>
-					</div>
+					
                 </div>
             </div>
-			
-			
             <!-- /PAGE CONTENT -->
-			
-			
         </div>
     </div>
 </body>

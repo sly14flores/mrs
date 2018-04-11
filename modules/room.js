@@ -1,4 +1,4 @@
-angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl) {
+angular.module('room-module',['bootstrap-modal','bootstrap-growl']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl) {
 	
 	function form() {
 		
@@ -21,17 +21,18 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 				},
 			};
 				
-			scope.group = {};
-			scope.group.group_id = 0;
+			scope.room = {};
+			scope.room.id = 0;
 			
-			scope.groups = []; // list
+			scope.rooms = []; // list
+			
 			
 			
 		};
 
 		function validate(scope) {
 			
-			var controls = scope.formHolder.group.$$controls;
+			var controls = scope.formHolder.room.$$controls;
 			
 			angular.forEach(controls,function(elem,i) {
 				
@@ -39,7 +40,7 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 									
 			});
 
-			return scope.formHolder.group.$invalid;
+			return scope.formHolder.room.$invalid;
 			
 		};
 		
@@ -59,17 +60,15 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 			
 		};	
 		
-		self.group = function(scope,row) {	
+		self.room = function(scope,row) {	
 		
-			scope.group = {};
-			scope.group.group_id = 0;
-			
-			privileges(scope);	
+			scope.room = {};
+			scope.room.id = 0;
 			
 			mode(scope,row);
 			
 			$('#x_content').html(loading);
-			$('#x_content').load('forms/group.html',function() {
+			$('#x_content').load('forms/room.html',function() {
 				$timeout(function() { $compile($('#x_content')[0])(scope); },200);
 			});
 			
@@ -78,12 +77,11 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 				if (scope.$id > 2) scope = scope.$parent;				
 				$http({
 				  method: 'POST',
-				  url: 'handlers/groups/group-view.php',
-				  data: {group_id: row.group_id}
+				  url: 'handlers/rooms/room-view.php',
+				  data: {id: row.id}
 				}).then(function mySucces(response) {
 					
-					angular.copy(response.data, scope.group);
-					privileges(scope);
+					angular.copy(response.data, scope.room);
 					
 				}, function myError(response) {
 				  // error
@@ -110,17 +108,17 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 		
 			$http({
 			  method: 'POST',
-			  url: 'handlers/groups/group-save.php',
-			  data: {group: scope.group, privileges: scope.privileges}
+			  url: 'handlers/rooms/room-save.php',
+			  data: {room: scope.room}
 			}).then(function mySucces(response) {
 				
-				if (scope.group.group_id == 0) {
-					scope.group.group_id = response.data;
-					growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Group Information successfully added.');
+				if (scope.room.id == 0) {
+					scope.room.id = response.data;
+					growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Room Information successfully added.');
 					}	else{
-						growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Group Information successfully updated.');
+						growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Room Information successfully updated.');
 					}
-					mode(scope,scope.group);
+					mode(scope,scope.room);
 				
 			}, function myError(response) {
 				 
@@ -138,13 +136,13 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/groups/group-delete.php',
-			  data: {group_id: [row.group_id]}
+			  url: 'handlers/rooms/room-delete.php',
+			  data: {id: [row.id]}
 			}).then(function mySucces(response) {
 
 				self.list(scope);
 				
-				growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Group Information successfully deleted.');
+				growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Room Information successfully deleted.');
 				
 			}, function myError(response) {
 				 
@@ -160,15 +158,15 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 		
 		self.list = function(scope) {
 
-			scope.group = {};
-			scope.group.group_id = 0;
+			scope.room = {};
+			scope.room.id = 0;
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/groups/group-list.php',
+			  url: 'handlers/rooms/room-list.php',
 			}).then(function mySucces(response) {
 				
-				scope.groups = response.data;
+				scope.rooms = response.data;
 				
 			}, function myError(response) {
 				 
@@ -178,11 +176,11 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 			
 			
 			$('#x_content').html(loading);
-			$('#x_content').load('lists/groups.html', function() {
+			$('#x_content').load('lists/rooms.html', function() {
 				$timeout(function() { $compile($('#x_content')[0])(scope); },100);								
 				// instantiate datable
 				$timeout(function() {
-					$('#groups').dataTable({
+					$('#rooms').dataTable({
 						"ordering": false,
 						"processing": true
 					});	
@@ -190,26 +188,7 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 				
 			});				
 			
-		};
-		
-		function privileges(scope) {
-			
-			$http({
-			  method: 'POST',
-			  url: 'handlers/privileges.php',
-			  data: {id: scope.group.group_id}
-			}).then(function mySuccess(response) {
-				
-				scope.privileges = angular.copy(response.data);
-				// iCheckInit();
-				
-			}, function myError(response) {
-				
-				//
-				
-			});				
-			
-		};		
+		};	
 		
 		
 	};

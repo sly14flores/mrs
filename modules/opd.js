@@ -15,16 +15,10 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			
 			scope.controls = {
 				btns: {
-					add: false,
-					edit: true,					
-					ok: true,
-					cancel: true,
-					addRecord: false
-				},
-				show: {
+					ok: false,
+					cancel: false,					
 					add: true,
-					edit: false,
-					editRecord: true
+					edit: true
 				},
 				label: {
 					ok: 'Save',
@@ -33,7 +27,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			};
 			
 		};
-				
+
 		self.selectPatient = function(scope,item) {
 			
 			patientRecord(scope,item);
@@ -79,6 +73,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				
 				$('#content').load('forms/opd.html');
 				scope.patient = angular.copy(response.data);
+				self.list(scope);
 				
 				$timeout(function() {
 					$compile($('#content')[0])(scope);
@@ -108,9 +103,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		
 		self.medicalRecord = function(scope,row) {
 			
-			if (row == null) { // add
-				
-				scope.controls.show.editRecord = false;
+			if (row == null) { // add				
 				
 				scope.opd = {};				
 				scope.opd.record = {};
@@ -118,12 +111,27 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				scope.opd.record.patient_id = scope.patient_id;				
 				scope.opd.record.other_history = {};
 				scope.opd.record.other_history.id = 0;
-				scope.opd.record.diagnosis = {};
-				scope.opd.record.diagnosis.id = 0;
 				scope.opd.record.prescription = [];
 				scope.opd.record.prescriptionDels = [];
+				scope.opd.record.laboratory = [];
+				scope.opd.record.laboratoryDels = [];
+				scope.opd.record.diagnose = [];
+				scope.opd.record.diagnoseDels = [];
 				scope.opd.record.follow_up = {};			
 				scope.opd.record.follow_up.id = 0;
+				
+				scope.controls = {
+					btns: {
+						ok: false,
+						cancel: false,					
+						add: true,
+						edit: true
+					},
+					label: {
+						ok: 'Save',
+						cancel: 'Cancel'
+					}
+				};				
 
 			} else { // edit
 				
@@ -136,22 +144,42 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 					scope.opd = {};
 					scope.opd.record = angular.copy(response.data);
 					scope.opd.record.date = new Date(response.data.date);
-					scope.opd.record.follow_up.date = new Date(response.data.follow_up.date);
+					scope.opd.record.follow_up.date = new Date(response.data.follow_up.date);					
 					
-					scope.controls.show.editRecord = true;
-
 				}, function myError(response) {
 					
-				});					
+				});
+
+				scope.controls = {
+					btns: {
+						ok: true,
+						cancel: false,					
+						add: true,
+						edit: false
+					},
+					label: {
+						ok: 'Update',
+						cancel: 'Close'
+					}
+				};				
 				
 			};
 
-			doctors(scope);			
-
-			bootstrapModal.box2(scope,'Medical Record','dialogs/opd.html');
+			doctors(scope);
+			
+			$('#opd-records').html('Please wait...');
+			
+			$('#opd-records').load('html/opd.html',function() {
+				$timeout(function() { $compile($('#opd-records')[0])(scope); }, 500);				
+			});
 
 		};
 		
+		self.edit = function(scope) {
+
+			scope.controls.btns.ok = false;
+		};
+
 		self.save = function(scope) {
 			
 			$http({
@@ -161,8 +189,11 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			}).then(function mySucces(response) {
 				
 				self.list(scope);
-				if (scope.opd.record.id == 0) growl.show('success',{from: 'top', amount: 55},'Patient record successfully added.');		
-				scope.controls.show.editRecord = true;
+				if (scope.opd.record.id == 0){ 
+					growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Patient record successfully added.');
+				} else{
+					growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Patient record successfully updated.');
+				}
 				
 			}, function myError(response) {
 				
@@ -172,7 +203,22 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 
 		self.list = function(scope) {
 			
+			$('#opd-records').html('Please wait...');			
+			
 			if (scope.$id > 2) scope = scope.$parent;
+			
+			scope.controls = {
+				btns: {
+					ok: false,
+					cancel: false,					
+					add: true,
+					edit: true
+				},
+				label: {
+					ok: 'Save',
+					cancel: 'Cancel'
+				}
+			};			
 			
 			$http({
 			  method: 'POST',
@@ -181,10 +227,15 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			}).then(function mySucces(response) {
 
 				scope.patient.records = angular.copy(response.data);
-
+				
+				$('#opd-records').load('lists/opd-records.html');
+				$timeout(function() { $compile($('#opd-records')[0])(scope); }, 500);				
+	
 			}, function myError(response) {
 				
-			});			
+			});
+
+			
 
 		};
 		
@@ -201,7 +252,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				}).then(function mySuccess(response) {
 					
 					self.list(scope);
-			
+					growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Patient record successfully deleted.');
 				}, function myError(response) {
 
 			
@@ -230,12 +281,6 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 					disabled: false
 				});
 
-			},			
-			
-			editRecord: function(scope) {
-				
-				scope.controls.show.editRecord	= !scope.controls.show.editRecord;			
-				
 			},
 			
 			edit: function(scope,row) {
@@ -267,7 +312,103 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 
 			}			
 			
-		};		
+		};
+		
+		self.laboratory = {
+			
+			add: function(scope) {
+
+				scope.opd.record.laboratory.push({
+					id: 0,
+					record_id: 0,
+					lab_type: '',
+					lab_remark: '',
+					disabled: false
+				});
+
+			},
+			
+			edit: function(scope,row) {
+				
+				row.disabled = !row.disabled;				
+				
+			},			
+			
+			delete: function(scope,row) {
+				
+				if (row.id > 0) {
+					scope.opd.record.laboratoryDels.push(row.id);
+				};
+				
+				var laboratories = scope.opd.record.laboratory;
+				var index = scope.opd.record.laboratory.indexOf(row);
+				scope.opd.record.laboratory = [];			
+				
+				angular.forEach(laboratories, function(d,i) {
+					
+					if (index != i) {
+						
+						delete d['$$hashKey'];
+						scope.opd.record.laboratory.push(d);
+						
+					};
+					
+				});
+
+			}			
+			
+		};
+		
+		self.diagnose = {
+			
+			add: function(scope) {
+
+				scope.opd.record.diagnose.push({
+					id: 0,
+					record_id: 0,
+					complaint: '',
+					diagnosis: '',
+					disabled: false
+				});
+
+			},
+			
+			edit: function(scope,row) {
+				
+				row.disabled = !row.disabled;				
+				
+			},			
+			
+			delete: function(scope,row) {
+				
+				if (row.id > 0) {
+					scope.opd.record.diagnoseDels.push(row.id);
+				};
+				
+				var diagnosis = scope.opd.record.diagnose;
+				var index = scope.opd.record.diagnose.indexOf(row);
+				scope.opd.record.diagnose = [];			
+				
+				angular.forEach(diagnosis, function(d,i) {
+					
+					if (index != i) {
+						
+						delete d['$$hashKey'];
+						scope.opd.record.diagnose.push(d);
+						
+					};
+					
+				});
+
+			}			
+			
+		};
+		
+		self.cancel = function(scope) {
+			
+			self.list(scope);
+			
+		};
 
 	};
 	

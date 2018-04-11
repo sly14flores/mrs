@@ -1,0 +1,50 @@
+<!-- PAGE CONTENT -->
+<div class="card-block">
+	<h6 class="card-title text-bold"><i class="fa fa-edit"></i> Manage Rooms<button class="btn btn-primary pull-right" ng-click="form.room(this)">Add</button></h6>
+	<table id="rooms" class="display datatable table table-stripped" cellspacing="0" width="50%">
+		<thead>
+		  <tr>
+			<th>No</th>
+			<th>Room Type</th>
+			<th>Actions</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="r in rooms">
+				<td>{{r.id}}</td>
+				<td>{{r.room_type}}</td>
+				<td>
+					<button type="button" class="btn btn-primary" ng-click="form.room(this,r)"><i class="fa fa-search"></i></button>
+					<button type="button" class="btn btn-danger" ng-click="form.delete(this,r)"><i class="fa fa-times"></i></button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+	
+<!--<div class="card-block">
+		<h5 class="text-bold card-title"><i class="fa fa-user"></i> Manage Users<button class="btn btn-primary pull-right" ng-click="form.group(this)">Add</button></h5>
+	<hr>
+</div>
+<div class="card-block">
+	<div class="row">
+		<div class="col-md-4 offset-md-8">
+			<div class="input-group">
+				<span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
+				<input type="text" class="form-control" placeholder="Search" ng-model="search" aria-describedby="sizing-addon2">
+			</div>
+		</div>
+	</div> 
+	<div style="margin-top: 25px;">
+	  <table class="display datatable table table-stripped">	
+		<tbody>
+		  <tr ng-repeat="g in groups">
+			<td>{{g.group_id}}</td>
+			<td>{{g.group_name}}</td>
+			<td>{{g.group_description}}</td>
+			
+		  </tr>
+		</tbody>
+	  </table>
+	 </div>
+</div>-->

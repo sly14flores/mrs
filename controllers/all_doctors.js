@@ -151,8 +151,8 @@ app.controller('doctorsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,
 		doc.text(60, 295, "Address: ");
 		doc.setFontSize(12); 
 		doc.setFontType('italic')
-		doc.text(110, 295, doctor.address);
-		doc.line(105, 297, 260, 295);
+		doc.text(110, 295, ''+doctor.province.province_description+', '+doctor.municipality.municipality_description+', '+doctor.barangay.barangay_description);
+		doc.line(105, 297, 560, 295);
 		
 		doc.setFontSize(10); 		
 		doc.setFontType('bold'); 

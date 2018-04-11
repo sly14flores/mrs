@@ -6,6 +6,8 @@ app.controller('doctorCtrl',function($scope,app) {
 	
 	$scope.app.data($scope);
 	
+	$scope.phoneNumbr = /^\d{3}[- ]?\d{3}[- ]?\d{5}$/;
+	
 	$scope.module = {
 			id: 3,
 			privileges: {

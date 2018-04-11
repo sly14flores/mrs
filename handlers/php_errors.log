@@ -34,3 +34,52 @@ Stack trace:
 #2 C:\Users\Dexieee\Desktop\UwAmp\www\mrs\handlers\account-profile.php(27): pdo_db->get(Array, Array)
 #3 {main}
   thrown in C:\Users\Dexieee\Desktop\UwAmp\www\mrs\db.php on line 30
+[09-Apr-2018 08:39:52 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:21
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(21): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\login.php(7): pdo_db->__construct()
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 21
+[09-Apr-2018 08:39:55 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:21
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(21): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\login.php(7): pdo_db->__construct()
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 21
+[09-Apr-2018 08:39:57 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:21
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(21): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\login.php(7): pdo_db->__construct()
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 21
+[09-Apr-2018 08:40:00 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:21
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(21): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\login.php(7): pdo_db->__construct()
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 21
+[09-Apr-2018 08:40:01 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:21
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(21): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\login.php(7): pdo_db->__construct()
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 21
+[09-Apr-2018 08:40:05 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:21
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(21): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\login.php(7): pdo_db->__construct()
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 21
+[09-Apr-2018 08:40:06 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:21
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(21): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\login.php(7): pdo_db->__construct()
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 21

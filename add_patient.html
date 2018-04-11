@@ -136,6 +136,7 @@ require_once 'authentication.php';
                 <ul>
                     <li><a href="backup-restore.html"><i class="fa fa-cogs"></i> Backup and Restore</a></li>
 					<li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
+					<li><a href="rooms.html"><i class="fa fa-edit"></i> Manage Rooms</a></li>
 				</ul>
             </li>
 			
@@ -301,10 +302,10 @@ require_once 'authentication.php';
                                     <span class="input-group-addon">
 										<i class="fa fa-fax"></i>
                                     </span>
-							<input type="text" class="form-control" name="mobile_number" ng-model="patient.mobile_number" ng-disabled="controls.btns.ok">
+								<input type="text" ng-pattern="phoneNumbr" class="form-control" placeholder="09x-xxx-xxxxx" name="mobile_number" ng-model="patient.mobile_number" ng-disabled="controls.btns.ok" required>
 							</div>
-							
-						</div>							
+							<div style="color: red" class="form-control-feedback" ng-show="form.patient.mobile_number.$error.pattern && form.patient.mobile_number.$invalid">Valid mobile no. is [09x-xxx-xxxxx]</div>
+						</div>								
 					</fieldset>
 				</div>	
 				<div class="col-md-4">
@@ -421,24 +422,104 @@ require_once 'authentication.php';
 				</div>	
 			</div>
 			
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label">PWD</label>
+						<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-wechat"></i>
+								</span>
+							<select class="form-control" name="pwd" ng-model="patient.pwd" ng-disabled="controls.btns.ok">
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>		
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label">Senior Citizen</label>
+						<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-wechat"></i>
+								</span>
+							<select class="form-control" name="senior_citizen" ng-model="patient.senior_citizen" ng-disabled="controls.btns.ok">
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>		
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label">Smoker</label>
+						<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-wechat"></i>
+								</span>
+							<select class="form-control" name="smoker" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>		
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label">Membership</label>
+						<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-wechat"></i>
+								</span>
+							<select class="form-control" name="membership" ng-model="patient.membership" ng-disabled="controls.btns.ok">
+								<option value="PHIC">PHIC</option>
+								<option value="NON PHIC">NON PHIC</option>
+							</select>
+						</div>
+					</div>		
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label">Categories</label>
+						<div class="input-group">
+								<span class="input-group-addon">
+									<i class="fa fa-wechat"></i>
+								</span>
+							<select class="form-control" name="categories" ng-model="patient.categories" ng-disabled="controls.btns.ok">
+								<option value="Gov't">Gov't</option>
+								<option value="Private">Private</option>
+								<option value="OWWA">OWWA</option>
+								<option value="NHTS">NHTS</option>
+								<option value="NPM">NPM</option>
+								<option value="SE">SE</option>
+							</select>
+						</div>
+					</div>		
+				</div>
+			</div>
+			
+			
 			<legend class="text-bold">Records</legend>
-			<fieldset class="content-group">
+			<!-- <fieldset class="content-group">
 				<button type="button" class="btn btn-primary" ng-click="record.medicalRecord(this,null)" ng-disabled="controls.btns.addRecord">Add Record</button>
-			</fieldset>			
+			</fieldset> -->			
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Date</th><th>OPD No</th><th>Department</th><th>Physician</th><th>&nbsp;</th>
+								<th>Date</th><th>OPD/IPD No</th><th>Department</th><th>Physician</th><th>&nbsp;</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr ng-repeat="mr in medical_records">
-								<td>{{mr.date}}</td><td>{{mr.opd_no}}</td><td>{{mr.department}}</td><td>{{mr.physician}}</td>
+								<td>{{mr.date}}</td><td>{{mr.opd_no}}{{mr.ipd_no}}</td><td>{{mr.department}}</td><td>{{mr.physician}}</td>
 								<td>
-									<i class="fa fa-search" ng-click="record.medicalRecord(this,mr)" style="margin-right: 5px; cursor: pointer;"></i>
-									<i class="fa fa-remove" ng-click="record.delete(this,mr)" style="cursor: pointer;"></i>								
+									<button class="btn btn-success" ng-click="record.medicalRecord(this,mr)" ng-disabled="controls.btns.ok"><i class="fa fa-search" ></i></button>
+									<!-- <i class="fa fa-remove" ng-click="record.delete(this,mr)" style="cursor: pointer;"></i>							 -->
 								</td>
 							</tr>
 						</tbody>

@@ -141,6 +141,7 @@ require_once 'authentication.php';
                 <ul>
                     <li><a href="backup-restore.html"><i class="fa fa-cogs"></i> Backup and Restore</a></li>
 					<li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
+					<li><a href="rooms.html"><i class="fa fa-edit"></i> Manage Rooms</a></li>
 				</ul>
             </li>
 			
@@ -197,7 +198,7 @@ require_once 'authentication.php';
 											<td>{{p.hospital_no}}</td>
 											<td>{{p.last_name}}, {{p.first_name}}</td>
 											<td>{{p.gender}}</td>
-											<td>{{p.address}}</td>
+											<td>{{p.municipality.municipality_description}}</td>
 
 											<td>
 												<button type="button" class="btn btn-primary" ng-click="view(p)" data-toggle="tooltip" data-placement="top" title="View Patient Info"><i class="fa fa-search"></i></button>
