@@ -117,21 +117,21 @@ require_once 'authentication.php';
 			<li ng-show="profile.pages_access[4].value">
                 <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
                 <ul>
-					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
-                    <li><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
-                    <li><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
+					<li ng-show="profile.pages_access[5].value"><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
+                    <li ng-show="profile.pages_access[6].value"><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
+                    <li ng-show="profile.pages_access[7].value"><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
 					<!-- <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li> -->
                 </ul>
             </li>
 			
-			<li ng-show="profile.pages_access[5].value">
+			<li ng-show="profile.pages_access[8].value">
                 <a href="index.html"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
                 <ul>
                     <li><a href="reports.html"><i class="fa fa-print"></i> Print Reports</a></li>
                 </ul>
             </li>
 			
-			<li ng-show="profile.pages_access[6].value">
+			<li ng-show="profile.pages_access[9].value">
                 <a href="index.html"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
                 <ul>
                     <li><a href="backup-restore.html"><i class="fa fa-cogs"></i> Backup and Restore</a></li>
@@ -140,7 +140,7 @@ require_once 'authentication.php';
 				</ul>
             </li>
 			
-			 <li ng-show="profile.pages_access[7].value">
+			<li ng-show="profile.pages_access[10].value">
                 <a href="help.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
             </li>	
 
@@ -181,7 +181,7 @@ require_once 'authentication.php';
 								<span class="input-group-addon">
 									<i class="fa fa-user-circle"></i>
 								</span>
-							<input type="text" class="form-control" name="hospital_no" ng-model="patient.hospital_no" ng-disabled="controls.btns.ok" required>
+							<input type="text" class="form-control" name="hospital_no" ng-model="patient.hospital_no" disabled required>
 							</div>
 							<div class="form-control-feedback" ng-show="form.patient.hospital_no.$touched && form.patient.hospital_no.$invalid">Hospital no is required</div>
 						</div>						
@@ -421,87 +421,97 @@ require_once 'authentication.php';
 					</fieldset>
 				</div>	
 			</div>
+			<div class="row">
+				 <div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group">
+							<label class="control-label">PWD</label>
+							<div class="col-md-9">
+						<label>Yes</label>
+							<input type="radio" ng-model="patient.pwd" value="Yes" ng-disabled="controls.btns.ok">
+						
+						<label>No</label>
+							<input type="radio" ng-model="patient.pwd" value="No" ng-disabled="controls.btns.ok">
+						</div>
+						</div>							
+					</fieldset>
+				</div>
+
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group">
+							<label class="control-label">Senior Citizen</label>
+							<div class="col-md-9">
+						<label>Yes</label>
+							<input type="radio" ng-model="patient.senior_citizen" ng-disabled="controls.btns.ok">
+						
+						<label>No</label>
+							<input type="radio" ng-model="patient.senior_citizen" ng-disabled="controls.btns.ok">
+						</div>
+						</div>							
+					</fieldset>
+				</div>
+
+				<div class="col-md-4">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group">
+							<label class="control-label">Smoker</label>
+							<div class="col-md-9">
+						<label>Yes</label>
+							<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
+						
+						<label>No</label>
+							<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
+						</div>
+						</div>							
+					</fieldset>
+				</div>					
+			</div>	
 			
 			<div class="row">
 				<div class="col-md-4">
-					<div class="form-group">
-						<label class="control-label">PWD</label>
-						<div class="input-group">
-								<span class="input-group-addon">
-									<i class="fa fa-wechat"></i>
-								</span>
-							<select class="form-control" name="pwd" ng-model="patient.pwd" ng-disabled="controls.btns.ok">
-								<option value="Yes">Yes</option>
-								<option value="No">No</option>
-							</select>
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group">
+							<label class="control-label">Membership</label>
+							<div class="col-md-9">
+						<label>PHIC</label>
+							<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
+						
+						<label>NON PHIC</label>
+							<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
 						</div>
-					</div>		
+						</div>							
+					</fieldset>
 				</div>
-				<div class="col-md-4">
-					<div class="form-group">
-						<label class="control-label">Senior Citizen</label>
-						<div class="input-group">
-								<span class="input-group-addon">
-									<i class="fa fa-wechat"></i>
-								</span>
-							<select class="form-control" name="senior_citizen" ng-model="patient.senior_citizen" ng-disabled="controls.btns.ok">
-								<option value="Yes">Yes</option>
-								<option value="No">No</option>
-							</select>
+
+			<div class="col-md-6">
+					<fieldset class="content-group margin-top-10">
+						<div class="form-group">
+							<label class="control-label">Categories</label>
+						<div class="col-md-9">
+							<label>Gov't</label>
+								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
+						
+							<label>Private</label>
+								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
+						
+							<label>OWWA</label>
+								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
+						
+							<label>NHTS</label>
+								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
+						
+							<label>NPM</label>
+								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
+						
+							<label>SE</label>
+								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
 						</div>
-					</div>		
-				</div>
-				<div class="col-md-4">
-					<div class="form-group">
-						<label class="control-label">Smoker</label>
-						<div class="input-group">
-								<span class="input-group-addon">
-									<i class="fa fa-wechat"></i>
-								</span>
-							<select class="form-control" name="smoker" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
-								<option value="Yes">Yes</option>
-								<option value="No">No</option>
-							</select>
-						</div>
-					</div>		
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="form-group">
-						<label class="control-label">Membership</label>
-						<div class="input-group">
-								<span class="input-group-addon">
-									<i class="fa fa-wechat"></i>
-								</span>
-							<select class="form-control" name="membership" ng-model="patient.membership" ng-disabled="controls.btns.ok">
-								<option value="PHIC">PHIC</option>
-								<option value="NON PHIC">NON PHIC</option>
-							</select>
-						</div>
-					</div>		
-				</div>
-				<div class="col-md-4">
-					<div class="form-group">
-						<label class="control-label">Categories</label>
-						<div class="input-group">
-								<span class="input-group-addon">
-									<i class="fa fa-wechat"></i>
-								</span>
-							<select class="form-control" name="categories" ng-model="patient.categories" ng-disabled="controls.btns.ok">
-								<option value="Gov't">Gov't</option>
-								<option value="Private">Private</option>
-								<option value="OWWA">OWWA</option>
-								<option value="NHTS">NHTS</option>
-								<option value="NPM">NPM</option>
-								<option value="SE">SE</option>
-							</select>
-						</div>
-					</div>		
+						</div>							
+					</fieldset>
 				</div>
 			</div>
-			
-			
+				
 			<legend class="text-bold">Records</legend>
 			<!-- <fieldset class="content-group">
 				<button type="button" class="btn btn-primary" ng-click="record.medicalRecord(this,null)" ng-disabled="controls.btns.addRecord">Add Record</button>

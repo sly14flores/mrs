@@ -26,6 +26,13 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				}
 			};
 			
+			// form
+			$('#content').load('forms/opd.html');
+			$timeout(function() {
+				$compile($('#content')[0])(scope);
+				self.list(scope);
+			}, 200);			
+			
 		};
 
 		self.selectPatient = function(scope,item) {
@@ -61,9 +68,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		
 		function patientRecord(scope,patient) {
 			
-			scope.search = '';
-			
-			$('#content').html('Loading patient info please wait...');
+			scope.search = '';			
 			
 			$http({
 			  method: 'POST',
@@ -71,13 +76,8 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			  data: {id: patient.id, department: 'Out-Patient'}
 			}).then(function mySucces(response) {
 				
-				$('#content').load('forms/opd.html');
 				scope.patient = angular.copy(response.data);
-				self.list(scope);
-				
-				$timeout(function() {
-					$compile($('#content')[0])(scope);
-				}, 200);
+				self.list(scope);	
 				
 			},
 			function myError(response) {
@@ -101,13 +101,29 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			
 		};
 		
-		self.medicalRecord = function(scope,row) {
+		function rooms(scope) {
 			
-			if (row == null) { // add				
+			$http({
+			  method: 'GET',
+			  url: 'api/suggestions/rooms.php'
+			}).then(function mySucces(response) {
+
+				scope.rooms = response.data;
+
+			}, function myError(response) {
 				
+			});			
+			
+		};
+		
+		self.medicalRecord = function(scope,row) {
+		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return	
+			if (row == null) { // add				
+			;
 				scope.opd = {};				
 				scope.opd.record = {};
 				scope.opd.record.id = 0;
+				scope.opd.record.date = new Date();
 				scope.opd.record.patient_id = scope.patient_id;				
 				scope.opd.record.other_history = {};
 				scope.opd.record.other_history.id = 0;
@@ -134,7 +150,9 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				};				
 
 			} else { // edit
-				
+			
+			 if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.edit)) return
+			 
 				$http({
 				  method: 'POST',
 				  url: 'handlers/opd/view.php',
@@ -166,11 +184,12 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			};
 
 			doctors(scope);
+			rooms(scope);
 			
 			$('#opd-records').html('Please wait...');
 			
 			$('#opd-records').load('html/opd.html',function() {
-				$timeout(function() { $compile($('#opd-records')[0])(scope); }, 500);				
+				$timeout(function() { $compile($('#opd-records')[0])(scope); }, 500);
 			});
 
 		};
@@ -240,7 +259,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		};
 		
 		self.delete = function(scope,row) {			
-			
+		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.delete)) return;
 			scope.patient_id = row.patient_id;
 			
 			var onOk = function() {

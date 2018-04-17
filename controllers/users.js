@@ -1,4 +1,4 @@
-var app = angular.module('users',['account-module','bootstrap-modal','module-access','bootstrap-growl']);
+var app = angular.module('users',['ui.bootstrap','account-module','bootstrap-modal','module-access','bootstrap-growl']);
 
 app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access,growl) {
 
@@ -6,9 +6,15 @@ app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access,g
 	
 	$scope.users = [];
 	
+	$scope.views.currentPage = 1;
+	
 	list();
 	
 	function list() {
+	
+		$scope.currentPage = $scope.views.currentPage;
+		$scope.pageSize = 3;
+		$scope.maxSize = 3;
 	
 		$http({
 		  method: 'GET',
@@ -16,6 +22,9 @@ app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access,g
 		}).then(function mySucces(response) {
 
 			$scope.users = angular.copy(response.data);
+			
+			$scope.filterData = $scope.users; // for pagination
+			$scope.currentPage = $scope.views.currentPage; // for pagination 					
 			$(function () {
 			  $('[data-toggle="tooltip"]').tooltip();
 			});	
@@ -83,4 +92,14 @@ app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access,g
 
 	};
 	
+});
+
+app.filter('pagination', function() {
+	  return function(input, currentPage, pageSize) {
+	    if(angular.isArray(input)) {
+	      var start = (currentPage-1)*pageSize;
+	      var end = currentPage*pageSize;
+	      return input.slice(start, end);
+	    }
+	  };
 });

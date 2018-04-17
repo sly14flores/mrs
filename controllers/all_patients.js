@@ -67,17 +67,20 @@ app.controller('patientsCtrl',function($scope,$http,$window,bootstrapModal,jspdf
 	};
 
 	$scope.module = {
-			id: 5,
+			id: 6,
 			privileges: {
 				show: 1,
 				add: 2,
 				edit: 3,
-				delete: 4,
+				print: 4,
+				delete: 5,
 			}
 		};	
 	
 	$scope.print = function(patient) {
-		
+	
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.print)) return;
+	
 		var doc = new jsPDF({
 			orientation: 'portrait',
 			unit: 'pt',

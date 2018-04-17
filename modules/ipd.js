@@ -25,6 +25,14 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 					cancel: 'Cancel'
 				}
 			};
+			
+			// form
+			$('#content').load('forms/ipd.html');
+			$timeout(function() {
+				$compile($('#content')[0])(scope);
+				self.list(scope);
+			}, 200);			
+			
 		};
 
 		self.selectPatient = function(scope,item) {
@@ -116,12 +124,13 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		};
 		
 		self.medicalRecord = function(scope,row) {
-			
+		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return		
 			if (row == null) { // add				
 				
 				scope.ipd = {};				
 				scope.ipd.record = {};
 				scope.ipd.record.id = 0;
+				scope.ipd.record.date = new Date();				
 				scope.ipd.record.patient_id = scope.patient_id;				
 				scope.ipd.record.other_history = {};
 				scope.ipd.record.other_history.id = 0;
@@ -148,7 +157,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				};				
 
 			} else { // edit
-				
+			if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.edit)) return		
 				$http({
 				  method: 'POST',
 				  url: 'handlers/ipd/view.php',
@@ -257,7 +266,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		};
 		
 		self.delete = function(scope,row) {			
-			
+		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.delete)) return		
 			scope.patient_id = row.patient_id;
 			
 			var onOk = function() {
