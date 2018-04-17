@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <form name="form.record" novalidate autocomplete="off">
 	<!-- <button class="btn btn-default float-right" ng-click="record.prescription.editRecord(this)" ng-disabled="!controls.show.editRecord"><i class="fa fa-edit"></i></button> -->
+=======
+<form name="form.record" novalidate autocomplete="false">
+	<button class="btn btn-default float-right" ng-click="record.prescription.editRecord(this)" ng-disabled="!controls.show.editRecord"><i class="fa fa-edit"></i></button>
+>>>>>>> origin/jp
 	<div class="clearfix"></div>
 	<legend class="text-bold">Consultation</legend>
 	<div class="row">
@@ -7,7 +12,11 @@
 			<fieldset class="content-group margin-top-10">
 				<div class="form-group">
 					<label class="control-label">Date</label>
+<<<<<<< HEAD
 					<input type="date" class="form-control" name="date" ng-model="patient.record.date" ng-disabled="controls.show.editRecord">					
+=======
+					<input type="date" class="form-control" name="date" ng-model="ipd.record.date" ng-disabled="controls.show.editRecord">					
+>>>>>>> origin/jp
 				</div>
 			</fieldset>
 		</div>
@@ -15,14 +24,24 @@
 			<fieldset class="content-group margin-top-10">
 				<div class="form-group">
 					<label class="control-label">IPD No</label>
+<<<<<<< HEAD
 					<input type="text" class="form-control" name="ipd_no" ng-model="patient.record.ipd_no" ng-disabled="controls.show.editRecord">					
 				</div>
 			</fieldset>
 		</div>
+=======
+					<input type="text" class="form-control" name="ipd_no" ng-model="ipd.record.ipd_no" ng-disabled="controls.show.editRecord">					
+				</div>
+			</fieldset>
+		</div>		
+	</div>
+	<div class="row">
+>>>>>>> origin/jp
 		<div class="col-md-4">
 			<fieldset class="content-group margin-top-10">
 				<div class="form-group">
 					<label class="control-label">Physician</label>
+<<<<<<< HEAD
 					<select class="form-control" name="physician" ng-model="patient.record.physician" ng-options="doctor.fullname for doctor in doctors track by doctor.id" ng-disabled="controls.show.editRecord"></select>
 				</div>
 			</fieldset>
@@ -72,13 +91,66 @@
 		</div>		
 	</div>
 	
+=======
+					<select class="form-control" name="physician" ng-model="ipd.record.physician" ng-options="doctor.fullname for doctor in doctors track by doctor.id" ng-disabled="controls.show.editRecord"></select>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+	<legend class="text-bold">Admission</legend>
+	<div class="row">
+		<div class="col-md-4">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Room</label>
+					<input type="text" class="form-control" name="room" ng-model="ipd.record.room" ng-disabled="controls.show.editRecord">					
+				</div>
+			</fieldset>
+		</div>	
+		<div class="col-md-4">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Room No</label>
+					<input type="text" class="form-control" name="room_no" ng-model="ipd.record.room_no" ng-disabled="controls.show.editRecord">					
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-4">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Bed No</label>
+					<input type="text" class="form-control" name="bed_no" ng-model="ipd.record.bed_no" ng-disabled="controls.show.editRecord">					
+				</div>
+			</fieldset>
+		</div>			
+	</div>
+	<legend class="text-bold">Diagnostic</legend>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<label class="control-label">Laboratory/s</label>
+				<textarea class="form-control" name="lab" ng-model="ipd.record.lab" ng-disabled="controls.show.editRecord"></textarea>
+			</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label">remarks</label>
+					<textarea class="form-control" name="remarks" ng-model="ipd.record.remarks" ng-disabled="controls.show.editRecord"></textarea>
+				</div>
+			</div>	
+	</div>
+>>>>>>> origin/jp
 	<legend class="text-bold">Vital Signs</legend>
 	<div class="row">
 		<div class="col-md-3">
 			<fieldset class="content-group margin-top-10">
 				<div class="form-group">
 					<label class="control-label">Temperature</label>
+<<<<<<< HEAD
 					<input type="text" class="form-control" name="temperature" ng-model="patient.record.temperature" ng-disabled="controls.show.editRecord">					
+=======
+					<input type="text" class="form-control" name="temperature" ng-model="ipd.record.temperature" ng-disabled="controls.show.editRecord">					
+>>>>>>> origin/jp
 				</div>
 			</fieldset>
 		</div>
@@ -86,7 +158,11 @@
 			<fieldset class="content-group margin-top-10">
 				<div class="form-group">
 					<label class="control-label">Blood Pressure</label>
+<<<<<<< HEAD
 					<input type="text" class="form-control" name="blood_pressure" ng-model="patient.record.blood_pressure" ng-disabled="controls.show.editRecord">					
+=======
+					<input type="text" class="form-control" name="blood_pressure" ng-model="ipd.record.blood_pressure" ng-disabled="controls.show.editRecord">					
+>>>>>>> origin/jp
 				</div>
 			</fieldset>
 		</div>
@@ -94,7 +170,11 @@
 			<fieldset class="content-group margin-top-10">
 				<div class="form-group">
 					<label class="control-label">Height</label>
+<<<<<<< HEAD
 					<input type="text" class="form-control" name="height" ng-model="patient.record.height" ng-disabled="controls.show.editRecord">					
+=======
+					<input type="text" class="form-control" name="height" ng-model="ipd.record.height" ng-disabled="controls.show.editRecord">					
+>>>>>>> origin/jp
 				</div>
 			</fieldset>
 		</div>
@@ -102,11 +182,16 @@
 			<fieldset class="content-group margin-top-10">
 				<div class="form-group">
 					<label class="control-label">Weight</label>
+<<<<<<< HEAD
 					<input type="text" class="form-control" name="weight" ng-model="patient.record.weight" ng-disabled="controls.show.editRecord">					
+=======
+					<input type="text" class="form-control" name="weight" ng-model="ipd.record.weight" ng-disabled="controls.show.editRecord">					
+>>>>>>> origin/jp
 				</div>
 			</fieldset>
 		</div>			
 	</div>
+<<<<<<< HEAD
 	
 	<legend class="text-bold">Laboratories</legend>
 	<div class="card">
@@ -128,6 +213,8 @@
 		</div>
 	</div>
 	
+=======
+>>>>>>> origin/jp
 <div class="card">
     <div class="card-block text-center">
 		<ul class="nav nav-tabs nav-justified" role="tablist">
@@ -150,24 +237,37 @@
 					<div class="col-md-4">		
 						<div class="form-group">
 							<label>Hospital</label>
+<<<<<<< HEAD
 							<input type="text" class="form-control" name="other_history_hospital_name" ng-model="patient.record.other_history.hospital_name" ng-disabled="controls.show.editRecord">
+=======
+							<input type="text" class="form-control" name="other_history_hospital_name" ng-model="ipd.record.other_history.hospital_name" ng-disabled="controls.show.editRecord">
+>>>>>>> origin/jp
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
 							<label class="control-label">Complaint</label>
+<<<<<<< HEAD
 							<textarea class="form-control" name="other_history_complaint" ng-model="patient.record.other_history.complaint" ng-disabled="controls.show.editRecord"></textarea>
+=======
+							<textarea class="form-control" name="other_history_complaint" ng-model="ipd.record.other_history.complaint" ng-disabled="controls.show.editRecord"></textarea>
+>>>>>>> origin/jp
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
 							<label class="control-label">Diagnosis</label>
+<<<<<<< HEAD
 							<textarea class="form-control" name="other_history_diagnosis" ng-model="patient.record.other_history.diagnosis" ng-disabled="controls.show.editRecord"></textarea>
+=======
+							<textarea class="form-control" name="other_history_diagnosis" ng-model="ipd.record.other_history.diagnosis" ng-disabled="controls.show.editRecord"></textarea>
+>>>>>>> origin/jp
 						</div>
 					</div>					
 				</div>
 			</div>
 			<div class="tab-pane" id="diagnosis" role="tabpanel">
+<<<<<<< HEAD
 					<div class="clearfix"></div>
 					<table class="table table-bordered table-striped">
 						<thead>
@@ -194,6 +294,34 @@
 							<td><input type="text" class="form-control" ng-model="prp.medicine" ng-disabled="prp.disabled"></td><td><input type="text" class="form-control" ng-model="prp.quantity" ng-disabled="prp.disabled"></td>
 							<td><input type="text" class="form-control" ng-model="prp.dosage" ng-disabled="prp.disabled"></td>
 							<!-- <td><i class="fa" ng-class="{'fa-edit': prp.disabled, 'fa-save': !prp.disabled}" style="margin-right: 10px; cursor: pointer;" ng-click="record.prescription.edit(this,prp)"></i><i class="fa fa-remove" style="cursor: pointer;" ng-click="record.prescription.delete(this,prp)"></i></td> -->
+=======
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="control-label">Complaint</label>
+							<textarea class="form-control" name="diagnosis_complaint" ng-model="ipd.record.diagnosis.complaint" ng-disabled="controls.show.editRecord"></textarea>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="control-label">Diagnosis</label>
+							<textarea class="form-control" name="diagnosis_diagnosis" ng-model="ipd.record.diagnosis.diagnosis" ng-disabled="controls.show.editRecord"></textarea>
+						</div>
+					</div>				
+				</div>
+			</div>
+			<div class="tab-pane" id="prescription" role="tabpanel">
+				<button class="btn btn-primary float-right" style="margin-bottom: 10px;" ng-click="record.prescription.add(this)">Add</button>
+				<div class="clearfix"></div>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr><th>Medicine</th><th>Quantity</th><th>Dosage</th><th></th></tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="prp in ipd.record.prescription">
+							<td><input type="text" class="form-control" ng-model="prp.medicine" ng-disabled="prp.disabled"></td><td><input type="text" class="form-control" ng-model="prp.quantity" ng-disabled="prp.disabled"></td><td><input type="text" class="form-control" ng-model="prp.dosage" ng-disabled="prp.disabled"></td>
+							<td><i class="fa" ng-class="{'fa-edit': prp.disabled, 'fa-save': !prp.disabled}" style="margin-right: 10px; cursor: pointer;" ng-click="record.prescription.edit(this,prp)"></i><i class="fa fa-remove" style="cursor: pointer;" ng-click="record.prescription.delete(this,prp)"></i></td>
+>>>>>>> origin/jp
 						</tr>
 					</tbody>
 				</table>				
@@ -203,13 +331,21 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label class="control-label">Date</label>
+<<<<<<< HEAD
 							<input type="date" class="form-control" name="follow_up_date" ng-model="patient.record.follow_up.date" ng-disabled="controls.show.editRecord">
+=======
+							<input type="date" class="form-control" name="follow_up_date" ng-model="ipd.record.follow_up.date" ng-disabled="controls.show.editRecord">
+>>>>>>> origin/jp
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<label class="control-label">Remarks</label>
+<<<<<<< HEAD
 							<input type="text" class="form-control" name="follow_up_remarks" ng-model="patient.record.follow_up.remarks" ng-disabled="controls.show.editRecord">
+=======
+							<input type="text" class="form-control" name="follow_up_remarks" ng-model="ipd.record.follow_up.remarks" ng-disabled="controls.show.editRecord">
+>>>>>>> origin/jp
 						</div>
 					</div>				
 				</div>
@@ -217,7 +353,14 @@
 		</div>		
 	</div>
 </div>
+<<<<<<< HEAD
 <!-- <fieldset class="content-group">
 	<button type="button" class="btn btn-primary float-right" ng-click="record.save(this)">Save</button>
 </fieldset> -->
+=======
+<fieldset class="content-group">
+	<button type="button" class="btn btn-primary float-right" ng-click="record.save(this)">Save</button>
+	<div class="clearfix"></div>
+</fieldset>
+>>>>>>> origin/jp
 </form>
