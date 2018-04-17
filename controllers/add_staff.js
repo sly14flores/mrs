@@ -5,11 +5,7 @@ app.controller('staffCtrl',function($scope,app) {
 	$scope.app = app;
 	
 	$scope.app.data($scope);
-<<<<<<< HEAD
 	$scope.phoneNumbr = /^\d{3}[-]?\d{3}[-]?\d{5}$/;
-=======
-	$scope.phoneNumbr = /^\d{3}[- ]?\d{3}[- ]?\d{5}$/;
->>>>>>> origin/jp
 	$scope.module = {
 			id: 4,
 			privileges: {
