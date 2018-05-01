@@ -251,9 +251,3 @@ Stack trace:
 #1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
 #2 {main}
   thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
-[25-Apr-2018 22:29:46 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
-[25-Apr-2018 22:29:46 Asia/Manila] PHP Stack trace:
-[25-Apr-2018 22:29:46 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
-[25-Apr-2018 22:30:22 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
-[25-Apr-2018 22:30:22 Asia/Manila] PHP Stack trace:
-[25-Apr-2018 22:30:22 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
