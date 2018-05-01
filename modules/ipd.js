@@ -31,7 +31,11 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			$timeout(function() {
 				$compile($('#content')[0])(scope);
 				self.list(scope);
-			}, 200);			
+			}, 200);
+
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip();
+			});			
 			
 		};
 

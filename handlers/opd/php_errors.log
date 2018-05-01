@@ -19,3 +19,9 @@
 [22-Apr-2018 14:41:07 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php on line 13
 [22-Apr-2018 14:41:07 Asia/Manila] PHP Stack trace:
 [22-Apr-2018 14:41:07 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php:0
+[01-May-2018 13:16:02 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\mrs\handlers\opd\view.php on line 13
+[01-May-2018 13:16:02 Asia/Manila] PHP Stack trace:
+[01-May-2018 13:16:02 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\mrs\handlers\opd\view.php:0
+[01-May-2018 13:16:08 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\mrs\handlers\opd\view.php on line 13
+[01-May-2018 13:16:08 Asia/Manila] PHP Stack trace:
+[01-May-2018 13:16:08 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\mrs\handlers\opd\view.php:0
