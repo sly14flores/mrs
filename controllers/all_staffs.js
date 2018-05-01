@@ -24,11 +24,13 @@ app.controller('staffsCtrl',function($scope,$timeout,$http,$window,bootstrapModa
 			
 			// instantiate datable
 			$timeout(function() {
-				$('#stafftable').dataTable({
-					ordering: false,
-					processing: true,
-					columnDefs: [{}]
-				});	
+			if (!$.fn.DataTable.isDataTable( '#pattable' )) {
+					$('#stafftable').dataTable({
+						ordering: false,
+						processing: true,
+						columnDefs: [{}]
+					});
+				};					
 			},1000);
 			
 		}, function myError(response) {

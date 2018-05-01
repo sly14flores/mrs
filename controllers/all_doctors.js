@@ -24,11 +24,13 @@ app.controller('doctorsCtrl',function($scope,$http,$timeout,$window,bootstrapMod
 			
 			// instantiate datable
 			$timeout(function() {
-				$('#doctable').dataTable({
-					ordering: false,
-					processing: true,
-					columnDefs: [{}]
-				});	
+			if (!$.fn.DataTable.isDataTable( '#doctable' )) {	
+					$('#doctable').dataTable({
+						ordering: false,
+						processing: true,
+						columnDefs: [{}]
+					});	
+				};
 			},1000);
 			
 		}, function myError(response) {

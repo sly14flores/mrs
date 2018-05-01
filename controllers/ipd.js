@@ -1,6 +1,6 @@
-var app = angular.module('ipd',['account-module','bootstrap-modal','app-module','jspdf-module']);
+var app = angular.module('ipd',['account-module','bootstrap-modal','app-module','jspdf-module','module-access']);
 
-app.controller('ipdCtrl',function($scope,$http,$window,bootstrapModal,app,jspdf) {
+app.controller('ipdCtrl',function($scope,$http,$window,bootstrapModal,app,jspdf,access) {
 
 	$scope.views = {};
 	
@@ -16,12 +16,15 @@ app.controller('ipdCtrl',function($scope,$http,$window,bootstrapModal,app,jspdf)
 				show: 1,
 				add: 2,
 				edit: 3,
-				delete: 4,
+				print: 4,
+				delete: 5,
 			}
 	};
 	
 	$scope.print = function(doctor) {
-		
+	
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.print)) return;
+	
 		var doc = new jsPDF({
 			orientation: 'portrait',
 			unit: 'pt',

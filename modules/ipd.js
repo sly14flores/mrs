@@ -31,7 +31,11 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			$timeout(function() {
 				$compile($('#content')[0])(scope);
 				self.list(scope);
-			}, 200);			
+			}, 200);
+
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip();
+			});
 			
 		};
 
@@ -81,7 +85,9 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				$('#content').load('forms/ipd.html');
 				scope.patient = angular.copy(response.data);
 				self.list(scope);
-				
+				$(function () {
+				  $('[data-toggle="tooltip"]').tooltip();
+				});
 				$timeout(function() {
 					$compile($('#content')[0])(scope);
 				}, 200);

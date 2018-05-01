@@ -35,7 +35,11 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			$timeout(function() {
 				$compile($('#content')[0])(scope);
 				self.list(scope);
-			}, 200);			
+			}, 200);
+
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip();
+			});
 			
 		};
 
@@ -82,7 +86,9 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			}).then(function mySucces(response) {
 				
 				scope.patient = angular.copy(response.data);
-				
+				$(function () {
+				  $('[data-toggle="tooltip"]').tooltip();
+				});
 				self.list(scope);	
 				
 			},

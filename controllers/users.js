@@ -23,11 +23,13 @@ app.controller('usersCtrl',function($scope,$compile,$timeout,$http,$window,boots
 			
 			// instantiate datable
 			$timeout(function() {
-				$('#users').dataTable({
-					ordering: false,
-					processing: true,
-					columnDefs: [{}]
-				});	
+				if (!$.fn.DataTable.isDataTable( '#users' )) {
+					$('#users').dataTable({
+						ordering: false,
+						processing: true,
+						columnDefs: [{}]
+					});
+				};
 			},1000);
 				
 		}, function myError(response) {

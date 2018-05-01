@@ -190,7 +190,7 @@ require_once 'authentication.php';
 										  </tr>
 										</thead>
 										<tbody>
-										  <tr ng-repeat="d in doctors | filter: search">
+										  <tr ng-repeat="d in doctors">
 											<td>{{d.id}}</td>
 											<td>Dr. {{d.last_name}} , {{d.first_name}}</td>
 											<td>{{d.specialization}}</td>
