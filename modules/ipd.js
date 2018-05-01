@@ -15,16 +15,10 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			
 			scope.controls = {
 				btns: {
-					add: false,
-					edit: true,					
-					ok: true,
-					cancel: true,
-					addRecord: false
-				},
-				show: {
+					ok: false,
+					cancel: false,					
 					add: true,
-					edit: false,
-					editRecord: true
+					edit: true
 				},
 				label: {
 					ok: 'Save',
@@ -32,8 +26,15 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				}
 			};
 			
+			// form
+			$('#content').load('forms/ipd.html');
+			$timeout(function() {
+				$compile($('#content')[0])(scope);
+				self.list(scope);
+			}, 200);			
+			
 		};
-				
+
 		self.selectPatient = function(scope,item) {
 			
 			patientRecord(scope,item);
@@ -79,6 +80,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				
 				$('#content').load('forms/ipd.html');
 				scope.patient = angular.copy(response.data);
+				self.list(scope);
 				
 				$timeout(function() {
 					$compile($('#content')[0])(scope);
@@ -106,27 +108,62 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			
 		};
 		
-		self.medicalRecord = function(scope,row) {
+		function rooms(scope) {
 			
-			if (row == null) { // add
+			$http({
+				method: 'POST',
+				url: 'api/suggestions/rooms.php'
+			}).then(function mySucces(response) {
 				
-				scope.controls.show.editRecord = false;
+				scope.rooms = response.data;
+				
+			},function myError(response) {
+				
+			});	
+			
+		};
+		
+		self.medicalRecord = function(scope,row) {
+		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
+		if (scope.patient.id == null){
+			growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'You have to search first to add record.');
+		}
+		
+		else
+		{
+			if (row == null) { // add				
 				
 				scope.ipd = {};				
 				scope.ipd.record = {};
 				scope.ipd.record.id = 0;
+				scope.ipd.record.date = new Date();				
 				scope.ipd.record.patient_id = scope.patient_id;				
 				scope.ipd.record.other_history = {};
 				scope.ipd.record.other_history.id = 0;
-				scope.ipd.record.diagnosis = {};
-				scope.ipd.record.diagnosis.id = 0;
 				scope.ipd.record.prescription = [];
 				scope.ipd.record.prescriptionDels = [];
+				scope.ipd.record.laboratory = [];
+				scope.ipd.record.laboratoryDels = [];
+				scope.ipd.record.diagnose = [];
+				scope.ipd.record.diagnoseDels = [];
 				scope.ipd.record.follow_up = {};			
 				scope.ipd.record.follow_up.id = 0;
+				
+				scope.controls = {
+					btns: {
+						ok: false,
+						cancel: false,					
+						add: true,
+						edit: true
+					},
+					label: {
+						ok: 'Save',
+						cancel: 'Cancel'
+					}
+				};				
 
 			} else { // edit
-				
+			if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.edit)) return		
 				$http({
 				  method: 'POST',
 				  url: 'handlers/ipd/view.php',
@@ -136,22 +173,44 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 					scope.ipd = {};
 					scope.ipd.record = angular.copy(response.data);
 					scope.ipd.record.date = new Date(response.data.date);
-					scope.ipd.record.follow_up.date = new Date(response.data.follow_up.date);
+					scope.ipd.record.admission_date = new Date(response.data.admission_date);
+					scope.ipd.record.follow_up.date = new Date(response.data.follow_up.date);					
 					
-					scope.controls.show.editRecord = true;
-
 				}, function myError(response) {
 					
-				});					
+				});
+
+				scope.controls = {
+					btns: {
+						ok: true,
+						cancel: false,					
+						add: true,
+						edit: false
+					},
+					label: {
+						ok: 'Update',
+						cancel: 'Close'
+					}
+				};				
 				
 			};
 
-			doctors(scope);			
-
-			bootstrapModal.box2(scope,'Medical Record','dialogs/ipd.html');
-
+			doctors(scope);
+			rooms(scope);
+			
+			$('#ipd-records').html('Please wait...');
+			
+			$('#ipd-records').load('html/ipd.html',function() {
+				$timeout(function() { $compile($('#ipd-records')[0])(scope); }, 500);				
+			});
+		}
 		};
 		
+		self.edit = function(scope) {
+
+			scope.controls.btns.ok = false;
+		};
+
 		self.save = function(scope) {
 			
 			$http({
@@ -161,8 +220,11 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			}).then(function mySucces(response) {
 				
 				self.list(scope);
-				if (scope.ipd.record.id == 0) growl.show('success',{from: 'top', amount: 55},'Patient record successfully added.');		
-				scope.controls.show.editRecord = true;
+				if (scope.ipd.record.id == 0){ 
+					growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Patient record successfully added.');
+				} else{
+					growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Patient record successfully updated.');
+				}
 				
 			}, function myError(response) {
 				
@@ -172,7 +234,22 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 
 		self.list = function(scope) {
 			
+			$('#ipd-records').html('Please wait...');			
+			
 			if (scope.$id > 2) scope = scope.$parent;
+			
+			scope.controls = {
+				btns: {
+					ok: false,
+					cancel: false,					
+					add: true,
+					edit: true
+				},
+				label: {
+					ok: 'Save',
+					cancel: 'Cancel'
+				}
+			};			
 			
 			$http({
 			  method: 'POST',
@@ -181,15 +258,20 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			}).then(function mySucces(response) {
 
 				scope.patient.records = angular.copy(response.data);
+				
+				$('#ipd-records').load('lists/ipd-records.html');
+				$timeout(function() { $compile($('#ipd-records')[0])(scope); }, 500);				
 
 			}, function myError(response) {
 				
-			});			
+			});
+
+			
 
 		};
 		
 		self.delete = function(scope,row) {			
-			
+		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.delete)) return		
 			scope.patient_id = row.patient_id;
 			
 			var onOk = function() {
@@ -201,7 +283,8 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				}).then(function mySuccess(response) {
 					
 					self.list(scope);
-			
+					growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Patient record successfully deleted.');
+				
 				}, function myError(response) {
 
 			
@@ -230,12 +313,6 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 					disabled: false
 				});
 
-			},			
-			
-			editRecord: function(scope) {
-				
-				scope.controls.show.editRecord	= !scope.controls.show.editRecord;			
-				
 			},
 			
 			edit: function(scope,row) {
@@ -267,7 +344,103 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 
 			}			
 			
-		};		
+		};
+		
+		self.laboratory = {
+			
+			add: function(scope) {
+
+				scope.ipd.record.laboratory.push({
+					id: 0,
+					record_id: 0,
+					lab_type: '',
+					lab_remark: '',
+					disabled: false
+				});
+
+			},
+			
+			edit: function(scope,row) {
+				
+				row.disabled = !row.disabled;				
+				
+			},			
+			
+			delete: function(scope,row) {
+				
+				if (row.id > 0) {
+					scope.ipd.record.laboratoryDels.push(row.id);
+				};
+				
+				var laboratories = scope.ipd.record.laboratory;
+				var index = scope.ipd.record.laboratory.indexOf(row);
+				scope.ipd.record.laboratory = [];			
+				
+				angular.forEach(laboratories, function(d,i) {
+					
+					if (index != i) {
+						
+						delete d['$$hashKey'];
+						scope.ipd.record.laboratory.push(d);
+						
+					};
+					
+				});
+
+			}			
+			
+		};
+		
+		self.diagnose = {
+			
+			add: function(scope) {
+
+				scope.ipd.record.diagnose.push({
+					id: 0,
+					record_id: 0,
+					complaint: '',
+					diagnosis: '',
+					disabled: false
+				});
+
+			},
+			
+			edit: function(scope,row) {
+				
+				row.disabled = !row.disabled;				
+				
+			},			
+			
+			delete: function(scope,row) {
+				
+				if (row.id > 0) {
+					scope.ipd.record.diagnoseDels.push(row.id);
+				};
+				
+				var diagnosis = scope.ipd.record.diagnose;
+				var index = scope.ipd.record.diagnose.indexOf(row);
+				scope.ipd.record.diagnose = [];			
+				
+				angular.forEach(diagnosis, function(d,i) {
+					
+					if (index != i) {
+						
+						delete d['$$hashKey'];
+						scope.ipd.record.diagnose.push(d);
+						
+					};
+					
+				});
+
+			}			
+			
+		};
+		
+		self.cancel = function(scope) {
+			
+			self.list(scope);
+			
+		};
 
 	};
 	

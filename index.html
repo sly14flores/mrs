@@ -114,29 +114,30 @@ require_once 'authentication.php';
 			<li ng-show="profile.pages_access[4].value">
                 <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
                 <ul>
-					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
-                    <li><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
-                    <li><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
+					<li ng-show="profile.pages_access[5].value"><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
+                    <li ng-show="profile.pages_access[6].value"><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
+                    <li ng-show="profile.pages_access[7].value"><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
 					<!-- <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li> -->
                 </ul>
             </li>
 			
-			<li ng-show="profile.pages_access[5].value">
+			<li ng-show="profile.pages_access[8].value">
                 <a href="index.html"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
                 <ul>
                     <li><a href="reports.html"><i class="fa fa-print"></i> Print Reports</a></li>
                 </ul>
             </li>
 			
-			<li ng-show="profile.pages_access[6].value">
+			<li ng-show="profile.pages_access[9].value">
                 <a href="index.html"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
                 <ul>
                     <li><a href="backup-restore.html"><i class="fa fa-cogs"></i> Backup and Restore</a></li>
-                    <li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
-                </ul>
+					<li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
+					<li><a href="rooms.html"><i class="fa fa-edit"></i> Manage Rooms</a></li>
+				</ul>
             </li>
 			
-            <li ng-show="profile.pages_access[7].value">
+			<li ng-show="profile.pages_access[10].value">
                 <a href="help.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
             </li>
 			
@@ -158,12 +159,12 @@ require_once 'authentication.php';
 							<div class="carousel-item active">
 								<img class="d-block w-100" src="assets/img/ban3.png" alt="First slide" style="height:210px">
 							</div>
-							<div class="carousel-item">
+							<!-- <div class="carousel-item">
 								<img class="d-block w-100" src="assets/img/ban2.png" alt="Second slide" style="height:210px">
 							</div>
 							<div class="carousel-item">
 								<img class="d-block w-100" src="assets/img/ban1.png" alt="Third slide" style="height:210px">
-							</div>
+							</div> -->
 							</div>
 						</div>
                     </div>
@@ -174,16 +175,16 @@ require_once 'authentication.php';
                         <div class="col-lg-3 col-xs-6">
                             <div class="widget-overview bg-primary-1">
                                 <div class="inner">
-                                    <h6># of Patients</h6>
-                                    <p>Patients</p>
+                                    <h4><b>{{dashboard.no_of_patients}}</b></h4>
+                                    <h5><b>Patients</b><h5>
                                 </div>
 
                                 <div class="icon">
                                     <i class="fa fa-user-secret"></i>
                                 </div>
-
+							
                                 <div class="details bg-primary-3">
-                                    <span>View Details <i class="fa fa-arrow-right"></i></span>
+                                     <span>&nbsp;</span>
                                 </div>
                             </div>
                         </div>
@@ -191,16 +192,16 @@ require_once 'authentication.php';
                         <div class="col-lg-3 col-xs-6">
                             <div class="widget-overview bg-info-1">
                                 <div class="inner">
-                                    <h6># of OPD Patients</h6>
-                                    <p>OPD Patient</p>
+                                    <h4><b>{{dashboard.no_of_opd}}</b></h4>
+									<h5><b>OPD Patients</b><h5>
                                 </div>
 
                                 <div class="icon">
                                     <i class="fa fa-wheelchair-alt"></i>
                                 </div>
-
+								
                                 <div class="details bg-info-3">
-                                    <span>View Details <i class="fa fa-arrow-right"></i></span>
+                                    <span>&nbsp;</span>
                                 </div>
                             </div>
                         </div>
@@ -208,16 +209,16 @@ require_once 'authentication.php';
                         <div class="col-lg-3 col-xs-6">
                             <div class="widget-overview bg-success-1">
                                 <div class="inner">
-                                    <h6># of IPD Patients</h6>
-                                    <p>IPD Patients</p>
+                                    <h4><b>{{dashboard.no_of_ipd}}</b></h4>
+									<h5><b>IPD Patients</b><h5>
                                 </div>
 
                                 <div class="icon">
                                     <i class="fa fa-bed"></i>
                                 </div>
-
+							
                                 <div class="details bg-success-3">
-                                    <span>View Details <i class="fa fa-arrow-right"></i></span>
+                                    <span>&nbsp;</span>
                                 </div>
                             </div>
                         </div>
@@ -225,8 +226,8 @@ require_once 'authentication.php';
                         <div class="col-lg-3 col-xs-6">
                             <div class="widget-overview bg-danger-1">
                                 <div class="inner">
-                                    <h6># of Doctors</h6>
-                                    <p>Doctors</p>
+                                    <h4><b>{{dashboard.no_of_doctors}}</b></h4>
+									<h5><b>Doctors</b><h5>
                                 </div>
 
                                 <div class="icon">
@@ -234,7 +235,7 @@ require_once 'authentication.php';
                                 </div>
 
                                 <div class="details bg-danger-3">
-                                    <span>View Details <i class="fa fa-arrow-right"></i></span>
+                                     <span>&nbsp;</span>
                                 </div>
                             </div>
                         </div>
@@ -245,56 +246,14 @@ require_once 'authentication.php';
                             <div class="card">
                                 <div class="card-block">
                                     <h5 class="card-title">Recent Patients</h5>
-
-                                    <ul class="recent-members">
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-                                    </ul>
+									
+										<ul class="recent-members">
+											<li ng-repeat="rp in dashboard.recent_patients">
+												<img src="assets/img/profile-picture.jpg" alt="">
+												<span class="user-name">{{rp.fullname}}</span>
+												<span class="joined-date">Today</span>
+											</li>
+										</ul>
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
-var app = angular.module('users',['account-module','bootstrap-modal','module-access','bootstrap-growl']);
+var app = angular.module('users',['ui.bootstrap','account-module','bootstrap-modal','module-access','bootstrap-growl']);
 
-app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access,growl) {
+app.controller('usersCtrl',function($scope,$compile,$timeout,$http,$window,bootstrapModal,access,growl) {
 
 	$scope.views = {};
 	
@@ -16,13 +16,25 @@ app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access,g
 		}).then(function mySucces(response) {
 
 			$scope.users = angular.copy(response.data);
+							
 			$(function () {
 			  $('[data-toggle="tooltip"]').tooltip();
-			});	
+			});			
 			
+			// instantiate datable
+			$timeout(function() {
+				$('#users').dataTable({
+					ordering: false,
+					processing: true,
+					columnDefs: [{}]
+				});	
+			},1000);
+				
 		}, function myError(response) {
 
 		});
+		
+		
 		
 	};
 	
@@ -83,4 +95,14 @@ app.controller('usersCtrl',function($scope,$http,$window,bootstrapModal,access,g
 
 	};
 	
+});
+
+app.filter('pagination', function() {
+	  return function(input, currentPage, pageSize) {
+	    if(angular.isArray(input)) {
+	      var start = (currentPage-1)*pageSize;
+	      var end = currentPage*pageSize;
+	      return input.slice(start, end);
+	    }
+	  };
 });

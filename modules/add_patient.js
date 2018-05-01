@@ -31,7 +31,6 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			}
 			return age;
 		};
-		
 
 		var self = this;
 
@@ -98,7 +97,9 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 						scope.controls.btns.addRecord = true;
 						scope.controls.show.add = false;
 						scope.controls.show.edit = false;
-						scope.views.option = 'Add Patient';					
+						scope.views.option = 'Add Patient';	
+
+						hospitalNo(scope);
 					
 					break;
 					
@@ -126,9 +127,25 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 
 		};
 
+		function hospitalNo(scope) {
+			
+			$http({
+			  method: 'GET',
+			  url: 'handlers/patients/hospital-no.php'
+			}).then(function mySucces(response) {
+
+				scope.patient.id = response.data.id;
+				scope.patient.hospital_no = response.data.hospital_no;
+
+			}, function myError(response) {
+				
+			});	
+			
+		};
+		
 		self.add = function(scope) {
 			
-		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
+			if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
 		
 			$routeParams.option = undefined;
 			
@@ -150,10 +167,29 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 
 		};
 
-		self.cancel = function(scope) {	
+		self.cancel = function(scope) {
 			
-			$window.location.href = 'all_patients.html';
+			if (scope.patient.first_name == null)
+			{
+			if (scope.patient.id>0) {
+				
+				$http({
+				  method: 'POST',
+				  url: 'handlers/patients/delete.php',
+				  data: {id: scope.patient.id}
+				}).then(function mySucces(response) {
 
+					$window.location.href = 'all_patients.html';
+
+				}, function myError(response) {
+					
+				});					
+				
+			};
+			} else {
+				$window.location.href = 'all_patients.html';
+			}
+			
 		};
 
 		self.save = function(scope) {

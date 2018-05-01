@@ -1,0 +1,6 @@
+[14-Apr-2018 17:57:52 Asia/Manila] PHP Notice:  Undefined index: room_type_id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\ipd\save.php on line 30
+[14-Apr-2018 17:57:52 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:57:52 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\ipd\save.php:0
+[14-Apr-2018 17:57:52 Asia/Manila] PHP Notice:  Undefined index: physician in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\ipd\save.php on line 31
+[14-Apr-2018 17:57:52 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:57:52 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\ipd\save.php:0

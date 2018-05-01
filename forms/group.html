@@ -85,20 +85,20 @@ input:checked + .slider:before {
 			</fieldset>
 		</div>
 		</div>
-		<div style="border-style: solid; border-width:0.5px;" class="card-block" ng-repeat="p in privileges">
-		<h6 class="text-bold card-title"><i class="fa fa-edit"></i> {{p.description}}</h6>
-		<hr>
-		<div class="row">		
-			<div class="col-md-3" ng-repeat="pp in p.privileges">
-				  <div class="checkbox">
-					<label class="switch">
-					  <input type="checkbox" class="flat" ng-checked="pp.value" ng-model="pp.value" ng-disabled="controls.ok.btn">
-					  <span class="slider round"></span>
-					</label>
-					<span>{{pp.description}}</span>
-				  </div>
+		<div style="border-style: solid; border-width:0.5px;" class="card-block col-lg-12" ng-repeat="p in privileges">
+			<h6 class="text-bold card-title"><i class="fa fa-edit"></i> {{p.description}}</h6>
+			<hr>
+			<div class="row">		
+				<div class="col-lg-3" ng-repeat="pp in p.privileges">
+					  <div class="checkbox">
+						<label class="switch">
+						  <input type="checkbox" class="flat" ng-checked="pp.value" ng-model="pp.value" ng-disabled="controls.ok.btn">
+						  <span class="slider round"></span>
+						</label>
+						<span>{{pp.description}}</span>
+					  </div>
+				</div>
 			</div>
-		</div>
 		</div>
 		
 		

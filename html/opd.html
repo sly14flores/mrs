@@ -1,0 +1,184 @@
+<form name="form.record" novalidate autocomplete="off">
+	<button class="btn btn-default float-right" ng-click="record.edit(this)" ng-disabled="controls.btns.edit"><i class="fa fa-edit"></i></button>
+	<div class="clearfix"></div>
+	<legend class="text-bold">Consultation</legend>
+	<div class="row">
+		<div class="col-md-4">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Date</label>
+					<input type="date" class="form-control" name="date" ng-model="opd.record.date" ng-disabled="controls.btns.ok">					
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-4">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">OPD No</label>
+					<input type="text" class="form-control" name="opd_no" ng-model="opd.record.opd_no" ng-disabled="controls.btns.ok">					
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-4">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Physician</label>
+					<select class="form-control" name="physician" ng-model="opd.record.physician" ng-options="doctor.fullname for doctor in doctors track by doctor.id" ng-disabled="controls.btns.ok"></select>
+				</div>
+			</fieldset>
+		</div>		
+	</div>
+	<legend class="text-bold">Vital Signs</legend>
+	<div class="row">
+		<div class="col-md-3">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Temperature</label>
+					<input type="text" class="form-control" name="temperature" ng-model="opd.record.temperature" ng-disabled="controls.btns.ok">					
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-3">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Blood Pressure</label>
+					<input type="text" class="form-control" name="blood_pressure" ng-model="opd.record.blood_pressure" ng-disabled="controls.btns.ok">					
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-3">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Height</label>
+					<input type="text" class="form-control" name="height" ng-model="opd.record.height" ng-disabled="controls.btns.ok">					
+				</div>
+			</fieldset>
+		</div>
+		<div class="col-md-3">
+			<fieldset class="content-group margin-top-10">
+				<div class="form-group">
+					<label class="control-label">Weight</label>
+					<input type="text" class="form-control" name="weight" ng-model="opd.record.weight" ng-disabled="controls.btns.ok">					
+				</div>
+			</fieldset>
+		</div>			
+	</div>
+	
+	<legend class="text-bold">Laboratories</legend>
+	<div class="card">
+		<div class="card-block text-center">
+			<button class="btn btn-primary float-right" style="margin-bottom: 10px;" ng-click="record.laboratory.add(this)" ng-disabled="controls.btns.ok">Add</button>
+			<button class="btn btn-primary float-right" style="margin-bottom: 10px;" ng-click="record.printLab(this)" ng-disabled="controls.btns.ok">Print</button>
+			<div class="clearfix"></div>
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr><th>Laboratory Type</th><th>Remarks</th><th></th></tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="lab in opd.record.laboratory">
+						<td><input type="text" class="form-control" ng-model="lab.lab_type" ng-disabled="lab.disabled"></td><td><input type="text" class="form-control" ng-model="lab.lab_remark" ng-disabled="lab.disabled"></td>
+						<td><button ng-disabled="controls.btns.ok" class="btn btn-success" style="margin-right: 10px; cursor: pointer;" ng-click="record.laboratory.edit(this,lab)"><i class="fa" ng-class="{'fa-edit': lab.disabled, 'fa-save': !lab.disabled}"></i></button>
+						<button ng-disabled="controls.btns.ok" class="btn btn-danger" ng-click="record.laboratory.delete(this,lab)"><i class="fa fa-remove"></i></button>
+					</tr>
+				</tbody>
+			</table>	
+		</div>
+	</div>
+	
+	
+<div class="card">
+    <div class="card-block text-center">
+		<ul class="nav nav-tabs nav-justified" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" href="#other-history" role="tab">Other History</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#diagnosis" role="tab">Diagnosis</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#prescription" role="tab">Prescriptions</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#follow-up" role="tab">Follow Up</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="other-history" role="tabpanel">
+				<div class="row">
+					<div class="col-md-4">		
+						<div class="form-group">
+							<label>Hospital</label>
+							<input type="text" class="form-control" name="other_history_hospital_name" ng-model="opd.record.other_history.hospital_name" ng-disabled="controls.btns.ok">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label">Complaint</label>
+							<textarea class="form-control" name="other_history_complaint" ng-model="opd.record.other_history.complaint" ng-disabled="controls.btns.ok"></textarea>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="control-label">Diagnosis</label>
+							<textarea class="form-control" name="other_history_diagnosis" ng-model="opd.record.other_history.diagnosis" ng-disabled="controls.btns.ok"></textarea>
+						</div>
+					</div>					
+				</div>
+			</div>
+			<div class="tab-pane" id="diagnosis" role="tabpanel">
+				<button class="btn btn-primary float-right" style="margin-bottom: 10px;" ng-click="record.diagnose.add(this)">Add</button>
+					<div class="clearfix"></div>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr><th>Complaint</th><th>Diagnosis</th><th></th></tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="dig in opd.record.diagnose">
+								<td><textarea type="text" class="form-control" ng-model="dig.complaint" ng-disabled="dig.disabled"></textarea></td>
+								<td><textarea type="text" class="form-control" ng-model="dig.diagnosis" ng-disabled="dig.disabled"></textarea></td>
+								<td><button ng-disabled="controls.btns.ok" class="btn btn-success" style="margin-right: 10px; cursor: pointer;" ng-click="record.diagnose.edit(this,dig)"><i class="fa" ng-class="{'fa-edit': lab.disabled, 'fa-save': !lab.disabled}"></i></button>
+								<button ng-disabled="controls.btns.ok" class="btn btn-danger" ng-click="record.diagnose.delete(this,dig)"><i class="fa fa-remove"></i></button>
+							</tr>
+						</tbody>
+					</table>	
+			</div>
+			<div class="tab-pane" id="prescription" role="tabpanel">
+				<button class="btn btn-primary float-right" style="margin-bottom: 10px;" ng-click="record.prescription.add(this)">Add</button>
+				<div class="clearfix"></div>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr><th>Medicine</th><th>Quantity</th><th>Dosage</th><th></th></tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="prp in opd.record.prescription">
+							<td><input type="text" class="form-control" ng-model="prp.medicine" ng-disabled="prp.disabled"></td><td><input type="text" class="form-control" ng-model="prp.quantity" ng-disabled="prp.disabled"></td><td><input type="text" class="form-control" ng-model="prp.dosage" ng-disabled="prp.disabled"></td>
+							<td><i class="fa" ng-class="{'fa-edit': prp.disabled, 'fa-save': !prp.disabled}" style="margin-right: 10px; cursor: pointer;" ng-click="record.prescription.edit(this,prp)"></i><i class="fa fa-remove" style="cursor: pointer;" ng-click="record.prescription.delete(this,prp)"></i></td>
+						</tr>
+					</tbody>
+				</table>				
+			</div>
+			<div class="tab-pane" id="follow-up" role="tabpanel">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="control-label">Date</label>
+							<input type="date" class="form-control" name="follow_up_date" ng-model="opd.record.follow_up.date" ng-disabled="controls.btns.ok">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="control-label">Remarks</label>
+							<input type="text" class="form-control" name="follow_up_remarks" ng-model="opd.record.follow_up.remarks" ng-disabled="controls.btns.ok">
+						</div>
+					</div>				
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>
+<fieldset class="content-group">
+	<button type="button" class="btn btn-danger float-right" ng-click="record.cancel(this)" ng-disabled="controls.btns.cancel">{{controls.label.cancel}}</button>
+	<button type="button" class="btn btn-primary float-right" ng-click="record.save(this)" ng-disabled="controls.btns.ok">{{controls.label.ok}}</button>
+	<div class="clearfix"></div>
+</fieldset>
+</form>

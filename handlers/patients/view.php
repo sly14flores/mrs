@@ -8,6 +8,8 @@ $con = new pdo_db("patients");
 
 $patient = $con->get(array("id"=>$_POST['id']));
 
+$patient[0]['pwd'] = ($patient[0]['pwd'])?true:false;
+
 $province = $con->getData("SELECT * FROM provinces WHERE province_id = ".$patient[0]['province']);
 $patient[0]['province'] = $province[0];
 

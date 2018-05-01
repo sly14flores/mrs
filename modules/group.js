@@ -104,7 +104,7 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 		self.save = function(scope) {
 			
 			if (validate(scope)){ 
-			growl.show('danger',{from: 'top', amount: 55},'Please complete required fields.');
+			growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Please complete required fields.');
 			return;
 			}
 		
@@ -116,9 +116,9 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 				
 				if (scope.group.group_id == 0) {
 					scope.group.group_id = response.data;
-					growl.show('success',{from: 'top', amount: 55},'Group Information successfully added.');
+					growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Group Information successfully added.');
 					}	else{
-						growl.show('success',{from: 'top', amount: 55},'Group Information successfully updated.');
+						growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Group Information successfully updated.');
 					}
 					mode(scope,scope.group);
 				
@@ -144,7 +144,7 @@ angular.module('group-module',['bootstrap-modal','bootstrap-growl']).factory('fo
 
 				self.list(scope);
 				
-				growl.show('danger',{from: 'top', amount: 55},'Group Information successfully deleted.');
+				growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Group Information successfully deleted.');
 				
 			}, function myError(response) {
 				 

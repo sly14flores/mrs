@@ -1,5 +1,14 @@
 <?php
-
+/**
+* INSERT, UPDATE, DELETE SQL Generator
+*
+* @package    db.php
+* @author     Sly Flores
+* @version    1.0
+* @email	  sly@christian.com.ph
+* @fb		  facebook.com/sly14flores
+*
+*/
 class pdo_db {
 
 	var $db;

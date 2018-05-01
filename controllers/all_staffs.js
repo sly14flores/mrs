@@ -1,6 +1,6 @@
 var app = angular.module('staffs',['account-module','bootstrap-modal','jspdf-module','module-access','bootstrap-growl']);
 
-app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,access,growl) {
+app.controller('staffsCtrl',function($scope,$timeout,$http,$window,bootstrapModal,jspdf,access,growl) {
 
 	$scope.views = {};
 	
@@ -21,6 +21,15 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
             $(function () {
 			  $('[data-toggle="tooltip"]').tooltip();
 			});	
+			
+			// instantiate datable
+			$timeout(function() {
+				$('#stafftable').dataTable({
+					ordering: false,
+					processing: true,
+					columnDefs: [{}]
+				});	
+			},1000);
 			
 		}, function myError(response) {
 
@@ -72,7 +81,8 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 				show: 1,
 				add: 2,
 				edit: 3,
-				delete: 4,
+				print: 4,
+				delete: 5,
 			}
 		};
 		
@@ -86,6 +96,8 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 	
 	$scope.print = function(staff) {
 		
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.print)) return;
+	
 		var doc = new jsPDF({
 			orientation: 'portrait',
 			unit: 'pt',
@@ -153,7 +165,7 @@ app.controller('staffsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,a
 		doc.setFontSize(12); 
 		doc.setFontType('italic')
 		doc.text(110, 295, ''+staff.province.province_description+', '+staff.municipality.municipality_description+', '+staff.barangay.barangay_description);
-		doc.line(105, 297, 560, 295);
+		doc.line(105, 297, 410, 297);
 		
 		doc.setFontSize(10); 		
 		doc.setFontType('bold'); 

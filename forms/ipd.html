@@ -28,38 +28,7 @@
 </div>
 <div class="row">
 	<div class="col-md-12">
-		<label class="control-label">Address:</label> <h5><strong>{{patient.address}}</strong></h5>
+		<label class="control-label">Address:</label> <h5><strong>{{patient.province.province_description}}, {{patient.city.municipality_description}} {{patient.barangay.barangay_description}}</strong></h5>
 	</div>
 </div>
-<div class="table-responsive" style="margin-top: 25px;">
-  <table class="table">										
-	<thead>
-	  <tr>
-		<th>Date</th>
-		<th>IPD No</th>
-		<th>Department</th>
-		<th>Room Type</th>
-		<th>Room No</th>
-		<th>Bed No</th>
-		<th>Physician</th>
-		<th>Actions</th>
-	  </tr>
-	</thead>
-	<tbody>
-	  <tr ng-repeat="patient in patient.records">
-		<td>{{patient.date}}</td>
-		<td>{{patient.ipd_no}}</td>
-		<td>{{patient.department}}</td>
-		<td>{{patient.room}}</td>
-		<td>{{patient.room_no}}</td>
-		<td>{{patient.bed_no}}</td>
-		<td>{{patient.physician}}</td>
-		<td>
-			<button type="button" class="btn btn-primary" ng-click="record.medicalRecord(this,patient)"><i class="fa fa-search"></i></button>
-			<!-- <button type="button" class="btn btn-info" ng-click="print(p)"><i class="fa fa-print"></i></button> -->
-			<button type="button" class="btn btn-danger" ng-click="record.delete(this,patient)"><i class="fa fa-times"></i></button>
-		</td>
-	  </tr>
-	</tbody>
-  </table>
-</div>
+<div id="ipd-records"></div>

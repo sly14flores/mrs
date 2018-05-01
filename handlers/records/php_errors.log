@@ -34,3 +34,226 @@ Stack trace:
 #1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(12): pdo_db->getData('SELECT id, CONC...')
 #2 {main}
   thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 14:30:05 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:30:06 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:30:06 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 14:30:11 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:30:11 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:30:11 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 14:31:42 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:31:42 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:31:42 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 14:38:19 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:38:19 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:38:19 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 14:38:28 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:38:28 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:38:28 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 14:39:41 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:39:41 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:39:41 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 14:40:48 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:40:48 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:40:48 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 14:41:52 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:41:52 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:41:52 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 14:43:57 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:43:57 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:43:57 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 14:50:05 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:50:05 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:50:05 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 14:57:45 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:57:45 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:57:45 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 14:59:30 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 14:59:30 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:59:30 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 15:00:26 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 15:00:26 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:00:26 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 15:00:52 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 15:00:52 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:00:52 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 15:01:09 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 15:01:09 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:01:09 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 15:01:50 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 15:01:50 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:01:50 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 15:02:04 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 15:02:04 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:02:05 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 15:03:40 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 15:03:40 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:03:40 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 15:04:42 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 15:04:42 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:04:42 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 15:06:43 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 15:06:43 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:06:44 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 15:07:02 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 15:07:02 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:07:02 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 15:07:29 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[07-Apr-2018 15:07:29 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:07:29 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[07-Apr-2018 15:10:11 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 15:10:16 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 11:39:09 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(15): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 11:39:35 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(15): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 11:47:25 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT * FROM r...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(10): pdo_db->get(Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:06:02 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:07:09 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:08:06 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:08:37 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:09:07 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:10:33 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:11:47 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:13:15 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:16:34 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:16:40 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT * FROM r...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(10): pdo_db->get(Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:19:14 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:24:28 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:29:16 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:35:30 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:36:03 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:36:46 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:38:09 Asia/Manila] PHP Parse error:  syntax error, unexpected ')' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 20
+[09-Apr-2018 12:38:36 Asia/Manila] PHP Parse error:  syntax error, unexpected ')' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 20
+[09-Apr-2018 12:38:47 Asia/Manila] PHP Parse error:  syntax error, unexpected ')' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 20
+[09-Apr-2018 12:39:06 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:39:30 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:40:16 Asia/Manila] PHP Parse error:  syntax error, unexpected '=' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 20
+[09-Apr-2018 12:40:41 Asia/Manila] PHP Parse error:  syntax error, unexpected '=' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 20
+[09-Apr-2018 12:41:01 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php(16): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[25-Apr-2018 22:29:46 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[25-Apr-2018 22:29:46 Asia/Manila] PHP Stack trace:
+[25-Apr-2018 22:29:46 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0
+[25-Apr-2018 22:30:22 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php on line 13
+[25-Apr-2018 22:30:22 Asia/Manila] PHP Stack trace:
+[25-Apr-2018 22:30:22 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\records\view.php:0

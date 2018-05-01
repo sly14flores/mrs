@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-12">
-		<button type="button" class="btn btn-primary float-right" ng-click="record.medicalRecord(this,null)" ng-disabled="controls.btns.addRecord"><i class="fa fa-plus"></i></button>		
+		<button type="button" class="btn btn-primary float-right" ng-click="record.medicalRecord(this,null)" ng-disabled="controls.btns.ok"><i class="fa fa-plus"></i></button>		
 		<div class="clearfix"></div>
 	</div>
 </div>
@@ -28,32 +28,7 @@
 </div>
 <div class="row">
 	<div class="col-md-12">
-		<label class="control-label">Address:</label> <h5><strong>{{patient.address}}</strong></h5>
+		<label class="control-label">Address:</label> <h5><strong>{{patient.province.province_description}}, {{patient.city.municipality_description}} {{patient.barangay.barangay_description}}</strong></h5>
 	</div>
 </div>
-<div class="table-responsive" style="margin-top: 25px;">
-  <table class="table">										
-	<thead>
-	  <tr>
-		<th>Date</th>
-		<th>OPD No</th>
-		<th>Department</th>
-		<th>Physician</th>
-		<th>Actions</th>
-	  </tr>
-	</thead>
-	<tbody>
-	  <tr ng-repeat="patient in patient.records">
-		<td>{{patient.date}}</td>
-		<td>{{patient.opd_no}}</td>
-		<td>{{patient.department}}</td>
-		<td>{{patient.physician}}</td>
-		<td>
-			<button type="button" class="btn btn-primary" ng-click="record.medicalRecord(this,patient)"><i class="fa fa-search"></i></button>
-			<!-- <button type="button" class="btn btn-info" ng-click="print(p)"><i class="fa fa-print"></i></button> -->
-			<button type="button" class="btn btn-danger" ng-click="record.delete(this,patient)"><i class="fa fa-times"></i></button>
-		</td>
-	  </tr>
-	</tbody>
-  </table>
-</div>
+<div id="opd-records"></div>

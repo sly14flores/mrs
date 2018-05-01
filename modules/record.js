@@ -10,10 +10,12 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 			scope.patient.record.id = 0;
 			scope.patient.record.other_history = {};
 			scope.patient.record.other_history.id = 0;
-			scope.patient.record.diagnosis = {};
-			scope.patient.record.diagnosis.id = 0;
 			scope.patient.record.prescription = [];
-			scope.patient.record.prescription.dels = [];		
+			scope.patient.record.prescription.dels = [];
+			scope.patient.record.laboratory = [];
+			scope.patient.record.laboratory.dels = [];
+			scope.patient.record.diagnose = [];
+			scope.patient.record.diagnose.dels = [];			
 			scope.patient.record.follow_up = {};			
 			scope.patient.record.follow_up.id = 0;
 
@@ -36,13 +38,33 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 			
 		};
 		
+		function rooms(scope) {
+			
+			$http({
+				method: 'POST',
+				url: 'api/suggestions/rooms.php'
+			}).then(function mySucces(response) {
+				
+				scope.rooms = response.data;
+				
+			},function myError(response) {
+				
+			});	
+			
+		};
+		
 		self.medicalRecord = function(scope,row) {
+			
+			var departments = {
+				"Out-Patient": "opd.html",
+				"In-Patient": "ipd.html"
+			};
 			
 			if (scope.controls.btns.addRecord) return;
 			
 			if (scope.patient.id == 0) {
 
-				growl.show('danger',{from: 'top', amount: 55},'You have to search one patient info first before you can add record.');				
+				growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'You have to search one patient info first before you can add record.');				
 				return;
 
 			};
@@ -55,10 +77,12 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 				scope.patient.record.id = 0;
 				scope.patient.record.other_history = {};
 				scope.patient.record.other_history.id = 0;
-				scope.patient.record.diagnosis = {};
-				scope.patient.record.diagnosis.id = 0;
 				scope.patient.record.prescription = [];
 				scope.patient.record.prescriptionDels = [];
+				scope.patient.record.laboratory = [];
+				scope.patient.record.laboratoryDels = [];
+				scope.patient.record.diagnose = [];
+				scope.patient.record.diagnoseDels = [];
 				scope.patient.record.follow_up = {};			
 				scope.patient.record.follow_up.id = 0;
 
@@ -73,6 +97,8 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 					scope.patient.record = angular.copy(response.data);
 					scope.patient.record.date = new Date(response.data.date);
 					scope.patient.record.follow_up.date = new Date(response.data.follow_up.date);
+					scope.patient.record.admission_date = new Date(response.data.admission_date);
+					scope.patient.record.discharge_date = new Date(response.data.discharge_date);
 					
 					scope.controls.show.editRecord = true;
 
@@ -83,8 +109,9 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 			};
 
 			doctors(scope);			
+			rooms(scope);			
 
-			bootstrapModal.box2(scope,'Medical Record','dialogs/medical-record.html');
+			bootstrapModal.box2(scope,'Medical Record','dialogs/'+departments[row.department]);
 
 		};
 		
@@ -97,7 +124,7 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 			}).then(function mySucces(response) {
 				
 				// self.list(scope);
-				if (scope.patient.record.id == 0) growl.show('success',{from: 'top', amount: 55},'Patient record successfully added.');		
+				if (scope.patient.record.id == 0) growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Patient record successfully added.');		
 				scope.controls.show.editRecord = true;
 				
 			}, function myError(response) {
@@ -106,7 +133,7 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 			
 		};
 
-		/* self.list = function(scope) {
+		self.list = function(scope) {
 			
 			if (scope.$id > 2) scope = scope.$parent;
 			
@@ -122,7 +149,7 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 				
 			});			
 
-		}; */
+		};
 		
 		self.delete = function(scope,row) {
 			
@@ -196,6 +223,108 @@ angular.module('record-module',['bootstrap-modal','bootstrap-growl']).factory('r
 						
 						delete d['$$hashKey'];
 						scope.patient.record.prescription.push(d);
+						
+					};
+					
+				});
+
+			}			
+			
+		};
+
+		self.laboratory = {
+			
+			add: function(scope) {
+
+				scope.patient.record.laboratory.push({
+					id: 0,
+					record_id: 0,
+					lab_type: '',
+					lab_remark: '',
+					disabled: false
+				});
+
+			},			
+			
+			editRecord: function(scope) {
+				
+				scope.controls.show.editRecord	= !scope.controls.show.editRecord;			
+				
+			},
+			
+			edit: function(scope,row) {
+				
+				row.disabled = !row.disabled;				
+				
+			},			
+			
+			delete: function(scope,row) {
+				
+				if (row.id > 0) {
+					scope.patient.record.laboratoryDels.push(row.id);
+				};
+				
+				var laboratories = scope.patient.record.laboratory;
+				var index = scope.patient.record.laboratory.indexOf(row);
+				scope.patient.record.laboratory = [];			
+				
+				angular.forEach(laboratories, function(d,i) {
+					
+					if (index != i) {
+						
+						delete d['$$hashKey'];
+						scope.patient.record.laboratory.push(d);
+						
+					};
+					
+				});
+
+			}			
+			
+		};
+
+		self.diagnose = {
+			
+			add: function(scope) {
+
+				scope.patient.record.diagnose.push({
+					id: 0,
+					record_id: 0,
+					complaint: '',
+					diagnosis: '',
+					disabled: false
+				});
+
+			},			
+			
+			editRecord: function(scope) {
+				
+				scope.controls.show.editRecord	= !scope.controls.show.editRecord;			
+				
+			},
+			
+			edit: function(scope,row) {
+				
+				row.disabled = !row.disabled;				
+				
+			},			
+			
+			delete: function(scope,row) {
+				
+				if (row.id > 0) {
+					scope.patient.record.diagnoseDels.push(row.id);
+				};
+				
+				var diagnosis = scope.patient.record.diagnose;
+				var index = scope.patient.record.diagnose.indexOf(row);
+				scope.patient.record.diagnose = [];			
+				
+				angular.forEach(diagnosis, function(d,i) {
+					
+					if (index != i) {
+						
+						delete d['$$hashKey'];
+						scope.patient.record.diagnose.push(d);
 						
 					};
 					

@@ -1,6 +1,6 @@
 var app = angular.module('doctors',['account-module','bootstrap-modal','jspdf-module','module-access','bootstrap-growl']);
 
-app.controller('doctorsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,access,growl) {
+app.controller('doctorsCtrl',function($scope,$http,$timeout,$window,bootstrapModal,jspdf,access,growl) {
 
 	$scope.views = {};
 	
@@ -21,6 +21,15 @@ app.controller('doctorsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,
 			$(function () {
 			  $('[data-toggle="tooltip"]').tooltip();
 			});	
+			
+			// instantiate datable
+			$timeout(function() {
+				$('#doctable').dataTable({
+					ordering: false,
+					processing: true,
+					columnDefs: [{}]
+				});	
+			},1000);
 			
 		}, function myError(response) {
 
@@ -71,7 +80,8 @@ app.controller('doctorsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,
 				show: 1,
 				add: 2,
 				edit: 3,
-				delete: 4,
+				print: 4,
+				delete: 5,
 			}
 		};	
 		
@@ -84,6 +94,8 @@ app.controller('doctorsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,
 	};
 	
 	$scope.print = function(doctor) {
+		
+		if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.print)) return;
 		
 		var doc = new jsPDF({
 			orientation: 'portrait',
@@ -151,8 +163,8 @@ app.controller('doctorsCtrl',function($scope,$http,$window,bootstrapModal,jspdf,
 		doc.text(60, 295, "Address: ");
 		doc.setFontSize(12); 
 		doc.setFontType('italic')
-		doc.text(110, 295, ''+doctor.province.province_description+', '+doctor.municipality.municipality_description+', '+doctor.barangay.barangay_description);
-		doc.line(105, 297, 560, 295);
+		doc.text(110, 295, doctor.province.province_description+', '+doctor.municipality.municipality_description+', '+doctor.barangay.barangay_description);
+		doc.line(105, 297, 410, 297);
 		
 		doc.setFontSize(10); 		
 		doc.setFontType('bold'); 

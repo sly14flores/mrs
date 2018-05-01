@@ -33,6 +33,10 @@ require_once 'authentication.php';
     <script type="text/javascript" src="assets/js/bootbox/bootbox.min.js"></script>
     <script type="text/javascript" src="assets/js/growl/jquery.bootstrap-growl.min.js"></script>
 	
+	<!-- PAGE LEVEL STYLESHEETS -->
+    <link rel="stylesheet" href="lib/css/jquery.dataTables.min.css">
+    <!-- /PAGE LEVEL STYLESHEETS -->
+	
 	<!-- for report -->
     <script type="text/javascript" src="jspdf/jspdf.min.js"></script>
     <script type="text/javascript" src="jspdf/jspdf.plugin.autotable.js"></script>
@@ -41,6 +45,11 @@ require_once 'authentication.php';
     <script type="text/javascript" src="angular/angular.min.js"></script>
     <script type="text/javascript" src="angular/angular-route.min.js"></script>
     <script type="text/javascript" src="angular/ui-bootstrap-tpls-3.0.2.min.js"></script>
+	
+	<!-- PAGE LEVEL SCRIPTS -->
+    <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/pages_datatables.min.js"></script>
+    <!-- /PAGE LEVEL SCRIPTS -->
 	
 	<!-- angularjs modules -->
     <script type="text/javascript" src="modules/account.js"></script>	
@@ -122,29 +131,30 @@ require_once 'authentication.php';
 			<li ng-show="profile.pages_access[4].value">
                 <a href="index.html"><i class="fa fa-medkit"></i> <span>Medicals Records</span></a>
                 <ul>
-					<li><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
-                    <li><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
-                    <li><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
+					<li ng-show="profile.pages_access[5].value"><a href="all_patients.html"><i class="fa fa-drivers-license-o"></i> Patient List</a></li>
+                    <li ng-show="profile.pages_access[6].value"><a href="opd.html"><i class="fa fa-edit"></i> OPD</a></li>
+                    <li ng-show="profile.pages_access[7].value"><a href="ipd.html"><i class="fa fa-edit"></i> IPD</a></li>
 					<!-- <li><a href="add_patient.html"><i class="fa fa-user-plus"></i> Add Patient</a></li> -->
                 </ul>
             </li>
 			
-			<li ng-show="profile.pages_access[5].value">
+			<li ng-show="profile.pages_access[8].value">
                 <a href="index.html"><i class="fa fa-folder-open"></i> <span>Reports</span></a>
                 <ul>
                     <li><a href="reports.html"><i class="fa fa-print"></i> Print Reports</a></li>
                 </ul>
             </li>
 			
-			<li ng-show="profile.pages_access[6].value">
+			<li ng-show="profile.pages_access[9].value">
                 <a href="index.html"><i class="fa fa-cogs"></i> <span>Maintenance</span></a>
                 <ul>
                     <li><a href="backup-restore.html"><i class="fa fa-cogs"></i> Backup and Restore</a></li>
 					<li><a href="manage-user.html"><i class="fa fa-user"></i> Manage Users</a></li>
+					<li><a href="rooms.html"><i class="fa fa-edit"></i> Manage Rooms</a></li>
 				</ul>
             </li>
 			
-			 <li ng-show="profile.pages_access[7].value">
+			<li ng-show="profile.pages_access[10].value">
                 <a href="help.html"><i class="fa fa-info-circle"></i> <span>Help</span></a>
             </li>	
 
@@ -166,21 +176,10 @@ require_once 'authentication.php';
                         <div class="col-md-12">
 						    <div class="card">
 								<div class="card-block">
-									<h5 class="text-bold card-title">Staffs List</h5>
-									<div class="row">
-										<div class="col-md-4">
-											<div class="input-group">
-												<span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
-												<input type="text" class="form-control" placeholder="Search" ng-model="search" aria-describedby="sizing-addon2">
-											</div>
-										</div>
-										<div class="col-md-8">
-											<button type="button" class="btn btn-primary float-right" ng-click="addStaff()" data-toggle="tooltip" data-placement="top" title="Add Staff"><i class="fa fa-plus"></i></button>											
-											<div class="clearfix"></div>
-										</div>
-									</div>
-									<div class="table-responsive" style="margin-top: 25px;">
-									  <table class="table">										
+									<h5 class="text-bold card-title">Staffs List<button type="button" class="btn btn-primary float-right" ng-click="addStaff()" data-toggle="tooltip" data-placement="top" title="Add Staff"><i class="fa fa-plus"></i></button></h5>
+									<hr>
+									<div style="margin-top: 25px;">
+									  <table id="stafftable" class="table table-striped">										
 										<thead>
 										  <tr>
 											<th>#</th>

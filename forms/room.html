@@ -1,0 +1,59 @@
+<!-- PAGE CONTENT -->
+<div class="card-block">
+		<h5 class="text-bold card-title"><i class="fa fa-pencil"></i> Room Form<button class="btn btn-default pull-right" ng-click="form.edit(this)"><i class="fa" ng-class="{'fa-edit': controls.ok.btn, 'fa-ban': !controls.ok.btn}"></i></button></h5>
+	<hr>
+	<form name="formHolder.room" id="formHolder.room" novalidate autocomplete="off">
+	<div class="col-lg-12">
+		<div class="row">
+			<div class="col-md-4">
+				<fieldset class="content-group margin-top-10">
+					<div class="form-group" ng-class="{'has-danger': formHolder.room.room_type.$touched && formHolder.room.room_type.$invalid}">
+						<label class="control-label">Room Type</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<i class="fa fa-user"></i>
+							</span>
+						<input type="text" class="form-control" name="room_type" ng-model="room.room_type" ng-disabled="controls.ok.btn" required>
+						</div>
+						<div class="form-control-feedback" ng-show="formHolder.room.room_type.$touched && formHolder.room.room_type.$invalid">Room Type is required</div>
+					</div>				
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-lg-12">
+		<div class="row">
+		<button class="btn btn-primary pull-right" style="margin-bottom: 10px;" ng-click="form.addNewChoice(this)" ng-disabled="controls.ok.btn">Add</button>
+			<div class="clearfix"></div>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+						<th>#</th>
+						<th>Room Number</th>
+						<th>Beds</th>
+						<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="rr in room.room_nos">
+							<td>{{$index+1}}</td>
+							<td><input class="form-control" type="text" name="room_number{{index}}" ng-model="rr.room_number" ng-disabled="rr.disabled"></td>
+							<td><button class="btn btn-info" ng-disabled="rr.disabled" ng-click="form.bedsForm(this,rr)"><i class="fa fa-bed"></i></button></td>
+							<td>
+								<button class="btn btn-success" style="margin-right: 10px; cursor: pointer;" ng-disabled="controls.ok.btn" ng-click="rr.disabled=!rr.disabled"><i ng-class="{'fa': true, 'fa-edit': rr.disabled, 'fa-save': !rr.disabled}" ></i></button>
+								<button class="btn btn-danger" ng-click="form.removeChoice(this, rr)" ng-disabled="controls.ok.btn"><i class="fa fa-remove"></i></button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+</form>
+<hr>
+<div class="col-lg-12">
+	<div class="row">
+		<button type="button" class="btn btn-secondary" ng-click="form.save(this)" ng-disabled="controls.btns.ok">Save</button>
+		<button type="button" class="btn btn-primary" ng-click="form.list(this)" ng-disabled="controls.btns.cancel">Cancel</button>	
+	</div>
+</div>

@@ -7,18 +7,26 @@ require_once '../../db.php';
 $con = new pdo_db("records");
 
 $other_history = (isset($_POST['record']['other_history']))?$_POST['record']['other_history']:[];
-$diagnosis = (isset($_POST['record']['diagnosis']))?$_POST['record']['diagnosis']:[];
 $prescriptions = (isset($_POST['record']['prescription']))?$_POST['record']['prescription']:[];
 $prescriptionsDels = (isset($_POST['record']['prescriptionDels']))?$_POST['record']['prescriptionDels']:[];
+$laboratories = (isset($_POST['record']['laboratory']))?$_POST['record']['laboratory']:[];
+$laboratoryDels = (isset($_POST['record']['laboratoryDels']))?$_POST['record']['laboratoryDels']:[];
+$diagnosis = (isset($_POST['record']['diagnose']))?$_POST['record']['diagnose']:[];
+$diagnoseDels = (isset($_POST['record']['diagnoseDels']))?$_POST['record']['diagnoseDels']:[];
 $follow_up = (isset($_POST['record']['follow_up']))?$_POST['record']['follow_up']:[];
 
 if (isset($_POST['record']['other_history'])) unset($_POST['record']['other_history']);
-if (isset($_POST['record']['diagnosis'])) unset($_POST['record']['diagnosis']);
 if (isset($_POST['record']['prescription'])) unset($_POST['record']['prescription']);
 if (isset($_POST['record']['prescriptionDels'])) unset($_POST['record']['prescriptionDels']);
+if (isset($_POST['record']['laboratory'])) unset($_POST['record']['laboratory']);
+if (isset($_POST['record']['laboratoryDels'])) unset($_POST['record']['laboratoryDels']);
+if (isset($_POST['record']['diagnose'])) unset($_POST['record']['diagnose']);
+if (isset($_POST['record']['diagnoseDels'])) unset($_POST['record']['diagnoseDels']);
 if (isset($_POST['record']['follow_up'])) unset($_POST['record']['follow_up']);
 
 $_POST['record']['date'] = (isset($_POST['record']['date']))?date("Y-m-d",strtotime($_POST['record']['date'])):"1970-01-01";
+$_POST['record']['admission_date'] = (isset($_POST['record']['admission_date']))?date("Y-m-d",strtotime($_POST['record']['admission_date'])):"1970-01-01";
+$_POST['record']['room_type_id'] = $_POST['record']['room_type_id']['id'];
 $_POST['record']['physician'] = $_POST['record']['physician']['id'];
 
 $_POST['record']['department'] = "In-Patient";
@@ -51,25 +59,6 @@ if (count($other_history)) {
 		unset($other_history['id']);
 		$other_history['record_id'] = $record_id;
 		$con->insertData($other_history);	
-	
-	};
-
-};
-
-# diagnosis
-if (count($diagnosis)) {
-	
-	$con->table = "diagnosis";
-	
-	if ($diagnosis['id']) {
-
-		$con->updateData($diagnosis,'id');
-		
-	} else {
-	
-		unset($diagnosis['id']);
-		$diagnosis['record_id'] = $record_id;
-		$con->insertData($diagnosis);	
 	
 	};
 
@@ -110,6 +99,79 @@ if (count($prescriptions)) {
 	};	
 	
 };
+
+# laboratories
+if (count($laboratoryDels)) {
+	
+	$con->table = "laboratories";	
+	
+	$deleteLab = array("id"=>implode(",",$laboratoryDels));
+
+	$con->deleteData($deleteLab);	
+	
+};
+
+if (count($laboratories)) {
+	
+	$con->table = "laboratories";		
+	
+	foreach ($laboratories as $i => $laboratory) {
+		
+		if ($laboratory['id']) { # update
+
+			unset($laboratory['disabled']);
+			unset($laboratory['record_id']);
+			$con->updateData($laboratory,'id');
+			
+		} else { # insert
+			
+			unset($laboratory['id']);
+			unset($laboratory['disabled']);
+			$laboratory['record_id'] = $record_id;
+			$con->insertData($laboratory);		
+			
+		};
+		
+	};	
+	
+};
+
+# diagnosis
+if (count($diagnoseDels)) {
+	
+	$con->table = "diagnosis";	
+	
+	$deleteDig = array("id"=>implode(",",$diagnoseDels));
+
+	$con->deleteData($deleteDig);	
+	
+};
+
+if (count($diagnosis)) {
+	
+	$con->table = "diagnosis";		
+	
+	foreach ($diagnosis as $i => $diagnose) {
+		
+		if ($diagnose['id']) { # update
+
+			unset($diagnose['disabled']);
+			unset($diagnose['record_id']);
+			$con->updateData($diagnose,'id');
+			
+		} else { # insert
+			
+			unset($diagnose['id']);
+			unset($diagnose['disabled']);
+			$diagnose['record_id'] = $record_id;
+			$con->insertData($diagnose);		
+			
+		};
+		
+	};	
+	
+};
+
 
 # follow_ups
 if (count($follow_up)) {
