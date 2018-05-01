@@ -10,6 +10,7 @@ $con = new pdo_db();
 
 $room = $con->getData("SELECT * FROM rooms WHERE id = $_POST[id]");
 
+<<<<<<< HEAD
 $room_nos = $con->getData("SELECT * FROM room_nos WHERE room_no_id = ".$room[0]['id']);
 
 foreach ($room_nos as $i => $rn) {
@@ -21,6 +22,8 @@ foreach ($room_nos as $i => $rn) {
 $room[0]['room_nos'] = $room_nos;
 $room[0]['dels'] = [];
 
+=======
+>>>>>>> origin/jp
 header("Content-Type: application/json");
 echo json_encode($room[0]);
 

@@ -169,8 +169,11 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 
 		self.cancel = function(scope) {
 			
+<<<<<<< HEAD
 			if (scope.patient.first_name == null)
 			{
+=======
+>>>>>>> origin/jp
 			if (scope.patient.id>0) {
 				
 				$http({
@@ -180,6 +183,15 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				}).then(function mySucces(response) {
 
 					$window.location.href = 'all_patients.html';
+<<<<<<< HEAD
+=======
+
+				}, function myError(response) {
+					
+				});					
+				
+			};
+>>>>>>> origin/jp
 
 				}, function myError(response) {
 					

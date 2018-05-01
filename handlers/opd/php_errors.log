@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [22-Apr-2018 13:56:07 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php on line 13
 [22-Apr-2018 13:56:07 Asia/Manila] PHP Stack trace:
 [22-Apr-2018 13:56:07 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php:0
@@ -25,3 +26,210 @@
 [01-May-2018 13:16:08 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\mrs\handlers\opd\view.php on line 13
 [01-May-2018 13:16:08 Asia/Manila] PHP Stack trace:
 [01-May-2018 13:16:08 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\mrs\handlers\opd\view.php:0
+=======
+[07-Apr-2018 14:03:48 Asia/Manila] PHP Notice:  Undefined index: physician in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php on line 22
+[07-Apr-2018 14:03:48 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 14:03:48 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php:0
+[07-Apr-2018 14:04:28 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 15:08:22 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php on line 13
+[07-Apr-2018 15:08:22 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:08:22 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php:0
+[07-Apr-2018 15:08:32 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php on line 13
+[07-Apr-2018 15:08:33 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:08:33 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php:0
+[07-Apr-2018 15:09:01 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php on line 13
+[07-Apr-2018 15:09:01 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:09:01 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php:0
+[07-Apr-2018 15:09:38 Asia/Manila] PHP Notice:  Undefined index: physician in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php on line 22
+[07-Apr-2018 15:09:38 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:09:38 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php:0
+[07-Apr-2018 15:09:41 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 15:11:04 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 15:11:19 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 15:11:32 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(60): pdo_db->getData('SELECT * FROM r...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(10): pdo_db->get(Array)
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 15:13:22 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 15:13:35 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 15:14:47 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 15:14:55 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 15:16:10 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT id, CONC...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(12): pdo_db->getData('SELECT id, CONC...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[07-Apr-2018 15:58:28 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php on line 13
+[07-Apr-2018 15:58:28 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:58:28 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php:0
+[07-Apr-2018 15:58:32 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php on line 13
+[07-Apr-2018 15:58:32 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:58:32 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php:0
+[07-Apr-2018 15:59:01 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php on line 13
+[07-Apr-2018 15:59:01 Asia/Manila] PHP Stack trace:
+[07-Apr-2018 15:59:02 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php:0
+[08-Apr-2018 21:53:30 Asia/Manila] PHP Notice:  Undefined index: room_type_id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php on line 27
+[08-Apr-2018 21:53:30 Asia/Manila] PHP Stack trace:
+[08-Apr-2018 21:53:30 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php:0
+[08-Apr-2018 21:56:32 Asia/Manila] PHP Notice:  Undefined index: physician in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php on line 26
+[08-Apr-2018 21:56:32 Asia/Manila] PHP Stack trace:
+[08-Apr-2018 21:56:32 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php:0
+[08-Apr-2018 21:56:32 Asia/Manila] PHP Notice:  Undefined index: room_type_id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php on line 27
+[08-Apr-2018 21:56:32 Asia/Manila] PHP Stack trace:
+[08-Apr-2018 21:56:32 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php:0
+[08-Apr-2018 21:56:53 Asia/Manila] PHP Notice:  Undefined index: physician in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php on line 26
+[08-Apr-2018 21:56:53 Asia/Manila] PHP Stack trace:
+[08-Apr-2018 21:56:53 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php:0
+[08-Apr-2018 21:56:53 Asia/Manila] PHP Notice:  Undefined index: room_type_id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php on line 27
+[08-Apr-2018 21:56:53 Asia/Manila] PHP Stack trace:
+[08-Apr-2018 21:56:53 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php:0
+[08-Apr-2018 21:57:40 Asia/Manila] PHP Notice:  Undefined index: room_type_id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php on line 27
+[08-Apr-2018 21:57:40 Asia/Manila] PHP Stack trace:
+[08-Apr-2018 21:57:40 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php:0
+[08-Apr-2018 21:58:50 Asia/Manila] PHP Notice:  Undefined index: room_type_id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php on line 27
+[08-Apr-2018 21:58:50 Asia/Manila] PHP Stack trace:
+[08-Apr-2018 21:58:50 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php:0
+[08-Apr-2018 22:03:52 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(15): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[08-Apr-2018 22:03:58 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(15): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[08-Apr-2018 22:04:35 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(15): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[08-Apr-2018 22:04:48 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\view.php(15): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 09:49:13 Asia/Manila] PHP Notice:  Undefined index: province in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\opd.php on line 13
+[09-Apr-2018 09:49:13 Asia/Manila] PHP Stack trace:
+[09-Apr-2018 09:49:13 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\opd.php:0
+[09-Apr-2018 09:49:13 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM p...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\opd.php(13): pdo_db->getData('SELECT * FROM p...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 10:16:06 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'diagnosis' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:215
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(215): PDO->prepare('UPDATE records ...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php(34): pdo_db->updateData(Array, 'id')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 215
+[09-Apr-2018 10:16:23 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'diagnosis' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:215
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(215): PDO->prepare('UPDATE records ...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php(34): pdo_db->updateData(Array, 'id')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 215
+[09-Apr-2018 10:18:15 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'diagnosis' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:215
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(215): PDO->prepare('UPDATE records ...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php(34): pdo_db->updateData(Array, 'id')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 215
+[09-Apr-2018 10:19:24 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'diagnosis' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:215
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(215): PDO->prepare('UPDATE records ...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php(34): pdo_db->updateData(Array, 'id')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 215
+[09-Apr-2018 10:19:41 Asia/Manila] PHP Notice:  Undefined index: physician in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php on line 28
+[09-Apr-2018 10:19:41 Asia/Manila] PHP Stack trace:
+[09-Apr-2018 10:19:41 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php:0
+[09-Apr-2018 10:19:41 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'diagnos' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:122
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(122): PDO->prepare('INSERT INTO rec...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php(40): pdo_db->insertData(Array)
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 122
+[09-Apr-2018 10:21:04 Asia/Manila] PHP Notice:  Undefined variable: prescriptionsDels in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php on line 84
+[09-Apr-2018 10:21:04 Asia/Manila] PHP Stack trace:
+[09-Apr-2018 10:21:04 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php:0
+[09-Apr-2018 10:22:05 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'diagnosis' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:215
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(215): PDO->prepare('UPDATE records ...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php(34): pdo_db->updateData(Array, 'id')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 215
+[09-Apr-2018 10:23:58 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'diagnosis' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:215
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(215): PDO->prepare('UPDATE records ...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php(34): pdo_db->updateData(Array, 'id')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 215
+[09-Apr-2018 10:24:30 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'diagnosis' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:215
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(215): PDO->prepare('UPDATE records ...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php(34): pdo_db->updateData(Array, 'id')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 215
+[09-Apr-2018 10:24:55 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'diagnosis' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:215
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(215): PDO->prepare('UPDATE records ...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php(34): pdo_db->updateData(Array, 'id')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 215
+[09-Apr-2018 10:43:14 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'diagnosis' in 'field list' in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:215
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(215): PDO->prepare('UPDATE records ...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\opd\save.php(34): pdo_db->updateData(Array, 'id')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 215
+>>>>>>> origin/jp

@@ -8,14 +8,18 @@ app.controller('ipdCtrl',function($scope,$http,$window,bootstrapModal,app,jspdf,
 	
 	$scope.record.data($scope);
 	
+<<<<<<< HEAD
 	jspdf.init(); // intialize jspdf
 	
+=======
+>>>>>>> origin/jp
 	$scope.module = {
 			id: 8,
 			privileges: {
 				show: 1,
 				add: 2,
 				edit: 3,
+<<<<<<< HEAD
 				print: 4,
 				delete: 5,
 			}
@@ -200,4 +204,9 @@ app.controller('ipdCtrl',function($scope,$http,$window,bootstrapModal,app,jspdf,
 		window.open(URL.createObjectURL(blob));		
 		
 	};	
+=======
+				delete: 4,
+			}
+	};
+>>>>>>> origin/jp
 });

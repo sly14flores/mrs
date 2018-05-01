@@ -1,0 +1,94 @@
+[20-Mar-2018 13:50:17 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 72
+[20-Mar-2018 13:50:17 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 13:50:17 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-list.php:0
+[20-Mar-2018 13:50:17 Asia/Manila] PHP   2. pdo_db->all() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-list.php:7
+[20-Mar-2018 13:50:17 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM groups' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT  FROM gr...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(80): pdo_db->getData('SELECT  FROM gr...')
+#2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-list.php(7): pdo_db->all('SELECT * FROM g...')
+#3 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[20-Mar-2018 13:50:45 Asia/Manila] PHP Warning:  require_once(../db.php): failed to open stream: No such file or directory in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-list.php on line 5
+[20-Mar-2018 13:50:45 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 13:50:45 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-list.php:0
+[20-Mar-2018 13:50:45 Asia/Manila] PHP Fatal error:  require_once(): Failed opening required '../db.php' (include_path='.;C:\php\pear') in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-list.php on line 5
+[20-Mar-2018 13:50:45 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 13:50:45 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-list.php:0
+[20-Mar-2018 13:51:00 Asia/Manila] PHP Fatal error:  Uncaught Error: Class 'pdo_db' not found in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-list.php:7
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-list.php on line 7
+[20-Mar-2018 13:51:55 Asia/Manila] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 52
+[20-Mar-2018 13:51:55 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 13:51:55 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-list.php:0
+[20-Mar-2018 13:51:55 Asia/Manila] PHP   2. pdo_db->get() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-list.php:9
+[20-Mar-2018 14:19:17 Asia/Manila] PHP Warning:  require_once(../../classes.php): failed to open stream: No such file or directory in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-save.php on line 8
+[20-Mar-2018 14:19:17 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 14:19:17 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-save.php:0
+[20-Mar-2018 14:19:17 Asia/Manila] PHP Fatal error:  require_once(): Failed opening required '../../classes.php' (include_path='.;C:\php\pear') in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-save.php on line 8
+[20-Mar-2018 14:19:17 Asia/Manila] PHP Stack trace:
+[20-Mar-2018 14:19:17 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\groups\group-save.php:0
+[09-Apr-2018 12:51:37 Asia/Manila] PHP Notice:  Undefined index: room_id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php on line 11
+[09-Apr-2018 12:51:37 Asia/Manila] PHP Stack trace:
+[09-Apr-2018 12:51:38 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php:0
+[09-Apr-2018 12:51:38 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php(11): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:55:05 Asia/Manila] PHP Notice:  Undefined index: room_id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php on line 11
+[09-Apr-2018 12:55:06 Asia/Manila] PHP Stack trace:
+[09-Apr-2018 12:55:06 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php:0
+[09-Apr-2018 12:55:06 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php(11): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:55:08 Asia/Manila] PHP Notice:  Undefined index: room_id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php on line 11
+[09-Apr-2018 12:55:08 Asia/Manila] PHP Stack trace:
+[09-Apr-2018 12:55:08 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php:0
+[09-Apr-2018 12:55:08 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php(11): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:55:49 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php on line 11
+[09-Apr-2018 12:55:49 Asia/Manila] PHP Stack trace:
+[09-Apr-2018 12:55:49 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php:0
+[09-Apr-2018 12:55:49 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php(11): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:55:52 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php on line 11
+[09-Apr-2018 12:55:52 Asia/Manila] PHP Stack trace:
+[09-Apr-2018 12:55:52 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php:0
+[09-Apr-2018 12:55:52 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php(11): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:56:11 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php on line 11
+[09-Apr-2018 12:56:11 Asia/Manila] PHP Stack trace:
+[09-Apr-2018 12:56:11 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php:0
+[09-Apr-2018 12:56:11 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php(11): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+[09-Apr-2018 12:56:37 Asia/Manila] PHP Notice:  Undefined index: id in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php on line 11
+[09-Apr-2018 12:56:37 Asia/Manila] PHP Stack trace:
+[09-Apr-2018 12:56:37 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php:0
+[09-Apr-2018 12:56:37 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php:30
+Stack trace:
+#0 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php(30): PDO->query('SELECT * FROM r...')
+#1 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\rooms\room-view.php(11): pdo_db->getData('SELECT * FROM r...')
+#2 {main}
+  thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30

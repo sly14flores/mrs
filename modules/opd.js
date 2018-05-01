@@ -19,10 +19,13 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 					cancel: false,					
 					add: true,
 					edit: true
+<<<<<<< HEAD
 				},
 				show: {
 					ok: false,
 					cancel: false
+=======
+>>>>>>> origin/jp
 				},
 				label: {
 					ok: 'Save',
@@ -35,11 +38,15 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			$timeout(function() {
 				$compile($('#content')[0])(scope);
 				self.list(scope);
+<<<<<<< HEAD
 			}, 200);
 
 			$(function () {
 			  $('[data-toggle="tooltip"]').tooltip();
 			});				
+=======
+			}, 200);			
+>>>>>>> origin/jp
 			
 		};
 
@@ -86,7 +93,10 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			}).then(function mySucces(response) {
 				
 				scope.patient = angular.copy(response.data);
+<<<<<<< HEAD
 				
+=======
+>>>>>>> origin/jp
 				self.list(scope);	
 				
 			},
@@ -121,6 +131,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				scope.rooms = response.data;
 
 			}, function myError(response) {
+<<<<<<< HEAD
 				
 			});			
 			
@@ -138,7 +149,17 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		{
 			
 		if (row == null) { // add				
+=======
+>>>>>>> origin/jp
 				
+			});			
+			
+		};
+		
+		self.medicalRecord = function(scope,row) {
+		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return	
+			if (row == null) { // add				
+			;
 				scope.opd = {};				
 				scope.opd.record = {};
 				scope.opd.record.id = 0;
@@ -210,7 +231,11 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			$('#opd-records').load('html/opd.html',function() {
 				$timeout(function() { $compile($('#opd-records')[0])(scope); }, 500);
 			});
+<<<<<<< HEAD
 		}
+=======
+
+>>>>>>> origin/jp
 		};
 		
 		self.edit = function(scope) {
@@ -447,7 +472,10 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			self.list(scope);
 			
 		};
+<<<<<<< HEAD
 		
+=======
+>>>>>>> origin/jp
 
 	};
 	

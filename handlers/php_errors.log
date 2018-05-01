@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [20-Mar-2018 13:30:53 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php on line 14
 [20-Mar-2018 13:30:53 Asia/Manila] PHP Stack trace:
 [20-Mar-2018 13:30:53 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php:0
@@ -216,3 +217,43 @@ Stack trace:
 #2 C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\account-profile.php(27): pdo_db->get(Array, Array)
 #3 {main}
   thrown in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\db.php on line 30
+=======
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 14
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:24 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Notice:  Undefined variable: Array in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 14
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:24 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 15
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:24 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Notice:  Undefined variable: Array in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 15
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:24 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 16
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:24 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Notice:  Undefined variable: Array in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 16
+[14-Apr-2018 17:21:24 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:24 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 14
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:49 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Notice:  Undefined variable: Array in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 14
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:49 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 15
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:49 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Notice:  Undefined variable: Array in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 15
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:49 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 16
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:49 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Notice:  Undefined variable: Array in C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php on line 16
+[14-Apr-2018 17:21:49 Asia/Manila] PHP Stack trace:
+[14-Apr-2018 17:21:49 Asia/Manila] PHP   1. {main}() C:\Users\Aquilino\Desktop\UwAmp310\www\mrs\handlers\dashboard.php:0
+>>>>>>> origin/jp
+[01-May-2018 13:40:49 Asia/Manila] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting ')' in C:\Users\SLY One\Desktop\UwAmp310\www\mrs\system_privileges.php on line 68
+[01-May-2018 13:41:06 Asia/Manila] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting ')' in C:\Users\SLY One\Desktop\UwAmp310\www\mrs\system_privileges.php on line 68
