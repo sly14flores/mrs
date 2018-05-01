@@ -24,12 +24,9 @@ angular.module('room-module',['bootstrap-modal','bootstrap-growl']).factory('for
 			scope.room = {};
 			scope.room.id = 0;
 			
-<<<<<<< HEAD
 			scope.room.room_nos = [];
 			scope.room.dels = [];
 			
-=======
->>>>>>> origin/jp
 			scope.rooms = []; // list
 			
 			
@@ -71,12 +68,9 @@ angular.module('room-module',['bootstrap-modal','bootstrap-growl']).factory('for
 			scope.room = {};
 			scope.room.id = 0;
 			
-<<<<<<< HEAD
 			scope.room.room_nos = [];
 			scope.room.dels = [];
 			
-=======
->>>>>>> origin/jp
 			mode(scope,row);
 			
 			$('#x_content').html(loading);
@@ -98,20 +92,11 @@ angular.module('room-module',['bootstrap-modal','bootstrap-growl']).factory('for
 				}, function myError(response) {
 				  // error
 				});
-<<<<<<< HEAD
 					 
 			}; //row
 		
 			
 		};		
-=======
-					
-			}; //row
-		
-			
-		};
-		
->>>>>>> origin/jp
 		
 		self.edit = function(scope) {
 			
@@ -121,17 +106,11 @@ angular.module('room-module',['bootstrap-modal','bootstrap-growl']).factory('for
 		
 		self.save = function(scope) {
 			
-<<<<<<< HEAD
 			if (validate(scope)) {
 				
 				growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Please complete required fields.');
 				return;
 			
-=======
-			if (validate(scope)){ 
-			growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'Please complete required fields.');
-			return;
->>>>>>> origin/jp
 			}
 		
 			$http({
@@ -143,19 +122,12 @@ angular.module('room-module',['bootstrap-modal','bootstrap-growl']).factory('for
 				if (scope.room.id == 0) {
 					scope.room.id = response.data;
 					growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Room Information successfully added.');
-<<<<<<< HEAD
 				} else {					
 					growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Room Information successfully updated.');
 				}
 					
 				self.list(scope);
 				mode(scope,scope.room);
-=======
-					}	else{
-						growl.show('alert alert-success alert-solid',{from: 'top', amount: 55},'Room Information successfully updated.');
-					}
-					mode(scope,scope.room);
->>>>>>> origin/jp
 				
 			}, function myError(response) {
 				 
@@ -211,7 +183,6 @@ angular.module('room-module',['bootstrap-modal','bootstrap-growl']).factory('for
 				
 			});
 			
-<<<<<<< HEAD
 			$('#x_content').html(loading);
 			$('#x_content').load('lists/rooms.html', function() {
 				$timeout(function() { $compile($('#x_content')[0])(scope); },500);								
@@ -223,25 +194,11 @@ angular.module('room-module',['bootstrap-modal','bootstrap-growl']).factory('for
 						columnDefs: [{}]
 					});	
 				},1000);
-=======
-			
-			$('#x_content').html(loading);
-			$('#x_content').load('lists/rooms.html', function() {
-				$timeout(function() { $compile($('#x_content')[0])(scope); },100);								
-				// instantiate datable
-				$timeout(function() {
-					$('#rooms').dataTable({
-						"ordering": false,
-						"processing": true
-					});	
-				},200);
->>>>>>> origin/jp
 				
 			});				
 			
 		};	
 		
-<<<<<<< HEAD
 		self.addNewChoice = function(scope) {
 			
 			scope.room.room_nos.push({id:0,room_number:'',disabled:false});
@@ -356,8 +313,6 @@ angular.module('room-module',['bootstrap-modal','bootstrap-growl']).factory('for
 			}
 			
 		};
-=======
->>>>>>> origin/jp
 		
 	};
 	

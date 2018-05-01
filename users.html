@@ -183,7 +183,7 @@ require_once 'authentication.php';
 										  </tr>
 										</thead>
 										<tbody>
-										  <tr ng-repeat="u in filterData = (users | filter: search) | pagination: currentPage:pageSize">
+										  <tr ng-repeat="u in users | filter: search">
 											<td>{{u.id}}</td>
 											<td>{{u.last_name}} , {{u.first_name}}</td>
 											<td>{{u.username}}</td>
@@ -193,19 +193,7 @@ require_once 'authentication.php';
 												<button type="button" class="btn btn-danger" ng-click="delete(u)" data-toggle="tooltip" data-placement="top" title="Delete User Info"><i class="fa fa-times"></i></button>
 											</td>
 										  </tr>
-<<<<<<< HEAD
 										</tbody>									
-=======
-										</tbody>
-										<tfoot><!-- added pagination feature -->
-											<tr>
-												<td colspan="5" style="text-align: center;">
-													<!-- <ul uib-pagination total-items="filterData.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="5"></ul>												 -->
-													<div class="float-right"><ul uib-pagination direction-links="false" boundary-links="true" total-items="filterData.length" ng-model="currentPage"></ul></div>
- 											    </td>
-											</tr>											
-										</tfoot>										
->>>>>>> origin/jp
 									  </table>
 									</div>                           
 								</div>                           

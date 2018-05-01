@@ -47,7 +47,7 @@ app.controller('staffsCtrl',function($scope,$timeout,$http,$window,bootstrapModa
 	
 	$scope.delete = function(row) {
 	
-	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.add)) return;
+	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.delete)) return;
 	
 		var onOk = function() {
 			

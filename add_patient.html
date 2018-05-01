@@ -192,7 +192,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.patient.first_name.$touched && form.patient.first_name.$invalid}">
-							<label class="control-label">First Name <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">First Name</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-user-circle"></i>
@@ -206,21 +206,21 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.patient.middle_name.$touched && form.patient.middle_name.$invalid}">
-							<label class="control-label">Middle Name <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Middle Name</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-user-circle"></i>
                                     </span>
-							<input type="text" class="form-control" name="middle_name" ng-model="patient.middle_name" ng-disabled="controls.btns.ok" required>
+							<input type="text" class="form-control" name="middle_name" ng-model="patient.middle_name" ng-disabled="controls.btns.ok">
 							</div>
-							<div class="form-control-feedback" ng-show="form.patient.middle_name.$touched && form.patient.middle_name.$invalid">Last name is required</div>
+							
 						</div>						
 					</fieldset>
 				</div>
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.patient.last_name.$touched && form.patient.last_name.$invalid}">
-							<label class="control-label">Last Name <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Last Name</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-user-circle"></i>
@@ -237,7 +237,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.patient.date_of_birth.$touched && form.patient.date_of_birth.$invalid}">
-							<label class="control-label">Birthday <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Birthday</label>
 							<input type="date" class="form-control" name="date_of_birth" ng-model="patient.date_of_birth" ng-disabled="controls.btns.ok" required ng-change="app.birthday(this)">
 							<div class="form-control-feedback" ng-show="form.patient.date_of_birth.$touched && form.patient.date_of_birth.$invalid">Birthday name is required</div>
 						</div>							
@@ -279,7 +279,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.patient.gender.$touched && form.patient.gender.$invalid}">
-							<label class="control-label">Gender <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Gender</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-venus-mars"></i>
@@ -302,7 +302,7 @@ require_once 'authentication.php';
                                     <span class="input-group-addon">
 										<i class="fa fa-fax"></i>
                                     </span>
-								<input type="text" restrict-to="[0-9]" ng-pattern="phoneNumbr" class="form-control" placeholder="09x-xxx-xxxxx | 09xxxxxxxxx" name="mobile_number" ng-model="patient.mobile_number" ng-disabled="controls.btns.ok">
+								<input type="text" restrict-to="[0-9]" ng-pattern="phoneNumbr" class="form-control" placeholder="09x-xxx-xxxxx | 09xxxxxxxxx" name="mobile_number" ng-model="patient.mobile_number" ng-disabled="controls.btns.ok" required>
 							</div>
 							<div style="color: red" class="form-control-feedback" ng-show="form.patient.mobile_number.$error.pattern && form.patient.mobile_number.$invalid">Valid mobile no. is (09x-xxx-xxxxx) or (09xxxxxxxxx)</div>
 						</div>								
@@ -311,7 +311,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.patient.civil_status.$touched && form.patient.civil_status.$invalid}">
-							<label class="control-label">Civil Status <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Civil Status</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-wechat"></i>
@@ -334,7 +334,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.patient.province.$touched && form.patient.province.$invalid}">
-							<label class="control-label">Province <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Province</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-address-book-o"></i>
@@ -348,7 +348,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.patient.city.$touched && form.patient.city.$invalid}">
-							<label class="control-label">City/Municipality <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">City/Municipality</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-address-book-o"></i>
@@ -368,10 +368,10 @@ require_once 'authentication.php';
                                     <span class="input-group-addon">
 										<i class="fa fa-address-book-o"></i>
                                     </span>
-							<input type="text" class="form-control" name="barangay" uib-typeahead="b.barangay_description for b in barangays | filter:{barangay_description:$viewValue}" typeahead-min-length="1" typeahead-on-select="app.barangaySelect($item, this)" ng-model="patient.barangay" ng-disabled="controls.btns.ok" >
+							<input type="text" class="form-control" name="barangay" uib-typeahead="b.barangay_description for b in barangays | filter:{barangay_description:$viewValue}" typeahead-min-length="1" typeahead-on-select="app.barangaySelect($item, this)" ng-model="patient.barangay" ng-disabled="controls.btns.ok" required>
 						</div>
-						
-						</div>
+						<div class="form-control-feedback" ng-show="form.patient.barangay.$touched && form.patient.barangay.$invalid">Barangay is required</div>
+							</div>
 					</fieldset>
 				</div>
 			</div>
@@ -380,15 +380,15 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.patient.nationality.$touched && form.patient.nationality.$invalid}">
-							<label class="control-label">Nationality <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Nationality</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-flag"></i>
                                     </span>
-							<input type="text" class="form-control" name="nationality" ng-model="patient.nationality" ng-disabled="controls.btns.ok" required>
+							<input type="text" class="form-control" name="nationality" ng-model="patient.nationality" ng-disabled="controls.btns.ok">
 							</div>
-							<div class="form-control-feedback" ng-show="form.patient.barangay.$touched && form.patient.barangay.$invalid">Nationality is required</div>
-							</div>							
+							
+						</div>							
 					</fieldset>
 				</div>			
 				<div class="col-md-4">
@@ -426,7 +426,6 @@ require_once 'authentication.php';
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group">
 							<label class="control-label">PWD</label>
-<<<<<<< HEAD
 						<div class="col-md-9">
 							<div class="col-md-4">
 								<input type="radio" ng-model="patient.pwd" value="Yes" ng-disabled="controls.btns.ok">
@@ -436,14 +435,6 @@ require_once 'authentication.php';
 								<input type="radio" ng-model="patient.pwd" value="No" ng-disabled="controls.btns.ok">
 							<label>No</label>
 							</div>
-=======
-							<div class="col-md-9">
-						<label>Yes</label>
-							<input type="radio" ng-model="patient.pwd" value="Yes" ng-disabled="controls.btns.ok">
-						
-						<label>No</label>
-							<input type="radio" ng-model="patient.pwd" value="No" ng-disabled="controls.btns.ok">
->>>>>>> origin/jp
 						</div>
 						</div>							
 					</fieldset>
@@ -453,7 +444,6 @@ require_once 'authentication.php';
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group">
 							<label class="control-label">Senior Citizen</label>
-<<<<<<< HEAD
 						<div class="col-md-9">
 							<div class="col-md-4">
 								<input type="radio" ng-model="patient.senior_citizen" value="Yes" ng-disabled="controls.btns.ok">
@@ -463,14 +453,6 @@ require_once 'authentication.php';
 								<input type="radio" ng-model="patient.senior_citizen" value="No" ng-disabled="controls.btns.ok">
 							<label>No</label>
 							</div>
-=======
-							<div class="col-md-9">
-						<label>Yes</label>
-							<input type="radio" ng-model="patient.senior_citizen" ng-disabled="controls.btns.ok">
-						
-						<label>No</label>
-							<input type="radio" ng-model="patient.senior_citizen" ng-disabled="controls.btns.ok">
->>>>>>> origin/jp
 						</div>
 						</div>							
 					</fieldset>
@@ -480,7 +462,6 @@ require_once 'authentication.php';
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group">
 							<label class="control-label">Smoker</label>
-<<<<<<< HEAD
 						<div class="col-md-9">
 							<div class="col-md-4">
 								<input type="radio" ng-model="patient.smoker" value="Yes" ng-disabled="controls.btns.ok">
@@ -492,22 +473,11 @@ require_once 'authentication.php';
 							</div>
 						</div>
 						</div>									
-=======
-							<div class="col-md-9">
-						<label>Yes</label>
-							<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
-						
-						<label>No</label>
-							<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
-						</div>
-						</div>							
->>>>>>> origin/jp
 					</fieldset>
 				</div>					
 			</div>	
 			
 			<div class="row">
-<<<<<<< HEAD
 			<div class="col-md-5">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group">
@@ -526,29 +496,10 @@ require_once 'authentication.php';
 					</fieldset>
 				</div>
 				<div class="col-md-6">
-=======
-				<div class="col-md-4">
-					<fieldset class="content-group margin-top-10">
-						<div class="form-group">
-							<label class="control-label">Membership</label>
-							<div class="col-md-9">
-						<label>PHIC</label>
-							<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
-						
-						<label>NON PHIC</label>
-							<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
-						</div>
-						</div>							
-					</fieldset>
-				</div>
-
-			<div class="col-md-6">
->>>>>>> origin/jp
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group">
 							<label class="control-label">Categories</label>
 						<div class="col-md-9">
-<<<<<<< HEAD
 							<div class="col-md-4">
 								<input type="radio" ng-model="patient.categories" value="Govt" ng-disabled="controls.btns.ok">
 							<label>Gov't</label>
@@ -575,27 +526,6 @@ require_once 'authentication.php';
 							</div>
 						</div>
 						</div>									
-=======
-							<label>Gov't</label>
-								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
-						
-							<label>Private</label>
-								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
-						
-							<label>OWWA</label>
-								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
-						
-							<label>NHTS</label>
-								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
-						
-							<label>NPM</label>
-								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
-						
-							<label>SE</label>
-								<input type="radio" ng-model="patient.smoker" ng-disabled="controls.btns.ok">
-						</div>
-						</div>							
->>>>>>> origin/jp
 					</fieldset>
 				</div>
 			</div>

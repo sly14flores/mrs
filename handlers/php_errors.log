@@ -257,3 +257,5 @@ Stack trace:
 >>>>>>> origin/jp
 [01-May-2018 13:40:49 Asia/Manila] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting ')' in C:\Users\SLY One\Desktop\UwAmp310\www\mrs\system_privileges.php on line 68
 [01-May-2018 13:41:06 Asia/Manila] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting ')' in C:\Users\SLY One\Desktop\UwAmp310\www\mrs\system_privileges.php on line 68
+[01-May-2018 13:51:04 Asia/Manila] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting ')' in C:\Users\SLY One\Desktop\UwAmp310\www\mrs\system_privileges.php on line 68
+[01-May-2018 13:51:53 Asia/Manila] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting ')' in C:\Users\SLY One\Desktop\UwAmp310\www\mrs\system_privileges.php on line 68

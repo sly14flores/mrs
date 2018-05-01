@@ -26,10 +26,6 @@ if (isset($_POST['record']['follow_up'])) unset($_POST['record']['follow_up']);
 
 $_POST['record']['date'] = (isset($_POST['record']['date']))?date("Y-m-d",strtotime($_POST['record']['date'])):"1970-01-01";
 $_POST['record']['admission_date'] = (isset($_POST['record']['admission_date']))?date("Y-m-d",strtotime($_POST['record']['admission_date'])):"1970-01-01";
-<<<<<<< HEAD
-=======
-$_POST['record']['discharge_date'] = (isset($_POST['record']['discharge_date']))?date("Y-m-d",strtotime($_POST['record']['discharge_date'])):"1970-01-01";
->>>>>>> origin/jp
 $_POST['record']['room_type_id'] = $_POST['record']['room_type_id']['id'];
 $_POST['record']['physician'] = $_POST['record']['physician']['id'];
 

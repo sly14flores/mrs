@@ -1,6 +1,6 @@
-var app = angular.module('ipd',['account-module','bootstrap-modal','app-module','jspdf-module','module-access']);
+var app = angular.module('ipd',['account-module','bootstrap-modal','app-module','jspdf-module']);
 
-app.controller('ipdCtrl',function($scope,$http,$window,bootstrapModal,app,jspdf,access) {
+app.controller('ipdCtrl',function($scope,$http,$window,bootstrapModal,app,jspdf) {
 
 	$scope.views = {};
 	
@@ -8,27 +8,20 @@ app.controller('ipdCtrl',function($scope,$http,$window,bootstrapModal,app,jspdf,
 	
 	$scope.record.data($scope);
 	
-<<<<<<< HEAD
 	jspdf.init(); // intialize jspdf
 	
-=======
->>>>>>> origin/jp
 	$scope.module = {
 			id: 8,
 			privileges: {
 				show: 1,
 				add: 2,
 				edit: 3,
-<<<<<<< HEAD
-				print: 4,
-				delete: 5,
+				delete: 4,
 			}
 	};
 	
 	$scope.print = function(doctor) {
 		
-	if (!access.has($scope,$scope.profile.groups,$scope.module.id,$scope.module.privileges.print)) return;
-	
 		var doc = new jsPDF({
 			orientation: 'portrait',
 			unit: 'pt',
@@ -204,9 +197,4 @@ app.controller('ipdCtrl',function($scope,$http,$window,bootstrapModal,app,jspdf,
 		window.open(URL.createObjectURL(blob));		
 		
 	};	
-=======
-				delete: 4,
-			}
-	};
->>>>>>> origin/jp
 });

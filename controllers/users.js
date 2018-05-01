@@ -6,15 +6,9 @@ app.controller('usersCtrl',function($scope,$compile,$timeout,$http,$window,boots
 	
 	$scope.users = [];
 	
-	$scope.views.currentPage = 1;
-	
 	list();
 	
 	function list() {
-	
-		$scope.currentPage = $scope.views.currentPage;
-		$scope.pageSize = 3;
-		$scope.maxSize = 3;
 	
 		$http({
 		  method: 'GET',
@@ -22,13 +16,7 @@ app.controller('usersCtrl',function($scope,$compile,$timeout,$http,$window,boots
 		}).then(function mySucces(response) {
 
 			$scope.users = angular.copy(response.data);
-<<<<<<< HEAD
 							
-=======
-			
-			$scope.filterData = $scope.users; // for pagination
-			$scope.currentPage = $scope.views.currentPage; // for pagination 					
->>>>>>> origin/jp
 			$(function () {
 			  $('[data-toggle="tooltip"]').tooltip();
 			});			

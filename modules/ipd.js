@@ -31,15 +31,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			$timeout(function() {
 				$compile($('#content')[0])(scope);
 				self.list(scope);
-<<<<<<< HEAD
-			}, 200);
-
-			$(function () {
-			  $('[data-toggle="tooltip"]').tooltip();
-			});			
-=======
 			}, 200);			
->>>>>>> origin/jp
 			
 		};
 
@@ -122,15 +114,9 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				method: 'POST',
 				url: 'api/suggestions/rooms.php'
 			}).then(function mySucces(response) {
-<<<<<<< HEAD
 				
 				scope.rooms = response.data;
 				
-=======
-				
-				scope.rooms = response.data;
-				
->>>>>>> origin/jp
 			},function myError(response) {
 				
 			});	
@@ -138,7 +124,6 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		};
 		
 		self.medicalRecord = function(scope,row) {
-<<<<<<< HEAD
 		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
 		if (scope.patient.id == null){
 			growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'You have to search first to add record.');
@@ -146,9 +131,6 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		
 		else
 		{
-=======
-		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return		
->>>>>>> origin/jp
 			if (row == null) { // add				
 				
 				scope.ipd = {};				
@@ -191,10 +173,6 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 					scope.ipd = {};
 					scope.ipd.record = angular.copy(response.data);
 					scope.ipd.record.date = new Date(response.data.date);
-<<<<<<< HEAD
-=======
-					scope.ipd.record.discharge_date = new Date(response.data.discharge_date);
->>>>>>> origin/jp
 					scope.ipd.record.admission_date = new Date(response.data.admission_date);
 					scope.ipd.record.follow_up.date = new Date(response.data.follow_up.date);					
 					
@@ -225,11 +203,7 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			$('#ipd-records').load('html/ipd.html',function() {
 				$timeout(function() { $compile($('#ipd-records')[0])(scope); }, 500);				
 			});
-<<<<<<< HEAD
 		}
-=======
-
->>>>>>> origin/jp
 		};
 		
 		self.edit = function(scope) {

@@ -173,7 +173,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.first_name.$touched && form.staff.first_name.$invalid}">
-							<label class="control-label">First Name <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">First Name</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-user-circle"></i>
@@ -186,27 +186,22 @@ require_once 'authentication.php';
 				</div>
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
-<<<<<<< HEAD
-							<div class="form-group" ng-class="{'has-danger': form.staff.middle_name.$touched && form.staff.middle_name.$invalid}">
-							<label class="control-label">Middle Name <span class="text-danger" style="font-size: 15px;">*</span></label>
-=======
 						<div class="form-group">
 							<label class="control-label">Middle Name</label>
->>>>>>> origin/jp
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-user-circle"></i>
                                     </span>
-							<input type="text" class="form-control" name="middle_name" ng-model="staff.middle_name" ng-disabled="controls.btns.ok" required>
+							<input type="text" class="form-control" name="middle_name" ng-model="staff.middle_name" ng-disabled="controls.btns.ok">
 							</div>
-							<div class="form-control-feedback" ng-show="form.staff.middle_name.$touched && form.staff.middle_name.$invalid">Middle name is required</div>
+							
 						</div>						
 					</fieldset>
 				</div>
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.last_name.$touched && form.staff.last_name.$invalid}">
-							<label class="control-label">Last Name <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Last Name</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-user-circle"></i>
@@ -223,7 +218,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.date_of_birth.$touched && form.staff.date_of_birth.$invalid}">
-							<label class="control-label">Birthday <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Birthday</label>
 							<input type="date" class="form-control" name="date_of_birth" ng-model="staff.date_of_birth" ng-change="app.birthday(this)" ng-disabled="controls.btns.ok" required>
 							<div class="form-control-feedback" ng-show="form.staff.date_of_birth.$touched && form.staff.date_of_birth.$invalid">Birthday name is required</div>
 						</div>							
@@ -238,9 +233,9 @@ require_once 'authentication.php';
                                     <span class="input-group-addon">
 										<i class="fa fa-id-badge"></i>
                                     </span>
-							<input type="text" restrict-to="[0-9]" class="form-control" name="age" ng-model="staff.age" ng-disabled="controls.btns.ok">
+							<input type="text" restrict-to="[0-9]" class="form-control" name="age" ng-model="staff.age" ng-disabled="controls.btns.ok" required>
 							</div>
-							
+							<div class="form-control-feedback" ng-show="form.staff.age.$touched && form.staff.age.$invalid">Age is required</div>
 						</div>							
 					</fieldset>
 				</div>		
@@ -253,9 +248,9 @@ require_once 'authentication.php';
                                     <span class="input-group-addon">
 										<i class="fa fa-id-card"></i>
                                     </span>
-							<input type="text" class="form-control" name="birth_place" ng-model="staff.birth_place" ng-disabled="controls.btns.ok" >
+							<input type="text" class="form-control" name="birth_place" ng-model="staff.birth_place" ng-disabled="controls.btns.ok" required>
 							</div>
-							
+							<div class="form-control-feedback" ng-show="form.staff.birth_place.$touched && form.staff.birth_place.$invalid">Birth Place is required</div>
 						</div>							
 					</fieldset>
 				</div>		
@@ -266,7 +261,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.gender.$touched && form.staff.gender.$invalid}">
-							<label class="control-label">Gender <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Gender</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-venus-mars"></i>
@@ -284,7 +279,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.mobile_number.$touched && form.staff.mobile_number.$invalid}">
-							<label class="control-label">Mobile Number <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Mobile Number</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-fax"></i>
@@ -298,7 +293,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.civil_status.$touched && form.staff.civil_status.$invalid}">
-							<label class="control-label">Civil Status <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Civil Status</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-wechat"></i>
@@ -321,7 +316,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.province.$touched && form.staff.province.$invalid}">
-							<label class="control-label">Province <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Province</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-address-book-o"></i>
@@ -335,7 +330,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.city.$touched && form.staff.city.$invalid}">
-							<label class="control-label">City/Municipality <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">City/Municipality</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-address-book-o"></i>
@@ -365,7 +360,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.nationality.$touched && form.staff.nationality.$invalid}">
-							<label class="control-label">Nationality <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Nationality</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-flag"></i>
@@ -379,7 +374,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.religion.$touched && form.staff.religion.$invalid}">
-							<label class="control-label">Religion <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Religion</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-handshake-o"></i>
@@ -394,7 +389,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.education.$touched && form.staff.education.$invalid}">
-							<label class="control-label">Education <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Education</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-graduation-cap"></i>
@@ -411,7 +406,7 @@ require_once 'authentication.php';
 				<div class="col-md-4">
 					<fieldset class="content-group margin-top-10">
 						<div class="form-group" ng-class="{'has-danger': form.staff.specialization.$touched && form.staff.specialization.$invalid}">
-							<label class="control-label">Specialization <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label class="control-label">Specialization</label>
 							<div class="input-group">
                                     <span class="input-group-addon">
 										<i class="fa fa-user-md"></i>

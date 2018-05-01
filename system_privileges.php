@@ -65,12 +65,8 @@ define('system_privileges', array(
 			array("id"=>1,"description"=>"Show OPD","value"=>false),
 			array("id"=>2,"description"=>"Add OPD","value"=>false),
 			array("id"=>3,"description"=>"Edit OPD","value"=>false),
-<<<<<<< HEAD
 			array("id"=>4,"description"=>"Print OPD","value"=>false),
 			array("id"=>5,"description"=>"Delete OPD","value"=>false),
-=======
-			array("id"=>4,"description"=>"Delete OPD","value"=>false),
->>>>>>> origin/jp
 		),
 	),
 	array(
@@ -80,12 +76,8 @@ define('system_privileges', array(
 			array("id"=>1,"description"=>"Show IPD","value"=>false),
 			array("id"=>2,"description"=>"Add IPD","value"=>false),
 			array("id"=>3,"description"=>"Edit IPD","value"=>false),
-<<<<<<< HEAD
 			array("id"=>4,"description"=>"Print IPD","value"=>false),
 			array("id"=>5,"description"=>"Delete IPD","value"=>false),
-=======
-			array("id"=>4,"description"=>"Delete IPD","value"=>false),
->>>>>>> origin/jp
 		),
 	),
 	array(

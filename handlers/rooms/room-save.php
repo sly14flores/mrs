@@ -8,7 +8,6 @@ include_once '../../db.php';
 
 $con = new pdo_db("rooms");
 
-<<<<<<< HEAD
 $room_nos = $_POST['room']['room_nos'];
 unset($_POST['room']['room_nos']);
 
@@ -19,16 +18,10 @@ if ($_POST['room']['id']) {
 	
 	$room = $con->updateData($_POST['room'],'id');
 	$room_id = $_POST['room']['id'];
-=======
-if ($_POST['room']['id']) {
-	
-	$room = $con->updateData($_POST['room'],'id');
->>>>>>> origin/jp
 	
 } else {
 	
 	$room = $con->insertData($_POST['room']);
-<<<<<<< HEAD
 	$room_id = $con->insertId;
 
 }
@@ -66,10 +59,6 @@ if (count($room_nos)) {
 	
 	}
 	
-=======
-	echo $con->insertId;
-
->>>>>>> origin/jp
 }
 
 ?>
