@@ -129,87 +129,106 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			
 		};
 		
-		self.medicalRecord = function(scope,row) {
-		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
-		if (scope.patient.id == null){
-			growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'You have to search first to add record.');
-		}
+		function ipdNo(scope) {
+			
+			$http({
+			  method: 'GET',
+			  url: 'handlers/ipd/ipd-no.php'
+			}).then(function mySucces(response) {
+
+				scope.ipd.record.id = response.data.id;
+				scope.ipd.record.ipd_no = response.data.ipd_no;
+
+			}, function myError(response) {
+				
+			});	
+			
+		};
 		
-		else
-		{
-			if (row == null) { // add				
-				
-				scope.ipd = {};				
-				scope.ipd.record = {};
-				scope.ipd.record.id = 0;
-				scope.ipd.record.date = new Date();				
-				scope.ipd.record.patient_id = scope.patient_id;				
-				scope.ipd.record.other_history = {};
-				scope.ipd.record.other_history.id = 0;
-				scope.ipd.record.prescription = [];
-				scope.ipd.record.prescriptionDels = [];
-				scope.ipd.record.laboratory = [];
-				scope.ipd.record.laboratoryDels = [];
-				scope.ipd.record.diagnose = [];
-				scope.ipd.record.diagnoseDels = [];
-				scope.ipd.record.follow_up = {};			
-				scope.ipd.record.follow_up.id = 0;
-				
-				scope.controls = {
-					btns: {
-						ok: false,
-						cancel: false,					
-						add: true,
-						edit: true
-					},
-					label: {
-						ok: 'Save',
-						cancel: 'Cancel'
-					}
-				};				
+		self.medicalRecord = function(scope,row) {
+			if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
+			if (scope.patient.id == null){
+				growl.show('alert alert-danger alert-solid',{from: 'top', amount: 55},'You have to search first to add record.');
+			}
+			
+			else
+			{
+				if (row == null) { // add				
+					
+					scope.ipd = {};				
+					scope.ipd.record = {};
+					scope.ipd.record.id = 0;
+					scope.ipd.record.date = new Date();
+					scope.ipd.record.admission_date = new Date();					
+					scope.ipd.record.patient_id = scope.patient_id;				
+					scope.ipd.record.other_history = {};
+					scope.ipd.record.other_history.id = 0;
+					scope.ipd.record.prescription = [];
+					scope.ipd.record.prescriptionDels = [];
+					scope.ipd.record.laboratory = [];
+					scope.ipd.record.laboratoryDels = [];
+					scope.ipd.record.diagnose = [];
+					scope.ipd.record.diagnoseDels = [];
+					scope.ipd.record.follow_up = {};			
+					scope.ipd.record.follow_up.id = 0;
+					
+					ipdNo(scope);
+					
+					scope.controls = {
+						btns: {
+							ok: false,
+							cancel: false,					
+							add: true,
+							edit: true
+						},
+						label: {
+							ok: 'Save',
+							cancel: 'Cancel'
+						}
+					};				
 
-			} else { // edit
-			if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.edit)) return		
-				$http({
-				  method: 'POST',
-				  url: 'handlers/ipd/view.php',
-				  data: {record_id: row.id},
-				}).then(function mySucces(response) {
+				} else { // edit
+				if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.edit)) return		
+					$http({
+					  method: 'POST',
+					  url: 'handlers/ipd/view.php',
+					  data: {record_id: row.id},
+					}).then(function mySucces(response) {
+						
+						scope.ipd = {};
+						scope.ipd.record = angular.copy(response.data);
+						scope.ipd.record.date = new Date(response.data.date);
+						scope.ipd.record.admission_date = new Date(response.data.admission_date);
+						scope.ipd.record.follow_up.date = new Date(response.data.follow_up.date);					
+						
+					}, function myError(response) {
+						
+					});
+
+					scope.controls = {
+						btns: {
+							ok: true,
+							cancel: false,					
+							add: true,
+							edit: false
+						},
+						label: {
+							ok: 'Update',
+							cancel: 'Close'
+						}
+					};				
 					
-					scope.ipd = {};
-					scope.ipd.record = angular.copy(response.data);
-					scope.ipd.record.date = new Date(response.data.date);
-					scope.ipd.record.admission_date = new Date(response.data.admission_date);
-					scope.ipd.record.follow_up.date = new Date(response.data.follow_up.date);					
-					
-				}, function myError(response) {
-					
+				};
+
+				doctors(scope);
+				rooms(scope);
+				
+				$('#ipd-records').html('Please wait...');
+				
+				$('#ipd-records').load('html/ipd.html',function() {
+					$timeout(function() { $compile($('#ipd-records')[0])(scope); }, 500);				
 				});
-
-				scope.controls = {
-					btns: {
-						ok: true,
-						cancel: false,					
-						add: true,
-						edit: false
-					},
-					label: {
-						ok: 'Update',
-						cancel: 'Close'
-					}
-				};				
-				
-			};
-
-			doctors(scope);
-			rooms(scope);
-			
-			$('#ipd-records').html('Please wait...');
-			
-			$('#ipd-records').load('html/ipd.html',function() {
-				$timeout(function() { $compile($('#ipd-records')[0])(scope); }, 500);				
-			});
-		}
+			}
 		};
 		
 		self.edit = function(scope) {
@@ -444,7 +463,27 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		
 		self.cancel = function(scope) {
 			
-			self.list(scope);
+			if (scope.ipd.record.date == null)
+			{
+				if (scope.ipd.record.id>0) {
+					
+					$http({
+					  method: 'POST',
+					  url: 'handlers/ipd/delete.php',
+					  data: {id: scope.ipd.record.id}
+					}).then(function mySucces(response) {
+
+						self.list(scope);
+						
+					}, function myError(response) {
+						
+					});					
+					
+				};
+			} else {
+					self.list(scope);
+			}			
+			
 			
 		};
 

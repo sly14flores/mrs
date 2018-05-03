@@ -128,6 +128,22 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 			
 		};
 		
+		function opdNo(scope) {
+			
+			$http({
+			  method: 'GET',
+			  url: 'handlers/opd/opd-no.php'
+			}).then(function mySucces(response) {
+
+				scope.opd.record.id = response.data.id;
+				scope.opd.record.opd_no = response.data.opd_no;
+
+			}, function myError(response) {
+				
+			});	
+			
+		};
+		
 		self.medicalRecord = function(scope,row) {
 
 		if (!access.has(scope,scope.profile.groups,scope.module.id,scope.module.privileges.add)) return;
@@ -156,6 +172,9 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 				scope.opd.record.diagnoseDels = [];
 				scope.opd.record.follow_up = {};			
 				scope.opd.record.follow_up.id = 0;
+				
+				
+				opdNo(scope);
 				
 				scope.controls = {
 					btns: {
@@ -446,7 +465,26 @@ angular.module('app-module', ['bootstrap-modal','form-validator','bootstrap-grow
 		
 		self.cancel = function(scope) {
 			
-			self.list(scope);
+			if (scope.opd.record.date == null)
+			{
+				if (scope.opd.record.id>0) {
+					
+					$http({
+					  method: 'POST',
+					  url: 'handlers/opd/delete.php',
+					  data: {id: scope.opd.record.id}
+					}).then(function mySucces(response) {
+
+						self.list(scope);
+						
+					}, function myError(response) {
+						
+					});					
+					
+				};
+			} else {
+					self.list(scope);
+			}	
 			
 		};
 		
